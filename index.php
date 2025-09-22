@@ -1,7 +1,7 @@
 <?php
 
-use Everest\EverestTheme;
+use Violence\ViolenceTheme;
 
 require 'vendor/autoload.php';
 
-return new EverestTheme;
+return new ViolenceTheme;

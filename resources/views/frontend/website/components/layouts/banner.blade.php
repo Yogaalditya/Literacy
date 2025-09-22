@@ -4,7 +4,7 @@
             <!-- Bagian gambar -->
             <div class="w-full lg:w-1/2 flex justify-items-end ">
                 @php
-                    $images = $currentScheduledConference->getMedia('everest-header');
+                    $images = $currentScheduledConference->getMedia('violence-header');
                     $imageUrls = [];
                     
                     foreach ($images as $image) {

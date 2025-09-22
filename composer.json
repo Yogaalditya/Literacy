@@ -1,8 +1,8 @@
 {
-    "name": "leconfe/everest",
+    "name": "leconfe/violence",
     "autoload": {
         "psr-4": {
-            "Everest\\": "src/"
+            "Violence\\": "src/"
         }
     },
     "authors": [
