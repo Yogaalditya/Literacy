@@ -41,7 +41,6 @@
                                         <span class="font-semibold text-white">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
                                     @endif
                                 @endif
-                                <span class="ml-2 text-sm text-gray-200">Conference Dates</span>
                             </div>
                         </div>
                     @endif
@@ -55,7 +54,6 @@
                         </span>
                         <div>
                             <span class="font-semibold text-white">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
-                            <span class="ml-2 text-sm text-gray-200">Conference Venue</span>
                         </div>
                     </div>
                 </div>
