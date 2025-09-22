@@ -1,55 +1,29 @@
-<section class="hero-banner bg-gradient-to-r relative bg-[#FAFAFA] text-black py-20 lg:py-32 -mt-16">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col gap-4 lg:flex-row-reverse items-center justify-between">
-            <!-- Bagian gambar -->
-            <div class="w-full lg:w-1/2 flex justify-items-end ">
-                @php
-                    $images = $currentScheduledConference->getMedia('violence-header');
-                    $imageUrls = [];
-                    
-                    foreach ($images as $image) {
-                        $imageUrls[] = $image->getAvailableUrl(['thumb', 'thumb-xl']); // Menyimpan URL ukuran 'thumb'
-                    }
-                @endphp
-                <div class="grid gap-4 {{ count($imageUrls) > 1 ? 'grid-cols-2' : 'grid-cols-1' }} mb-4">
-                    @if(count($imageUrls) > 0)
-                        @foreach($imageUrls as $index => $url)
-                            @if($index < 2)
-                                <div class="rounded-lg overflow-hidden shadow-sm"> 
-                                    <img src="{{ $url }}" alt="Conference Image {{ $index + 1 }}" class="w-full h-full object-cover">
-                                </div>
-                            @endif
-                        @endforeach
-                        
-                        @if(count($imageUrls) == 3)
-                            <div class="col-span-2 flex justify-center">
-                                <div class="w-1/2 rounded-lg overflow-hidden shadow-sm"> 
-                                    <img src="{{ $imageUrls[2] }}" alt="Conference Image 3" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                        @elseif(count($imageUrls) == 4)
-                            <div class="col-span-2 grid grid-cols-2 gap-4">
-                                <div class="rounded-lg overflow-hidden shadow-sm"> 
-                                    <img src="{{ $imageUrls[2] }}" alt="Conference Image 3" class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-lg overflow-hidden shadow-sm"> 
-                                    <img src="{{ $imageUrls[3] }}" alt="Conference Image 4" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                        @endif
-                        @else
-                       
-                        <div class="rounded-lg overflow-hidden shadow-sm bg-gradient-to-r from-gray-300 to-gray-400 w-full sm:w-[752px] sm:h-[286.17px] aspect-[752/286.17] flex items-center justify-center">
-                            <span class="text-gray-500 text-xl">Default Image</span>
-                        </div>
-                        
+<section class="hero-banner relative text-white -mt-16" style="min-height: 871px; display: flex; align-items: center;">
+    @php
+        $images = $currentScheduledConference->getMedia('violence-header');
+        $backgroundUrl = null;
+        foreach ($images as $image) {
+            // Try to get the largest available version for a crisp background
+            $backgroundUrl = $image->getAvailableUrl(['original', 'large', 'thumb-xl', 'thumb']);
+            break;
+        }
+    @endphp
 
-                    @endif
-                </div>
-            </div>
+    {{-- Background image (full-cover) with overlay --}}
+    @if($backgroundUrl)
+        <div class="absolute inset-0">
+            <img src="{{ $backgroundUrl }}" alt="Conference Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+    @else
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-300 to-gray-400"></div>
+    @endif
 
-            <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
-                <h1 class="font-bold text-2xl lg:text-6xl tracking-tight mb-8 drop-shadow-lg">{{ $currentScheduledConference->title }}</h1>
+    <div class="relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl">
+                <h1 class="font-bold text-3xl lg:text-6xl tracking-tight mb-8 drop-shadow-lg">{{ $currentScheduledConference->title }}</h1>
+
                 <div class="flex flex-col space-y-4 mb-8">
                     @if($currentScheduledConference->date_start || $currentScheduledConference->date_end)
                         <div class="flex items-center">
@@ -61,17 +35,17 @@
                             <div>
                                 @if($currentScheduledConference->date_start)
                                     @if($currentScheduledConference->date_end && $currentScheduledConference->date_start->format(Setting::get('format_date')) !== $currentScheduledConference->date_end->format(Setting::get('format_date')))
-                                        <span class="font-semibold text-black">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
-                                        <span class="font-semibold text-black"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold text-white">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold text-white"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
                                     @else
-                                        <span class="font-semibold text-black">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold text-white">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
                                     @endif
                                 @endif
-                                <span class="ml-2 text-sm text-gray-600">Conference Dates</span>
+                                <span class="ml-2 text-sm text-gray-200">Conference Dates</span>
                             </div>
                         </div>
                     @endif
-                    
+
                     <div class="flex items-center">
                         <span class="icon-banner mr-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,11 +54,12 @@
                             </svg>
                         </span>
                         <div>
-                            <span class="font-semibold text-black">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
-                            <span class="ml-2 text-sm text-gray-600">Conference Venue</span>
+                            <span class="font-semibold text-white">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
+                            <span class="ml-2 text-sm text-gray-200">Conference Venue</span>
                         </div>
                     </div>
                 </div>
+
                 @if($theme->getSetting('banner_buttons'))
                 <div class="flex flex-col flex-wrap sm:flex-row gap-4">
                     @foreach($theme->getSetting('banner_buttons') ?? [] as $button)
