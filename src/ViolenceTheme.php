@@ -20,7 +20,6 @@ use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Toggle;
 
 class ViolenceTheme extends Theme
 {
@@ -36,9 +35,6 @@ class ViolenceTheme extends Theme
 	public function getFormSchema(): array
 	{
 		return [
-			Toggle::make('top_navigation')
-				->label('Enable Top Navigation')
-				->default(false),
 			SpatieMediaLibraryFileUpload::make('images')
 				->collection('violence-header')
 				->label('Upload Header Images')
@@ -136,7 +132,6 @@ class ViolenceTheme extends Theme
 			'layouts' => $this->getSetting('layouts') ?? [] ,
 			'name_content' => $this->getSetting('name_content'),
 			'about' => $this->getSetting('about'),
-			'top_navigation' => $this->getSetting('top_navigation'),
 			'banner_buttons' => $this->getSetting('banner_buttons'),
 		];
 	}
