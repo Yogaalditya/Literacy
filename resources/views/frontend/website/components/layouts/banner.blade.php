@@ -1,4 +1,4 @@
-<section class="hero-banner relative text-white -mt-16" style="min-height: 962px; display: flex; align-items: center; margin-top: -76px;">
+<section class="hero-banner relative text-white -mt-16" style="min-height: 965px; display: flex; align-items: center; margin-top: -92px;">
     @php
         $images = $currentScheduledConference->getMedia('violence-header');
         $backgroundUrl = null;
