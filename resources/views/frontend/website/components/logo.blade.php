@@ -6,7 +6,7 @@
 
 @if ($headerLogo)
     <x-violence::link
-        {{ $attributes->merge(['class' => 'inline-flex items-center']) }}
+        {{ $attributes->merge(['class' => 'inline-flex items-center no-underline-hover']) }}
         :href="$homeUrl"
     >
         <div class="relative h-12 min-w-[100px] max-w-[200px]"> {{-- Sesuaikan ukuran --}}
@@ -22,12 +22,10 @@
         :href="$homeUrl"
         {{ $attributes->merge([
             'class' => '
+                no-underline-hover
                 text-lg
                 sm:text-xl
                 font-semibold
-                hover:opacity-80
-                transition-opacity
-                duration-200
             '
         ]) }}
     >

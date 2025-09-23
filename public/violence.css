@@ -102,6 +102,9 @@ body {
     transform-origin: right;
     transition: transform 0.3s ease;
 }
+.navbar-custom-violence a.no-underline-hover::before {
+    content: none !important;
+}
 
 .navbar-custom-violence a:hover::before {
     transform: scaleX(1);
