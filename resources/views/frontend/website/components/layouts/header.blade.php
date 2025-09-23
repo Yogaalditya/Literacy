@@ -1,6 +1,7 @@
 @php
     $primaryNavigationItems = app()->getNavigationItems('primary-navigation-menu');
     $userNavigationMenu = app()->getNavigationItems('user-navigation-menu');
+    $homeUrl = app()->getCurrentConference()?->getHomeUrl() ?? url('/');
 @endphp
 
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
@@ -14,6 +15,8 @@
                     </div>
                     <x-violence::logo
                         :headerLogo="$headerLogo"
+                        :homeUrl="$homeUrl"
+                        :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')"
                         class="font-bold h-8 w-auto"
                     />
                 </div>

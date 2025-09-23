@@ -1,6 +1,7 @@
 @php
     $primaryNavigationItems = app()->getNavigationItems('primary-navigation-menu');
     $userNavigationItems = app()->getNavigationItems('user-navigation-menu');
+    $homeUrl = app()->getCurrentConference()?->getHomeUrl() ?? url('/');
 @endphp
 
 <aside class="flex items-center lg:hidden" x-slide-over>
@@ -23,7 +24,11 @@
                             class="w-screen max-w-xs">
                             <div class="bg-white border-neutral-100/70 border-r shadow-lg h-svh overflow-y-scroll">
                                 <div class="navigation-menu-mobile ps-4 py-2 text-primary-content flex">
-                                    <x-violence::logo :headerLogo="$headerLogo" class="font-bold text-white" />
+                                    <x-violence::logo 
+                                    :headerLogo="$headerLogo" 
+                                    :homeUrl="$homeUrl" 
+                                    :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')" 
+                                    class="font-bold text-white" />
                                     <button @@click="closeSlideOver" class="btn btn-sm btn-square btn-ghost">
                                         <x-heroicon-o-x-mark class="h-6 w-6" />
                                     </button>

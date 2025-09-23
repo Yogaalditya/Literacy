@@ -1,7 +1,7 @@
 @props([
     'homeUrl' => url('/'),
     'headerLogo' => null,
-    'headerLogoAltText' => config('app.name'),
+    'headerLogoAltText' => app()->getCurrentConference()?->name ?? config('app.name'),
 ])
 
 @if ($headerLogo)
