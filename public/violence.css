@@ -121,13 +121,13 @@ body {
 }
 
 /* Adjusted styles for headings and dividers */
-#speakers h2,
+#research h2,
 .sponsors h2,
 .partners h2 {
     font-size: 25px;
 }
 
-#speakers hr,
+#research hr,
 .sponsors hr,
 .partners hr {
     height: 3px;
@@ -1315,3 +1315,599 @@ body {
         /* 1280px */
     ;
 }
+
+/* GVAV Conference Template Styles */
+
+/* Base Styles */
+.gvav-body {
+    font-family: "Inter Tight", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #FAFAFA;
+}
+
+
+
+
+
+/* Hero Section */
+.gvav-hero {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 6rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem;
+}
+
+.gvav-hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.gvav-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.gvav-hero-subtitle {
+    font-size: 1.5rem;
+    color: #475569;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.gvav-hero-date {
+    font-size: 1.2rem;
+    color: oklch(var(--p));
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.gvav-cta-button {
+    background-color: oklch(var(--p));
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gvav-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gvav-hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gvav-peace-symbol {
+    font-size: 8rem;
+    color: oklch(var(--p));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Section Styles */
+.gvav-section {
+    padding: 6rem 2rem;
+}
+
+.gvav-section-alt {
+    background-color: #f8fafc;
+}
+
+.gvav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gvav-section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    letter-spacing: -0.02em;
+}
+
+.gvav-section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: oklch(var(--p));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* About Section - Timeline Design */
+.gvav-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.gvav-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, oklch(var(--p)), rgba(0,0,0,0.1));
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.gvav-timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    animation: timelineSlideIn 0.6s ease-out forwards;
+}
+
+.gvav-timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.gvav-timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.gvav-timeline-item:nth-child(3) { animation-delay: 0.6s; }
+
+.gvav-timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.gvav-timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.gvav-timeline-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gvav-timeline-icon {
+    width: 3rem;
+    height: 3rem;
+    background: oklch(var(--p));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.gvav-timeline-item:hover .gvav-timeline-icon {
+    transform: scale(1.1);
+}
+
+.gvav-timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 3rem);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gvav-timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gvav-timeline-item:nth-child(odd) .gvav-timeline-content {
+    margin-right: auto;
+}
+
+.gvav-timeline-item:nth-child(even) .gvav-timeline-content {
+    margin-left: auto;
+}
+
+.gvav-timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+}
+
+.gvav-timeline-item:nth-child(odd) .gvav-timeline-content::before {
+    right: -20px;
+    border-left-color: white;
+}
+
+.gvav-timeline-item:nth-child(even) .gvav-timeline-content::before {
+    left: -20px;
+    border-right-color: white;
+}
+
+.gvav-timeline-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.gvav-timeline-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: oklch(var(--p));
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+.gvav-timeline-text {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.gvav-timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gvav-timeline-list-item {
+    color: #475569;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.gvav-timeline-list-item::before {
+    /* content: '→'; */
+    position: absolute;
+    left: 0;
+    color: oklch(var(--p));
+    font-weight: bold;
+}
+
+.gvav-timeline-list-item:hover {
+    color: #1e293b;
+}
+
+@keyframes timelineSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Timeline */
+@media (max-width: 768px) {
+    .gvav-timeline::before {
+        left: 2rem;
+    }
+    
+    .gvav-timeline-item {
+        flex-direction: row !important;
+        margin-bottom: 2rem;
+    }
+    
+    .gvav-timeline-marker {
+        left: 2rem;
+        position: relative;
+        transform: none;
+    }
+    
+    .gvav-timeline-content {
+        width: calc(100% - 6rem);
+        margin-left: 2rem !important;
+        margin-right: 0 !important;
+    }
+    
+    .gvav-timeline-content::before {
+        display: none;
+    }
+}
+
+
+
+/* Research Section */
+.gvav-research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gvav-research-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid oklch(var(--p));
+}
+
+.gvav-research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gvav-research-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: oklch(var(--p));
+}
+
+.gvav-research-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.gvav-research-category {
+    color: oklch(var(--p));
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.gvav-research-description {
+    color: #475569;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Schedule Section */
+.gvav-schedule-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gvav-schedule-day {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gvav-day-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: oklch(var(--p));
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.gvav-schedule-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    gap: 1rem;
+}
+
+.gvav-schedule-item:last-child {
+    border-bottom: none;
+}
+
+.gvav-time {
+    font-weight: 600;
+    color: oklch(var(--p));
+    min-width: 60px;
+}
+
+.gvav-event {
+    color: #475569;
+    flex: 1;
+}
+
+/* Registration Section */
+.gvav-registration-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.gvav-info-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.gvav-info-text {
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.gvav-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.gvav-price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gvav-price-label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.gvav-price-amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: oklch(var(--p));
+}
+
+/* Form Styles */
+.gvav-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.gvav-input,
+.gvav-select {
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: "Inter Tight", sans-serif;
+}
+
+.gvav-input:focus,
+.gvav-select:focus {
+    outline: none;
+    border-color: oklch(var(--p));
+}
+
+.gvav-submit-button {
+    background-color: oklch(var(--p));
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.gvav-submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gvav-nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .gvav-nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .gvav-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 4rem 1rem;
+    }
+    
+    .gvav-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .gvav-peace-symbol {
+        font-size: 6rem;
+    }
+    
+    .gvav-section {
+        padding: 4rem 1rem;
+    }
+    
+    .gvav-section-title {
+        font-size: 2rem;
+    }
+    
+    .gvav-registration-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .gvav-pricing {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .gvav-price-item {
+        flex: 1;
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gvav-hero-title {
+        font-size: 2rem;
+    }
+    
+    .gvav-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .gvav-section-title {
+        font-size: 1.8rem;
+    }
+    
+    .gvav-about-grid,
+    .gvav-research-grid,
+    .gvav-schedule-timeline {
+        grid-template-columns: 1fr;
+    }
+    
+    .gvav-pricing {
+        flex-direction: column;
+    }
+}
+
+/* End GVAV Conference Template Styles */

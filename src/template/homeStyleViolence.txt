@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GVAV 2025: Global Conference on Violence and Peace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gvav-body">
+
+    <main class="gvav-main">
+        <section id="home" class="gvav-hero">
+            <div class="gvav-hero-content">
+                <h1 class="gvav-hero-title">Global Conference on Violence and Peace</h1>
+                <p class="gvav-hero-subtitle">Building Bridges for a Peaceful Future</p>
+                <p class="gvav-hero-date">March 15-17, 2025 | Geneva, Switzerland</p>
+                <button class="gvav-cta-button">Register Now</button>
+            </div>
+            <div class="gvav-hero-visual">
+                <div class="gvav-peace-symbol">☮</div>
+            </div>
+        </section>
+
+        <section id="about" class="gvav-section">
+            <div class="gvav-container">
+                <h2 class="gvav-section-title">About GVAV 2025</h2>
+                <div class="gvav-timeline">
+                    <div class="gvav-timeline-item">
+                        <div class="gvav-timeline-marker">
+                            <div class="gvav-timeline-icon">🎯</div>
+                        </div>
+                        <div class="gvav-timeline-content">
+                            <h3 class="gvav-timeline-title">Our Mission</h3>
+                            <p class="gvav-timeline-text">To foster global dialogue and collaboration in addressing violence while promoting sustainable peace initiatives worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="gvav-timeline-item">
+                        <div class="gvav-timeline-marker">
+                            <div class="gvav-timeline-icon">🔍</div>
+                        </div>
+                        <div class="gvav-timeline-content">
+                            <h3 class="gvav-timeline-title">Key Focus Areas</h3>
+                            <ul class="gvav-timeline-list">
+                                <li class="gvav-timeline-list-item">Conflict Resolution</li>
+                                <li class="gvav-timeline-list-item">Social Justice</li>
+                                <li class="gvav-timeline-list-item">Peace Education</li>
+                                <li class="gvav-timeline-list-item">Community Building</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gvav-timeline-item">
+                        <div class="gvav-timeline-marker">
+                            <div class="gvav-timeline-icon">🌟</div>
+                        </div>
+                        <div class="gvav-timeline-content">
+                            <h3 class="gvav-timeline-title">Expected Outcomes</h3>
+                            <p class="gvav-timeline-text">Development of actionable strategies and international partnerships to create lasting impact in violence prevention and peace promotion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="gvav-section gvav-section-alt">
+            <div class="gvav-container">
+                <h2 class="gvav-section-title">Key Research Topics</h2>
+                <div class="gvav-research-grid">
+                    <div class="gvav-research-card">
+                        <div class="gvav-research-icon">🔬</div>
+                        <h3 class="gvav-research-title">Violence Prevention Strategies</h3>
+                        <p class="gvav-research-category">Behavioral & Social Sciences</p>
+                        <p class="gvav-research-description">Examining evidence-based approaches to prevent violence before it occurs, including early intervention programs and community-based initiatives.</p>
+                    </div>
+                    <div class="gvav-research-card">
+                        <div class="gvav-research-icon">🌍</div>
+                        <h3 class="gvav-research-title">Post-Conflict Reconstruction</h3>
+                        <p class="gvav-research-category">International Relations</p>
+                        <p class="gvav-research-description">Analyzing successful models for rebuilding societies after conflict, focusing on sustainable peace and reconciliation processes.</p>
+                    </div>
+                    <div class="gvav-research-card">
+                        <div class="gvav-research-icon">🧠</div>
+                        <h3 class="gvav-research-title">Trauma & Healing</h3>
+                        <p class="gvav-research-category">Psychology & Mental Health</p>
+                        <p class="gvav-research-description">Understanding the psychological impact of violence and developing innovative therapeutic approaches for individual and collective healing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="gvav-section">
+            <div class="gvav-container">
+                <h2 class="gvav-section-title">Conference Schedule</h2>
+                <div class="gvav-schedule-timeline">
+                    <div class="gvav-schedule-day">
+                        <h3 class="gvav-day-title">Day 1 - March 15</h3>
+                        <div class="gvav-schedule-item">
+                            <span class="gvav-time">09:00</span>
+                            <span class="gvav-event">Opening Ceremony & Keynote</span>
+                        </div>
+                        <div class="gvav-schedule-item">
+                            <span class="gvav-time">11:00</span>
+                            <span class="gvav-event">Panel: Understanding Violence in Modern Society</span>
+                        </div>
+                        <div class="gvav-schedule-item">
+                            <span class="gvav-time">14:00</span>
+                            <span class="gvav-event">Workshop: Conflict Resolution Techniques</span>
+                        </div>
+                    </div>
+                    <div class="gvav-schedule-day">
+                        <h3 class="gvav-day-title">Day 2 - March 16</h3>
+                        <div class="gvav-schedule-item">
+                            <span class="gvav-time">09:00</span>
+                            <span class="gvav-event">Peace Education Initiatives</span>
+                        </div>
+                        <div class="gvav-schedule-item">
+                            <span class="gvav-time">11:00</span>
+                            <span class="gvav-event">Community Building Strategies</span>
+                        </div>
+                        <div class="gvav-schedule-item">
+                            <span class="gvav-time">14:00</span>
+                            <span class="gvav-event">International Case Studies</span>
+                        </div>
+                    </div>
+                    <div class="gvav-schedule-day">
+                        <h3 class="gvav-day-title">Day 3 - March 17</h3>
+                        <div class="gvav-schedule-item">
+                            <span class="gvav-time">09:00</span>
+                            <span class="gvav-event">Action Plan Development</span>
+                        </div>
+                        <div class="gvav-schedule-item">
+                            <span class="gvav-time">11:00</span>
+                            <span class="gvav-event">Collaborative Networks</span>
+                        </div>
+                        <div class="gvav-schedule-item">
+                            <span class="gvav-time">14:00</span>
+                            <span class="gvav-event">Closing Ceremony</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register" class="gvav-section gvav-section-alt">
+            <div class="gvav-container">
+                <h2 class="gvav-section-title">Register for GVAV 2025</h2>
+                <div class="gvav-registration-content">
+                    <div class="gvav-registration-info">
+                        <h3 class="gvav-info-title">Join the Movement for Peace</h3>
+                        <p class="gvav-info-text">Be part of this historic gathering of peace advocates, researchers, and policymakers from around the world.</p>
+                        <div class="gvav-pricing">
+                            <div class="gvav-price-item">
+                                <span class="gvav-price-label">Early Bird</span>
+                                <span class="gvav-price-amount">$299</span>
+                            </div>
+                            <div class="gvav-price-item">
+                                <span class="gvav-price-label">Regular</span>
+                                <span class="gvav-price-amount">$399</span>
+                            </div>
+                            <div class="gvav-price-item">
+                                <span class="gvav-price-label">Student</span>
+                                <span class="gvav-price-amount">$99</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gvav-registration-form">
+                        <form class="gvav-form">
+                            <input type="text" placeholder="Full Name" class="gvav-input">
+                            <input type="email" placeholder="Email Address" class="gvav-input">
+                            <input type="text" placeholder="Organization" class="gvav-input">
+                            <select class="gvav-select">
+                                <option>Select Registration Type</option>
+                                <option>Early Bird - $299</option>
+                                <option>Regular - $399</option>
+                                <option>Student - $99</option>
+                            </select>
+                            <button type="submit" class="gvav-submit-button">Complete Registration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
