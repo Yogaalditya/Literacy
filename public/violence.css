@@ -1911,13 +1911,35 @@ body {
 
 /* End GVAV Conference Template Styles */
 
-/* Banner title & description adjustments (only) */
-.section-line-1 {
-    transform: translateY(-124px);
+/* Banner specific styles */
+.banner-violence {
+    padding-top: 2rem;   /* give space from top */
+    padding-bottom: 2rem;
+}
+
+/* Prevent global shift inside banner */
+.banner-violence .section-line-1 {
+    transform: none !important;
+    margin-bottom: 2rem;
+}
+
+/* Larger banner image height */
+.banner-violence .banner-image {
+    height: 16rem !important; /* ~h-64 */
+}
+
+@media (min-width: 768px) {
+    .banner-violence {
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+    .banner-violence .banner-image {
+        height: 22rem !important; /* larger on md+ */
+    }
 }
 
 @media (min-width: 1024px) {
-    .section-line-1 {
-        transform: translateY(-152px);
+    .banner-violence {
+        padding-top: 2rem;
     }
 }
