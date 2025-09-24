@@ -24,7 +24,7 @@
             <div class="max-w-full">
                 <div class="section-line-1 relative mb-8 xl:flex xl:items-start xl:gap-x-8">
                     <div class="xl:w-3/5">
-                        <h1 class="font-bold text-3xl lg:text-6xl tracking-tight drop-shadow-lg leading-tight break-words">{{ $currentScheduledConference->title }}</h1>
+                        <h1 class="font-bold text-3xl lg:text-6xl tracking-tight drop-shadow-lg leading-tight break-words color-latest">{{ $currentScheduledConference->title }}</h1>
                     </div>
                     @if($theme->getSetting('description'))
                         <div class="xl:w-2/5">
@@ -62,10 +62,10 @@
                             <div>
                                 @if($currentScheduledConference->date_start)
                                     @if($currentScheduledConference->date_end && $currentScheduledConference->date_start->format(Setting::get('format_date')) !== $currentScheduledConference->date_end->format(Setting::get('format_date')))
-                                        <span class="font-semibold text-white">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
-                                        <span class="font-semibold text-white"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold color-latest">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold color-latest"> - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}</span>
                                     @else
-                                        <span class="font-semibold text-white">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
+                                        <span class="font-semibold color-latest">{{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }}</span>
                                     @endif
                                 @endif
                             </div>
@@ -80,7 +80,7 @@
                             </svg>
                         </span>
                         <div>
-                            <span class="font-semibold text-white">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
+                            <span class="font-semibold color-latest">{{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}</span>
                         </div>
                     </div>
                 </div>
