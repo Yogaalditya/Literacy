@@ -51,6 +51,11 @@ class ViolenceTheme extends Theme
 			->rows(4)
 			->maxLength(1000),
 
+			ColorPicker::make('description_text_color')
+				->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
+				->label('Description Text Color')
+				->default('#ffffff'),
+
 			// Layouts
 			Builder::make('layouts')
 				->collapsible()
@@ -139,6 +144,7 @@ class ViolenceTheme extends Theme
 			'about' => $this->getSetting('about'),
 			'banner_buttons' => $this->getSetting('banner_buttons'),
 			'description' => $this->getSetting('description'),
+			'description_text_color' => $this->getSetting('description_text_color'),
 		];
 	}
 }

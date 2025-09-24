@@ -28,7 +28,8 @@
                     </div>
                     @if($theme->getSetting('description'))
                         <div class="xl:w-2/5">
-                            <p class="mt-4 xl:mt-0 text-left text-base lg:text-lg text-white/90 leading-relaxed break-words" style="overflow-wrap:anywhere;">
+                            <p class="mt-4 xl:mt-0 text-left text-base lg:text-lg leading-relaxed break-words" 
+                               style="overflow-wrap:anywhere; color: {{ $theme->getSetting('description_text_color') ?: '#ffffff' }};">
                                 {!! nl2br(e($theme->getSetting('description'))) !!}
                             </p>
                             @if($theme->getSetting('banner_buttons'))
