@@ -46,6 +46,11 @@ class ViolenceTheme extends Theme
 				->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
 				->label(__('general.appearance_color')),
 
+			Textarea::make('description')
+			->label('Description')
+			->rows(4)
+			->maxLength(1000),
+
 			// Layouts
 			Builder::make('layouts')
 				->collapsible()
@@ -133,6 +138,7 @@ class ViolenceTheme extends Theme
 			'name_content' => $this->getSetting('name_content'),
 			'about' => $this->getSetting('about'),
 			'banner_buttons' => $this->getSetting('banner_buttons'),
+			'description' => $this->getSetting('description'),
 		];
 	}
 }

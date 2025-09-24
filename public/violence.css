@@ -1910,3 +1910,14 @@ body {
 }
 
 /* End GVAV Conference Template Styles */
+
+/* Banner title & description adjustments (only) */
+.section-line-1 {
+    transform: translateY(-124px);
+}
+
+@media (min-width: 1024px) {
+    .section-line-1 {
+        transform: translateY(-152px);
+    }
+}

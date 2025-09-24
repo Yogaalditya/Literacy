@@ -21,8 +21,19 @@
 
     <div class="relative z-10">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl">
-                <h1 class="font-bold text-3xl lg:text-6xl tracking-tight mb-8 drop-shadow-lg">{{ $currentScheduledConference->title }}</h1>
+            <div class="max-w-full">
+                <div class="section-line-1 relative mb-8 xl:flex xl:items-start xl:gap-x-8">
+                    <div class="xl:w-3/5">
+                        <h1 class="font-bold text-3xl lg:text-6xl tracking-tight drop-shadow-lg leading-tight break-words">{{ $currentScheduledConference->title }}</h1>
+                    </div>
+                    @if($theme->getSetting('description'))
+                        <div class="xl:w-2/5">
+                            <p class="mt-4 xl:mt-0 text-left text-base lg:text-lg text-white/90 leading-relaxed break-words" style="overflow-wrap:anywhere;">
+                                {!! nl2br(e($theme->getSetting('description'))) !!}
+                            </p>
+                        </div>
+                    @endif
+                </div>
 
                 <div class="flex flex-col space-y-4 mb-8">
                     @if($currentScheduledConference->date_start || $currentScheduledConference->date_end)
