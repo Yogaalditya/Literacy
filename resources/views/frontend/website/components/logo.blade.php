@@ -23,9 +23,6 @@
         {{ $attributes->merge([
             'class' => '
                 no-underline-hover
-                text-lg
-                sm:text-xl
-                font-semibold
             '
         ]) }}
     >
