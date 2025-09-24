@@ -31,6 +31,22 @@
                             <p class="mt-4 xl:mt-0 text-left text-base lg:text-lg text-white/90 leading-relaxed break-words" style="overflow-wrap:anywhere;">
                                 {!! nl2br(e($theme->getSetting('description'))) !!}
                             </p>
+                            @if($theme->getSetting('banner_buttons'))
+                            <div class="flex flex-col flex-wrap sm:flex-row gap-4 mt-4">
+                                @foreach($theme->getSetting('banner_buttons') ?? [] as $button)
+                                    <a 
+                                        @style([
+                                            'background-color: ' . data_get($button, 'background_color') => data_get($button, 'background_color'),
+                                            'color: ' . data_get($button, 'text_color') => data_get($button, 'text_color'), 
+                                        ])
+                                        href="{{ data_get($button, 'url') }}" 
+                                        class="button-banner"
+                                        >
+                                        {{ data_get($button, 'text') }}
+                                    </a>
+                                @endforeach
+                            </div>
+                            @endif
                         </div>
                     @endif
                 </div>
@@ -68,23 +84,6 @@
                         </div>
                     </div>
                 </div>
-
-                @if($theme->getSetting('banner_buttons'))
-                <div class="flex flex-col flex-wrap sm:flex-row gap-4">
-                    @foreach($theme->getSetting('banner_buttons') ?? [] as $button)
-                        <a 
-                            @style([
-                                'background-color: ' . data_get($button, 'background_color') => data_get($button, 'background_color'),
-                                'color: ' . data_get($button, 'text_color') => data_get($button, 'text_color'), 
-                            ])
-                            href="{{ data_get($button, 'url') }}" 
-                            class="button-banner"
-                            >
-                            {{ data_get($button, 'text') }}
-                        </a>
-                    @endforeach
-                </div>
-                @endif
             </div>
         </div>
     </div>
