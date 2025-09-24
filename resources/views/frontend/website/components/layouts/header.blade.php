@@ -30,7 +30,7 @@
                             <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
                     </button>
-                    <div x-cloak x-show="open" x-transition.origin.top.right @@click.away="open = false" class="navbar-dropdown-content text-gray-800 absolute right-0 top-full mt-2">
+                    <div x-cloak x-show="open" x-transition.origin.top.right x-on:mouseenter="open = true" @@click.away="open = false" class="navbar-dropdown-content text-gray-800 absolute right-0 top-full mt-2">
                         <div class="flex flex-col divide-y mt-1 min-w-[12rem] bg-white rounded-md shadow-md">
                             @foreach ($userNavigationMenu as $item)
                                 @if(!$item->isDisplayed())
