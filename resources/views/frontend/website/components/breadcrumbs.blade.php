@@ -3,19 +3,20 @@
 ])
 
 @if(!empty($breadcrumbs))
-<div {{ $attributes->class(['breadcrumbs text-sm bg-gray-50 px-4 py-3 rounded-md']) }}>
+<div {{ $attributes->class(['breadcrumbs text-sm breadcrumbs-container px-4 py-3 rounded-md']) }}>
     <ul class="flex items-center flex-wrap gap-2">
         @foreach ($breadcrumbs as $url => $label)
             <li class="flex items-center">
                 @if(!is_int($url))
                     <x-violence::link
                         :href="$url"
-                        class="text-gray-600 hover:text-blue-800 transition-colors duration-200 font-medium"
+                        class="breadcrumbs-link transition-colors duration-200 font-medium"
+                        style="color: var(--color-text-secondary);"
                     >
                         {{ $label }}
                     </x-violence::link>
                 @else
-                    <span class="text-gray-600">{{ $label }}</span>
+                    <span class="breadcrumbs-current" style="color: var(--color-text-secondary);">{{ $label }}</span>
                 @endif
             </li>
         @endforeach

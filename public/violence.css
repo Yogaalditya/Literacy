@@ -323,6 +323,42 @@ body {
     display: none !important;
 }
 
+/* Breadcrumbs styles */
+.breadcrumbs-container {
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+}
+
+.breadcrumbs-link {
+    color: var(--color-text-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs-link:hover {
+    color: var(--color-accent) !important;
+}
+
+.breadcrumbs-current {
+    color: var(--color-text-secondary) !important;
+}
+
+/* About page specific styles */
+.breadcrumbs-violence {
+    color: var(--color-text-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs-violence:hover {
+    color: var(--color-accent) !important;
+}
+
+.about-no-info-card {
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
+    box-shadow: 0 1px 3px var(--color-shadow) !important;
+    transition: all 0.3s ease;
+}
+
 /* Light mode styles for GVAV template */
 .gvav-body {
     /* keep existing background from base styles */
