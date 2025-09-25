@@ -359,6 +359,21 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Announcement page specific styles */
+.announcement-card {
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
+    box-shadow: 0 1px 3px var(--color-shadow) !important;
+    transition: all 0.3s ease;
+}
+
+.announcement-no-info-card {
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
+    box-shadow: 0 1px 3px var(--color-shadow) !important;
+    transition: all 0.3s ease;
+}
+
 /* Light mode styles for GVAV template */
 .gvav-body {
     /* keep existing background from base styles */
