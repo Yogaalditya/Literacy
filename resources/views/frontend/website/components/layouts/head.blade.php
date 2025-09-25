@@ -31,6 +31,36 @@
         }
     </style>
 
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('darkMode', {
+                isDark: localStorage.getItem('darkMode') === 'true' || false,
+                
+                init() {
+                    this.updateTheme();
+                },
+                
+                toggle() {
+                    this.isDark = !this.isDark;
+                    this.updateTheme();
+                },
+                
+                updateTheme() {
+                    if (this.isDark) {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('darkMode', 'true');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('darkMode', 'false');
+                    }
+                }
+            });
+            
+            // Initialize the theme on page load
+            Alpine.store('darkMode').init();
+        });
+    </script>
+
     @vite(['resources/frontend/js/frontend.js'])
 
     @livewireStyles

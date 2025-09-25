@@ -23,15 +23,35 @@
                             x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full"
                             class="w-screen max-w-xs">
                             <div class="bg-white border-neutral-100/70 border-r shadow-lg h-svh overflow-y-scroll">
-                                <div class="navigation-menu-mobile ps-4 py-2 text-primary-content flex">
+                                <div class="navigation-menu-mobile ps-4 py-2 text-primary-content flex justify-between items-center">
                                     <x-violence::logo 
                                     :headerLogo="$headerLogo" 
                                     :homeUrl="$homeUrl" 
                                     :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')" 
                                     class="font-bold text-white" />
-                                    <button @@click="closeSlideOver" class="btn btn-sm btn-square btn-ghost">
-                                        <x-heroicon-o-x-mark class="h-6 w-6" />
-                                    </button>
+                                    <div class="flex items-center gap-2">
+                                        <!-- Dark/Light Mode Toggle Button -->
+                                        <button 
+                                            x-data="{ 
+                                                get isDark() { return $store.darkMode.isDark },
+                                                toggle() { $store.darkMode.toggle() }
+                                            }" 
+                                            @click="toggle()" 
+                                            class="btn btn-sm btn-square btn-ghost rounded-full p-1.5 transition-colors hover:bg-white/20 focus:outline-none group"
+                                        >
+                                            <!-- Sun Icon (Light Mode) -->
+                                            <svg x-cloak x-show="!isDark" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 scale-75 -translate-y-2" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-75 translate-y-2" class="h-5 w-5 text-white transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                            </svg>
+                                            <!-- Moon Icon (Dark Mode) -->
+                                            <svg x-cloak x-show="isDark" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 scale-75 translate-y-2" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-75 -translate-y-2" class="h-5 w-5 text-white transition-transform duration-300 group-hover:-rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                                            </svg>
+                                        </button>
+                                        <button @@click="closeSlideOver" class="btn btn-sm btn-square btn-ghost">
+                                            <x-heroicon-o-x-mark class="h-6 w-6" />
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="flex flex-col justify-between">
                                     @if($primaryNavigationItems->isNotEmpty())
