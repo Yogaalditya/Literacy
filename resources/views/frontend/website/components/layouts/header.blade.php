@@ -18,9 +18,43 @@
             />
         </div>
         <div class="navbar-violence container mx-auto px-4 lg:px-8 py-3">
-            <!-- User Card (Right) -->
+            <!-- Dark/Light Mode Toggle & User Card (Right) -->
             <div class="absolute top-3 right-4 hidden lg:block">
-                <div x-data="{ open: false }" x-on:mouseleave="open = false" class="navbar-custom-violence relative rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-3 lg:px-4 h-14 w-auto flex items-center z-40">
+                <div class="flex items-center gap-3">
+                    <!-- Dark/Light Mode Toggle Button -->
+                    <div class="navbar-custom-violence rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-3 h-14 w-14 flex items-center justify-center">
+                        <button 
+                            x-data="{ 
+                                isDark: localStorage.getItem('darkMode') === 'true' || false,
+                                init() {
+                                    this.updateTheme();
+                                    this.$watch('isDark', () => this.updateTheme());
+                                },
+                                updateTheme() {
+                                    if (this.isDark) {
+                                        document.documentElement.classList.add('dark');
+                                        localStorage.setItem('darkMode', 'true');
+                                    } else {
+                                        document.documentElement.classList.remove('dark');
+                                        localStorage.setItem('darkMode', 'false');
+                                    }
+                                }
+                            }" 
+                            @click="isDark = !isDark" 
+                            class="btn btn-ghost btn-sm rounded-full p-2 transition-colors hover:bg-white/20 focus:outline-none group"
+                        >
+                            <!-- Sun Icon (Light Mode) -->
+                            <svg x-cloak x-show="!isDark" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="h-5 w-5 text-gray-800 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                            <!-- Moon Icon (Dark Mode) -->
+                            <svg x-cloak x-show="isDark" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="h-5 w-5 text-gray-800 transition-transform group-hover:-rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- User Card -->
+                    <div x-data="{ open: false }" x-on:mouseleave="open = false" class="navbar-custom-violence relative rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-3 lg:px-4 h-14 w-auto flex items-center z-40">
                     <button @@click="open = !open" x-on:mouseenter="open = true" class="btn btn-ghost btn-sm rounded-full inline-flex items-center justify-center px-4 transition-colors hover:text-primary-content focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-0 text-gray-800">
                         <x-heroicon-o-user class="h-6 w-6 text-gray-800" />
                         <svg :class="{ '-rotate-180': open }"
@@ -55,6 +89,7 @@
                                 @endif
                             @endforeach
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
