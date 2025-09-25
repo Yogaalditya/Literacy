@@ -1930,16 +1930,49 @@ body {
 
 @media (min-width: 768px) {
     .banner-violence {
-        padding-top: 4rem;
+        padding-top: 0rem;
         padding-bottom: 3rem;
     }
     .banner-violence .banner-image {
-        height: 22rem !important; /* larger on md+ */
+        height: 28rem !important;
     }
 }
 
 @media (min-width: 1024px) {
     .banner-violence {
-        padding-top: 2rem;
+        padding-top: 0rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-violence .banner-image {
+        height: 14rem !important;
+    }
+
+    .banner-violence .banner-info-card {
+        position: static;
+        transform: none;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: none;
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+    }
+
+    .banner-violence .banner-info-card > div {
+        width: 100%;
+    }
+
+    .banner-violence .banner-info-card > div + div {
+        border-top: 1px solid rgba(226, 232, 240, 0.8);
+        padding-top: 1rem;
+    }
+
+    .banner-violence .banner-info-card svg {
+        height: 20px;
+        width: 20px;
+    }
+
+    .banner-violence .banner-info-card p {
+        font-size: 0.95rem;
     }
 }
