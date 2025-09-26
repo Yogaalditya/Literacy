@@ -243,6 +243,19 @@ body {
     color: var(--color-text) !important;
 }
 
+/* Preserve academic icon brand colors in dark mode */
+.dark .cf-committee-scholar a[href*="orcid"] svg {
+    color: #A6CE39 !important;
+}
+
+.dark .cf-committee-scholar a[href*="scholar"] svg {
+    color: #4285F4 !important;
+}
+
+.dark .cf-committee-scholar a[href*="scopus"] svg {
+    color: #e9711c !important;
+}
+
 .dark .text-gray-800 {
     color: var(--color-text) !important;
 }
@@ -536,6 +549,31 @@ body {
 
 .dark .gvav-research-icon {
     background-color: transparent !important;
+}
+
+/* Speaker Name Card Styles */
+.speaker-name-card {
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
+    transition: all 0.3s ease;
+}
+
+.dark .speaker-name-card {
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
+}
+
+/* Speaker section dark mode text colors */
+.dark #speakers h3 {
+    color: var(--color-text) !important;
+}
+
+.dark #speakers .text-gray-600 {
+    color: var(--color-text-secondary) !important;
+}
+
+.dark #speakers .text-gray-800 {
+    color: var(--color-text) !important;
 }
 
 .dark .gvav-schedule-timeline {
