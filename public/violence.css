@@ -556,11 +556,24 @@ body {
     background-color: var(--color-card-bg) !important;
     border-color: var(--color-border) !important;
     transition: all 0.3s ease;
+    min-height: fit-content;
+    height: auto;
+    white-space: normal;
+    word-wrap: break-word;
+    z-index: 1;
+    position: absolute;
 }
 
 .dark .speaker-name-card {
     background-color: var(--color-card-bg) !important;
     border-color: var(--color-border) !important;
+}
+
+.speaker-name-card h4 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
 }
 
 /* Speaker section dark mode text colors */
