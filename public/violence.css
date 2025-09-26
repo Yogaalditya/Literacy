@@ -331,6 +331,44 @@ body {
     color: var(--color-text-secondary) !important;
 }
 
+/* Speakers layout with auto centering */
+.speakers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+.speakers-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 20rem;
+    padding: 1.5rem;
+}
+
+/* Responsive widths for max 4 cards per row */
+@media (min-width: 640px) {
+    .speakers-card {
+        width: calc(50% - 1.5rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .speakers-card {
+        width: calc(33.333% - 2rem);
+    }
+}
+
+@media (min-width: 1280px) {
+    .speakers-card {
+        width: calc(25% - 2.25rem);
+    }
+}
+
 /* Alpine.js cloak */
 [x-cloak] {
     display: none !important;

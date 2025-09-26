@@ -7,18 +7,19 @@
 					<div class="flex flex-col items-center">
 						<h3 class="text-4xl font-bold text-gray-800 mb-16 text-center">{{ $role->name }}
 						</h3>
-						<div class="flex flex-wrap justify-center gap-12">
+						<div class="speakers-grid">
 							@foreach ($role->speakers as $speaker)
-								<div class="flex flex-col items-center text-center max-w-xs p-6">
+								<div class="speakers-card">
 									<!-- Speaker Image with rounded square design -->
 									<img
-										class="h-56 w-56 object-cover mx-auto border-4 border-gray-200 dark:border-gray-600 shadow-sm rounded-2xl"
+										class="h-56 w-56 object-cover mx-auto shadow-sm rounded-2xl"
+										style="border: 4px solid var(--color-border);"
 										src="{{ $speaker->getFilamentAvatarUrl() }}"
 										alt="{{ $speaker->fullName }}"
 									/>
 
 									<!-- Name Card below image -->
-									<div class="bg-white dark:bg-gray-800 px-4 py-3 rounded-2xl shadow-md border border-gray-200 dark:border-gray-600 mt-4 w-56 text-center">
+									<div class="bg-white px-4 py-3 rounded-2xl shadow-md mt-4 w-56 text-center" style="border: 1px solid var(--color-border);">
 										<h4 class="text-xl font-bold color-latest break-words leading-tight">
 											{{ $speaker->fullName }}
 										</h4>
