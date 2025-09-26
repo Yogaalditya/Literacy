@@ -1714,3 +1714,70 @@ body {
         font-size: 0.95rem;
     }
 }
+
+/* Latest News Card Styles */
+.latest-news-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    height: 590px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.latest-news-card .px-6 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.latest-news-card .mt-auto {
+    margin-top: auto;
+}
+
+/* Ensure proper spacing and layout */
+.latest-news-card .p-2\.5 {
+    padding: 10px;
+}
+
+.latest-news-card .px-6 {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.latest-news-card .pb-6 {
+    padding-bottom: 24px;
+}
+
+/* Dark mode styles for latest news cards */
+.dark .latest-news-card {
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
+    box-shadow: 0 4px 6px var(--color-shadow) !important;
+}
+
+.dark .latest-news-card .text-xl {
+    color: var(--color-text) !important;
+}
+
+.dark .latest-news-card .text-sm {
+    color: var(--color-text-secondary) !important;
+}
+
+/* Responsive adjustments for latest news */
+@media (max-width: 768px) {
+    .latest-news-card {
+        height: auto;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 640px) {
+    .latest-news-card {
+        min-height: 450px;
+    }
+    
+    .latest-news-card .h-\[270px\] {
+        height: 200px !important;
+    }
+}

@@ -1,9 +1,9 @@
 @if ($currentScheduledConference)
-<section class="latest-news section-background py-24">
-	<div class="container mx-auto px-4 max-w-7xl">
+<section class="latest-news gvav-section">
+	<div class="gvav-container">
 		<!-- Section Header -->
-		<div class="text-center max-w-3xl mx-auto mb-16">
-			<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+		<div class="text-start max-w-3xl mb-16">
+			<h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight" style="color: var(--color-text);">
 				Latest News
 			</h2>
 		</div>
@@ -22,7 +22,6 @@
 						->orWhereNull('expires_at');
 				})
 				->orderBy('created_at', 'DESC')
-				->take(3)
 				->get() as $announcement)
 				
 					@php
@@ -31,61 +30,52 @@
 						$imageUrl = $matches[1] ?? '';
 					@endphp
 
-					<article
-						class="group relative bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 ease-in-out transform hover:-translate-y-1">
+					<article class="latest-news-card w-full" style="background-color: var(--color-card-bg); border: 1px solid var(--color-border); box-shadow: 0 4px 6px var(--color-shadow);">
 						<!-- Image Section -->
-						<div class="relative h-64 rounded-t-3xl overflow-hidden">
-							<div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30 z-10">
-							</div>
-
-
-							@if($imageUrl)
-								<img src="{{ $imageUrl }}" alt="{{ $announcement->title }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
-							@else
-								<div class="w-full h-full flex items-center justify-center bg-gray-200">
-									<span class="text-gray-500 text-xl">No Image Available</span>
+						<div class="p-2.5">
+							<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" class="block">
+								<div class="relative w-full h-[270px] rounded-lg overflow-hidden">
+									@if($imageUrl)
+										<img src="{{ $imageUrl }}" alt="{{ $announcement->title }}" class="w-full h-full object-cover" loading="lazy">
+									@else
+										<div class="w-full h-full flex items-center justify-center" style="background-color: var(--color-bg-secondary);">
+											<span class="text-xl" style="color: var(--color-text-secondary);">No Image Available</span>
+										</div>
+									@endif
 								</div>
-							@endif
-							<!-- Date Badge -->
-							<div class="absolute top-4 left-4 z-20">
-								<div
-									class="flex items-center space-x-1 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
-									<svg class="color-latest w-4 h-4" fill="none" stroke="currentColor"
-										viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											stroke-width="2"
-											d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-									</svg>
-									<span class="text-sm font-medium text-gray-800">
-										{{ $announcement->created_at->format(Setting::get('format_date')) }}
-									</span>
-								</div>
-							</div>
+							</a>
 						</div>
 
 						<!-- Content Section -->
-						<div class="relative p-8 bg-white/80 backdrop-blur-sm rounded-b-3xl">
-							<h3
-								class="text-xl font-bold text-gray-900 mb-4 line-clamp-2 transition-colors duration-300">
-								<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}"
-									class="block hover:text-blue-600">
+						<div class="px-6 pb-6">
+							<!-- Date -->
+							<div class="mb-3">
+								<span class="text-sm font-medium" style="color: var(--color-text-secondary);">
+									{{ $announcement->created_at->format(Setting::get('format_date')) }}
+								</span>
+							</div>
+
+							<!-- Title -->
+							<h3 class="text-xl font-bold mb-3 line-clamp-2">
+								<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" 
+								   class="block" style="color: var(--color-text);">
 									{{ $announcement->title }}
 								</a>
 							</h3>
-							<p class="text-gray-600 mb-6 line-clamp-3 leading-relaxed">
+
+							<!-- Summary -->
+							<p class="mb-4 line-clamp-3 leading-relaxed text-sm" style="color: var(--color-text-secondary);">
 								{{ $announcement->getMeta('summary') }}
 							</p>
-							<div class="flex items-center justify-between">
+
+							<!-- Read More Button -->
+							<div class="mt-auto">
 								<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}"
-									class="inline-flex items-center group/link">
-									<span
-										class="text-sm font-semibold color-latest group-hover/link:color-latest transition-colors duration-200">
-										Read full announcement
-									</span>
-									<svg class="w-5 h-5 ml-2 color-latest transform transition-transform duration-300 group-hover/link:translate-x-1"
-										fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round"
-											stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+								   class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200"
+								   style="background-color: oklch(var(--p)); color: #ffffff;">
+									Read More
+									<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 									</svg>
 								</a>
 							</div>
@@ -94,15 +84,14 @@
 				@endforeach
 			</div>
 
-			<!-- View All Link -->
+			<!-- Load More Button -->
 			<div class="mt-16 text-center">
 				<a href="{{ route(App\Frontend\ScheduledConference\Pages\Announcements::getRouteName('scheduledConference')) }}"
-					class="button-banner submit inline-flex items-center px-8 py-3 text-base font-medium text-white rounded-full hover:opacity-90 transition-opacity">
-					View All Updates
-					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-							d="M17 8l4 4m0 0l-4 4m4-4H3" />
-					</svg>
+					class="inline-flex items-center justify-center px-16 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:border-accent hover:text-accent"
+					style="background-color: var(--color-card-bg); color: var(--color-text); border: 2px solid var(--color-border);"
+					onmouseover="this.style.borderColor='var(--color-accent)'; this.style.color='var(--color-accent)';"
+					onmouseout="this.style.borderColor='var(--color-border)'; this.style.color='var(--color-text)';">
+					Load More
 				</a>
 			</div>
 		@else
