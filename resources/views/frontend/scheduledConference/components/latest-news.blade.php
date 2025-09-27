@@ -2,10 +2,28 @@
 <section class="latest-news gvav-section">
 	<div class="gvav-container">
 		<!-- Section Header -->
-		<div class="text-start max-w-3xl mb-16">
-			<h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight" style="color: var(--color-text);">
-				Latest News
-			</h2>
+		<div class="flex justify-between items-center mb-16">
+			<div class="text-start max-w-3xl">
+				<h2 class="text-4xl md:text-5xl font-bold leading-tight" style="color: var(--color-text);">
+					Latest News
+				</h2>
+			</div>
+			@if ($currentScheduledConference->announcements()
+			->where(function ($query) {
+				$query->where('expires_at', '>', now()->startOfDay())
+					  ->orWhereNull('expires_at');
+			})->count() > 0)
+			<!-- Load More Button -->
+			<div>
+				<a href="{{ route(App\Frontend\ScheduledConference\Pages\Announcements::getRouteName('scheduledConference')) }}"
+					class="inline-flex items-center justify-center px-8 py-3 text-base font-semibold rounded-lg transition-all duration-300 hover:border-accent hover:text-accent"
+					style="background-color: var(--color-card-bg); color: var(--color-text); border: 2px solid var(--color-border);"
+					onmouseover="this.style.borderColor='var(--color-accent)'; this.style.color='var(--color-accent)';"
+					onmouseout="this.style.borderColor='var(--color-border)'; this.style.color='var(--color-text)';">
+					Load More
+				</a>
+			</div>
+			@endif
 		</div>
 
 		@if ($currentScheduledConference->announcements()
@@ -82,17 +100,6 @@
 						</div>
 					</article>
 				@endforeach
-			</div>
-
-			<!-- Load More Button -->
-			<div class="mt-16 text-center">
-				<a href="{{ route(App\Frontend\ScheduledConference\Pages\Announcements::getRouteName('scheduledConference')) }}"
-					class="inline-flex items-center justify-center px-16 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:border-accent hover:text-accent"
-					style="background-color: var(--color-card-bg); color: var(--color-text); border: 2px solid var(--color-border);"
-					onmouseover="this.style.borderColor='var(--color-accent)'; this.style.color='var(--color-accent)';"
-					onmouseout="this.style.borderColor='var(--color-border)'; this.style.color='var(--color-text)';">
-					Load More
-				</a>
 			</div>
 		@else
 			<!-- Empty State -->
