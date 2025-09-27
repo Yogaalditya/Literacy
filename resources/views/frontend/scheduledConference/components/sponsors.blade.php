@@ -194,9 +194,9 @@ foreach ($sponsorLevels as $sponsorLevel) {
 			const totalSlides = {{ $allSponsors->count() }};
 			const hasMultipleSlides = totalSlides > 1;
 			
-			// Early return if only one slide - no carousel functionality needed
+			
 			if (!hasMultipleSlides) {
-				// Just ensure the single slide is visible and not blurred
+				
 				slides.forEach(slide => {
 					slide.classList.remove('blur');
 					slide.classList.add('active');
@@ -204,11 +204,11 @@ foreach ($sponsorLevels as $sponsorLevel) {
 				return;
 			}
 			
-			// Start at index 1 if we have duplicate slides (to account for duplicate-last at index 0)
+			
 			let currentIndex = hasMultipleSlides ? 1 : 0;
 			let isTransitioning = false;
 
-			// Initialize carousel position
+			
 			if (hasMultipleSlides) {
 				track.style.transform = `translateX(-${currentIndex * 100}%)`;
 			}
@@ -220,10 +220,10 @@ foreach ($sponsorLevels as $sponsorLevel) {
 					track.style.transition = 'transform 0.5s ease-in-out';
 				}
 				
-				// Update track position
+				
 				track.style.transform = `translateX(-${currentIndex * 100}%)`;
 				
-				// Update slide classes for blur effect
+				
 				slides.forEach((slide, index) => {
 					slide.classList.remove('active', 'blur');
 					if (index === currentIndex) {
@@ -233,15 +233,15 @@ foreach ($sponsorLevels as $sponsorLevel) {
 					}
 				});
 
-				// Update dots and counter (only for real slides, not duplicates)
+				
 				let displayIndex;
 				if (hasMultipleSlides) {
 					if (currentIndex === 0) {
-						displayIndex = totalSlides - 1; // duplicate-last shows last slide
+						displayIndex = totalSlides - 1; 
 					} else if (currentIndex > totalSlides) {
-						displayIndex = 0; // duplicate-first shows first slide
+						displayIndex = 0; 
 					} else {
-						displayIndex = currentIndex - 1; // adjust for duplicate-last at index 0
+						displayIndex = currentIndex - 1; 
 					}
 				} else {
 					displayIndex = currentIndex;
@@ -251,7 +251,7 @@ foreach ($sponsorLevels as $sponsorLevel) {
 					dot.classList.toggle('active', index === displayIndex);
 				});
 
-				// Update counter
+				
 				currentSlideSpan.textContent = (displayIndex) + 1;
 			}
 
@@ -262,13 +262,13 @@ foreach ($sponsorLevels as $sponsorLevel) {
 				currentIndex++;
 				updateCarousel();
 				
-				// If we're at the duplicate slide (after last real slide)
+				
 				if (hasMultipleSlides && currentIndex > totalSlides) {
 					setTimeout(() => {
-						currentIndex = 1; // Jump back to first real slide (index 1)
-						updateCarousel(true); // Instant transition
+						currentIndex = 1; 
+						updateCarousel(true); 
 						isTransitioning = false;
-					}, 500); // Wait for transition to complete
+					}, 500); 
 				} else {
 					setTimeout(() => {
 						isTransitioning = false;
@@ -283,11 +283,11 @@ foreach ($sponsorLevels as $sponsorLevel) {
 				currentIndex--;
 				updateCarousel();
 				
-				// If we're at the duplicate slide (before first real slide)
+				
 				if (hasMultipleSlides && currentIndex < 1) {
 					setTimeout(() => {
-						currentIndex = totalSlides; // Jump to last real slide
-						updateCarousel(true); // Instant transition
+						currentIndex = totalSlides; 
+						updateCarousel(true); 
 						isTransitioning = false;
 					}, 500);
 				} else {
@@ -301,7 +301,7 @@ foreach ($sponsorLevels as $sponsorLevel) {
 				if (isTransitioning) return;
 				isTransitioning = true;
 				
-				// Adjust index for duplicate slide at beginning
+				
 				currentIndex = hasMultipleSlides ? index + 1 : index;
 				updateCarousel();
 				setTimeout(() => {
@@ -309,10 +309,10 @@ foreach ($sponsorLevels as $sponsorLevel) {
 				}, 500);
 			}
 
-			// Initialize display
+			
 			updateCarousel(true);
 
-			// Event listeners (only add if buttons exist)
+			
 			if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 			if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 
@@ -322,7 +322,7 @@ foreach ($sponsorLevels as $sponsorLevel) {
 				});
 			}
 
-			// Keyboard navigation
+			
 			document.addEventListener('keydown', function(e) {
 				if (e.key === 'ArrowLeft') {
 					prevSlide();
@@ -331,7 +331,7 @@ foreach ($sponsorLevels as $sponsorLevel) {
 				}
 			});
 
-			// Auto-play (optional - uncomment to enable)
+			// Auto-play (optional)
 			// if (hasMultipleSlides) {
 			//     setInterval(nextSlide, 5000);
 			// }

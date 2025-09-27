@@ -514,6 +514,146 @@ body {
     color: var(--color-text-secondary);
 }
 
+/* Partner Carousel Styles */
+.partner-carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.partner-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.partner-carousel-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    transition: filter 0.3s ease;
+}
+
+.partner-carousel-slide .text-center {
+    max-width: 600px;
+    width: 100%;
+}
+
+.partner-carousel-slide.blur {
+    filter: blur(3px);
+    opacity: 0.6;
+}
+
+.partner-carousel-slide.active {
+    filter: none;
+    opacity: 1;
+}
+
+/* Single slide styling - ensure proper centering */
+.partner-carousel-container:has(.partner-carousel-slide:only-child) .partner-carousel-slide {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+.partner-carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.partner-carousel-nav:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.partner-carousel-nav.prev {
+    left: 10px;
+}
+
+.partner-carousel-nav.next {
+    right: 10px;
+}
+
+.partner-carousel-nav svg {
+    width: 20px;
+    height: 20px;
+    color: #374151;
+}
+
+.partner-carousel-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.partner-carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.partner-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.partner-carousel-dot.active {
+    background-color: oklch(var(--p));
+    transform: scale(1.2);
+}
+
+.partner-carousel-counter {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* Dark mode styles for partner carousel */
+.dark .partner-carousel-nav {
+    background-color: rgba(33, 38, 45, 0.9);
+}
+
+.dark .partner-carousel-nav:hover {
+    background-color: rgba(33, 38, 45, 1);
+}
+
+.dark .partner-carousel-nav svg {
+    color: var(--color-text);
+}
+
+.dark .partner-carousel-dot {
+    background-color: var(--color-text-secondary);
+}
+
+.dark .partner-carousel-dot.active {
+    background-color: oklch(var(--p));
+}
+
+.dark .partner-carousel-counter {
+    color: var(--color-text-secondary);
+}
+
 /* Breadcrumbs styles */
 .breadcrumbs-container {
     background-color: transparent !important;
