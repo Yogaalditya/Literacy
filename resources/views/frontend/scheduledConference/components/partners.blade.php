@@ -19,7 +19,7 @@ foreach ($partners as $partner) {
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 		<!-- Section Header -->
 		<div class="text-center max-w-3xl mx-auto mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-text);">Our Partners</h2>
+			<h2 class="text-3xl md:text-4xl font-bold mb-4 section-title-with-underline" style="color: var(--color-text);">Our Partners</h2>
 			<p class="max-w-2xl mx-auto mt-4" style="color: var(--color-text-secondary);">Thank you to all our amazing partners who support our mission</p>
 		</div>
 

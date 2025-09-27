@@ -1503,6 +1503,22 @@ body {
     border-radius: 2px;
 }
 
+/* Section titles with underline for speakers, sponsors, partners */
+.section-title-with-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title-with-underline::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: oklch(var(--p));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
 /* About Section - Timeline Design */
 .gvav-timeline {
     position: relative;
