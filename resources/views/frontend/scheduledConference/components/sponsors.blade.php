@@ -32,8 +32,8 @@ foreach ($sponsorLevels as $sponsorLevel) {
 @endphp
 
 @if ($allSponsors->isNotEmpty())
-<section id="sponsors" class="section-background py-20">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+<section id="sponsors" class="gvav-section">
+	<div class="gvav-container">
 		<!-- Section Header -->
 		<div class="text-center max-w-3xl mx-auto mb-16">
 			<h2 class="text-3xl md:text-4xl font-bold mb-4 section-title-with-underline" style="color: var(--color-text);">Our Sponsors</h2>
@@ -41,300 +41,74 @@ foreach ($sponsorLevels as $sponsorLevel) {
 		</div>
 
 		<!-- Sponsor Carousel -->
-		<div class="sponsor-carousel-container">
-			<div class="sponsor-carousel-track" id="sponsorCarouselTrack">
-				<!-- Duplicate last slide for smooth infinite loop (backward) -->
-				@if ($allSponsors->count() > 1)
-					@php 
-						$lastItem = $allSponsors->last();
-						$sponsor = $lastItem['sponsor'];
-						$level = $lastItem['level'];
-						$tag = $sponsor->getMeta('url') ? 'a' : 'div'; 
-					@endphp
-					<div class="sponsor-carousel-slide blur" data-slide="duplicate-last">
-						<div class="text-center">
-							@if($level)
-								<h3 class="text-xl font-medium mb-6" style="color: var(--color-text);">{{ $level }}</h3>
-							@endif
-							<{{$tag}} 
-								@if($sponsor->getMeta('url'))
-								href="{{ $sponsor->getMeta('url') }}"
-								target="_blank"
+		<div class="splide" id="sponsor-slider">
+			<div class="splide__track">
+				<ul class="splide__list">
+					@foreach ($allSponsors as $index => $item)
+						@php 
+							$sponsor = $item['sponsor'];
+							$level = $item['level'];
+							$tag = $sponsor->getMeta('url') ? 'a' : 'div'; 
+						@endphp
+						<li class="splide__slide">
+							<div class="text-center">
+								@if($level)
+									<h3 class="text-xl font-medium mb-6" style="color: var(--color-text);">{{ $level }}</h3>
 								@endif
-								class="flex items-center justify-center transition duration-300 ease-in-out">
-								<img
-									style="
-										image-rendering: auto;
-										width: auto;
-										height: auto;
-										object-fit: contain;
-										max-width: 300px;
-										max-height: 200px;
-									"
-									src="{{ $sponsor->getFirstMediaUrl('logo') }}"
-									alt="{{ $sponsor->name }}"
-									loading="lazy"
-								/>
-							</{{$tag}}>
-						</div>
-					</div>
-				@endif
-				
-				@foreach ($allSponsors as $index => $item)
-					@php 
-						$sponsor = $item['sponsor'];
-						$level = $item['level'];
-						$tag = $sponsor->getMeta('url') ? 'a' : 'div'; 
-					@endphp
-					<div class="sponsor-carousel-slide blur" data-slide="{{ $index }}">
-						<div class="text-center">
-							@if($level)
-								<h3 class="text-xl font-medium mb-6" style="color: var(--color-text);">{{ $level }}</h3>
-							@endif
-							<{{$tag}} 
-								@if($sponsor->getMeta('url'))
-								href="{{ $sponsor->getMeta('url') }}"
-								target="_blank"
-								@endif
-								class="flex items-center justify-center transition duration-300 ease-in-out">
-								<img
-									style="
-										image-rendering: auto;
-										width: auto;
-										height: auto;
-										object-fit: contain;
-										max-width: 300px;
-										max-height: 200px;
-									"
-									src="{{ $sponsor->getFirstMediaUrl('logo') }}"
-									alt="{{ $sponsor->name }}"
-									loading="lazy"
-								/>
-							</{{$tag}}>
-						</div>
-					</div>
-				@endforeach
-				
-				<!-- Duplicate first slide for smooth infinite loop -->
-				@if ($allSponsors->count() > 1)
-					@php 
-						$firstItem = $allSponsors->first();
-						$sponsor = $firstItem['sponsor'];
-						$level = $firstItem['level'];
-						$tag = $sponsor->getMeta('url') ? 'a' : 'div'; 
-					@endphp
-					<div class="sponsor-carousel-slide blur" data-slide="duplicate">
-						<div class="text-center">
-							@if($level)
-								<h3 class="text-xl font-medium mb-6" style="color: var(--color-text);">{{ $level }}</h3>
-							@endif
-							<{{$tag}} 
-								@if($sponsor->getMeta('url'))
-								href="{{ $sponsor->getMeta('url') }}"
-								target="_blank"
-								@endif
-								class="flex items-center justify-center transition duration-300 ease-in-out">
-								<img
-									style="
-										image-rendering: auto;
-										width: auto;
-										height: auto;
-										object-fit: contain;
-										max-width: 300px;
-										max-height: 200px;
-									"
-									src="{{ $sponsor->getFirstMediaUrl('logo') }}"
-									alt="{{ $sponsor->name }}"
-									loading="lazy"
-								/>
-							</{{$tag}}>
-						</div>
-					</div>
-				@endif
-			</div>
-
-			<!-- Navigation Arrows (only show if more than 1 sponsor) -->
-			@if ($allSponsors->count() > 1)
-			<button class="sponsor-carousel-nav prev" id="sponsorPrevBtn">
-				<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-				</svg>
-			</button>
-			<button class="sponsor-carousel-nav next" id="sponsorNextBtn">
-				<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-				</svg>
-			</button>
-			@endif
-		</div>
-
-		<!-- Pagination (only show if more than 1 sponsor) -->
-		@if ($allSponsors->count() > 1)
-		<div class="sponsor-carousel-pagination">
-			<div class="sponsor-carousel-counter">
-				<span id="currentSlide">1</span> / <span id="totalSlides">{{ $allSponsors->count() }}</span>
-			</div>
-			<div class="sponsor-carousel-dots" id="sponsorDots">
-				@for ($i = 0; $i < $allSponsors->count(); $i++)
-					<div class="sponsor-carousel-dot {{ $i === 0 ? 'active' : '' }}" data-slide="{{ $i }}"></div>
-				@endfor
+								<{{$tag}} 
+									@if($sponsor->getMeta('url'))
+									href="{{ $sponsor->getMeta('url') }}"
+									target="_blank"
+									@endif
+									class="flex items-center justify-center transition duration-300 ease-in-out">
+									<img
+										style="
+											image-rendering: auto;
+											width: auto;
+											height: auto;
+											object-fit: contain;
+											max-width: 300px;
+											max-height: 200px;
+										"
+										src="{{ $sponsor->getFirstMediaUrl('logo') }}"
+										alt="{{ $sponsor->name }}"
+										loading="lazy"
+									/>
+								</{{$tag}}>
+							</div>
+						</li>
+					@endforeach
+				</ul>
 			</div>
 		</div>
-		@endif
 	</div>
 
+	<style>
+		.splide__slide {
+			transition: filter 0.3s ease;
+			filter: blur(2px);
+			opacity: 0.6;
+		}
+		
+		.splide__slide.is-active {
+			filter: blur(0px);
+			opacity: 1;
+		}
+	</style>
+
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const track = document.getElementById('sponsorCarouselTrack');
-			const slides = document.querySelectorAll('.sponsor-carousel-slide');
-			const prevBtn = document.getElementById('sponsorPrevBtn');
-			const nextBtn = document.getElementById('sponsorNextBtn');
-			const dots = document.querySelectorAll('.sponsor-carousel-dot');
-			const currentSlideSpan = document.getElementById('currentSlide');
-			const totalSlides = {{ $allSponsors->count() }};
-			const hasMultipleSlides = totalSlides > 1;
-			
-			
-			if (!hasMultipleSlides) {
-				
-				slides.forEach(slide => {
-					slide.classList.remove('blur');
-					slide.classList.add('active');
-				});
-				return;
-			}
-			
-			
-			let currentIndex = hasMultipleSlides ? 1 : 0;
-			let isTransitioning = false;
-
-			
-			if (hasMultipleSlides) {
-				track.style.transform = `translateX(-${currentIndex * 100}%)`;
-			}
-
-			function updateCarousel(instant = false) {
-				if (instant) {
-					track.style.transition = 'none';
-				} else {
-					track.style.transition = 'transform 0.5s ease-in-out';
-				}
-				
-				
-				track.style.transform = `translateX(-${currentIndex * 100}%)`;
-				
-				
-				slides.forEach((slide, index) => {
-					slide.classList.remove('active', 'blur');
-					if (index === currentIndex) {
-						slide.classList.add('active');
-					} else {
-						slide.classList.add('blur');
-					}
-				});
-
-				
-				let displayIndex;
-				if (hasMultipleSlides) {
-					if (currentIndex === 0) {
-						displayIndex = totalSlides - 1; 
-					} else if (currentIndex > totalSlides) {
-						displayIndex = 0; 
-					} else {
-						displayIndex = currentIndex - 1; 
-					}
-				} else {
-					displayIndex = currentIndex;
-				}
-
-				dots.forEach((dot, index) => {
-					dot.classList.toggle('active', index === displayIndex);
-				});
-
-				
-				currentSlideSpan.textContent = (displayIndex) + 1;
-			}
-
-			function nextSlide() {
-				if (isTransitioning) return;
-				isTransitioning = true;
-				
-				currentIndex++;
-				updateCarousel();
-				
-				
-				if (hasMultipleSlides && currentIndex > totalSlides) {
-					setTimeout(() => {
-						currentIndex = 1; 
-						updateCarousel(true); 
-						isTransitioning = false;
-					}, 500); 
-				} else {
-					setTimeout(() => {
-						isTransitioning = false;
-					}, 500);
-				}
-			}
-
-			function prevSlide() {
-				if (isTransitioning) return;
-				isTransitioning = true;
-				
-				currentIndex--;
-				updateCarousel();
-				
-				
-				if (hasMultipleSlides && currentIndex < 1) {
-					setTimeout(() => {
-						currentIndex = totalSlides; 
-						updateCarousel(true); 
-						isTransitioning = false;
-					}, 500);
-				} else {
-					setTimeout(() => {
-						isTransitioning = false;
-					}, 500);
-				}
-			}
-
-			function goToSlide(index) {
-				if (isTransitioning) return;
-				isTransitioning = true;
-				
-				
-				currentIndex = hasMultipleSlides ? index + 1 : index;
-				updateCarousel();
-				setTimeout(() => {
-					isTransitioning = false;
-				}, 500);
-			}
-
-			
-			updateCarousel(true);
-
-			
-			if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-			if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-
-			if (dots.length > 0) {
-				dots.forEach((dot, index) => {
-					dot.addEventListener('click', () => goToSlide(index));
-				});
-			}
-
-			
-			document.addEventListener('keydown', function(e) {
-				if (e.key === 'ArrowLeft') {
-					prevSlide();
-				} else if (e.key === 'ArrowRight') {
-					nextSlide();
-				}
-			});
-
-			// Auto-play (optional)
-			// if (hasMultipleSlides) {
-			//     setInterval(nextSlide, 5000);
-			// }
+		document.addEventListener('DOMContentLoaded', function () {
+			new Splide('#sponsor-slider', {
+				type: 'loop',
+				focus: 'center',
+				perPage: 3,
+				autoplay: true,
+				breakpoints: {
+					768: {
+						perPage: 1,
+					},
+				},
+			}).mount();
 		});
 	</script>
 </section>
