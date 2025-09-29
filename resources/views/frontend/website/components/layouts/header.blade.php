@@ -66,9 +66,17 @@
                                         {{ $item->getLabel() }}
                                     </x-violence::link>
                                 @else
+                                    <!-- Parent item -->
+                                    <x-violence::link
+                                        class="relative flex hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full font-semibold"
+                                        :href="$item->getUrl()"
+                                    >
+                                        {{ $item->getLabel() }}
+                                    </x-violence::link>
+                                    <!-- Child items -->
                                     @foreach ($item->children as $childItem)
                                         <x-violence::link
-                                            class="relative flex hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full"
+                                            class="relative flex hover:bg-base-content/10 items-center py-2 px-4 pr-6 pl-8 text-sm outline-none transition-colors gap-4 w-full text-gray-600"
                                             :href="$childItem->getUrl()"
                                         >
                                             {{ $childItem->getLabel() }}
