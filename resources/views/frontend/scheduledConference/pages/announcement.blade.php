@@ -6,18 +6,18 @@
       
             <div class="p-3 space-y-4">
                 <header class="space-y-2">
-                    <h1 class="text-3xl font-extrabold text-gray-900 ">{{ $announcement->title }}</h1>
+                    <h1 class="text-3xl font-extrabold text-gray-800 ">{{ $announcement->title }}</h1>
                 </header>
-
+                
                 @if ($announcement->hasMedia('featured_image'))
-                    <div class="relative h-64 overflow-hidden rounded-lg">
-                        <img class="object-cover w-full h-full"
+                    <div class="relative overflow-hidden rounded-lg w-full">
+                        <img class="w-full h-auto object-cover "
                             src="{{ $announcement->getFirstMedia('featured_image')->getAvailableUrl(['thumb']) }}"
                             alt="{{ $announcement->title }}">
                     </div>
                 @endif
 
-                <div class="prose  max-w-none">
+                <div class="prose dark:prose-invert max-w-none hyphens-auto break-words">
                     {{ new Illuminate\Support\HtmlString($this->announcement->getMeta('content')) }}
                 </div>
             </div>

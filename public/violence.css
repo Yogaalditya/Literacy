@@ -260,7 +260,38 @@ body {
     color: var(--color-text) !important;
 }
 
+.dark .text-gray-900 {
+    color: var(--color-text) !important;
+}
 
+.dark .prose {
+    color: var(--color-text-secondary);
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4,
+.dark .prose strong {
+    color: var(--color-text);
+}
+
+.dark .prose blockquote {
+    border-left-color: var(--color-text);
+    color: var(--color-text);
+}
+
+.dark .prose blockquote p {
+    color: var(--color-text-secondary);
+}
+
+.dark .prose ul li {
+    color: var(--color-text-secondary);
+}
+
+.dark .prose ul li::marker {
+    color: var(--color-text);
+}
 
 .dark .home-violence li {
     color: var(--color-text-secondary) !important;
