@@ -94,6 +94,24 @@ foreach ($sponsorLevels as $sponsorLevel) {
 			filter: blur(0px);
 			opacity: 1;
 		}
+
+		/* Pagination styling (for now for mobile) */
+		#sponsor-slider .splide__pagination {
+			margin-top: 2rem;
+			bottom: -3rem;
+		}
+
+		#sponsor-slider .splide__pagination__page {
+			background: var(--color-text-secondary);
+			opacity: 0.4;
+			transition: all 0.3s ease;
+		}
+
+		#sponsor-slider .splide__pagination__page.is-active {
+			background: var(--color-text);
+			opacity: 1;
+			transform: scale(1.2);
+		}
 	</style>
 
 	<script>
@@ -103,9 +121,11 @@ foreach ($sponsorLevels as $sponsorLevel) {
 				focus: 'center',
 				perPage: 3,
 				autoplay: true,
+				pagination: false,
 				breakpoints: {
 					768: {
 						perPage: 1,
+						pagination: true,
 					},
 				},
 			}).mount();

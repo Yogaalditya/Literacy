@@ -73,6 +73,24 @@ foreach ($partners as $partner) {
 			filter: blur(0px);
 			opacity: 1;
 		}
+
+		/* Pagination styling (for now for mobile) */
+		#partner-slider .splide__pagination {
+			margin-top: 2rem;
+			bottom: -3rem;
+		}
+
+		#partner-slider .splide__pagination__page {
+			background: var(--color-text-secondary);
+			opacity: 0.4;
+			transition: all 0.3s ease;
+		}
+
+		#partner-slider .splide__pagination__page.is-active {
+			background: var(--color-text);
+			opacity: 1;
+			transform: scale(1.2);
+		}
 	</style>
 
 	<script>
@@ -82,9 +100,11 @@ foreach ($partners as $partner) {
 				focus: 'center',
 				perPage: 3,
 				autoplay: true,
+				pagination: false,
 				breakpoints: {
 					768: {
 						perPage: 1,
+						pagination: true,
 					},
 				},
 			}).mount();
