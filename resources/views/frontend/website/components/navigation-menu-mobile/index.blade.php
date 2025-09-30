@@ -114,9 +114,9 @@
                                                 @if ($item->children->isEmpty())
                                                     <li class="navigation-menu-item relative">
                                                         <x-website::link @class([
-                                                            'hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex',
+                                                            'navigation-menu-mobile-item hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex',
                                                             'text-primary font-semibold' => request()->url() === $item->getUrl(),
-                                                            'text-slate-900 font-medium' => request()->url() !== $item->getUrl(),
+                                                            'font-medium' => request()->url() !== $item->getUrl(),
                                                         ]) :href="$item->getUrl()">
                                                             {{ $item->getLabel() }}
                                                         </x-website::link>
@@ -126,7 +126,7 @@
                                                         <button 
                                                             x-ref="button"
                                                             @@click="open = !open"
-                                                            class="hover:bg-base-content/10 py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex items-center justify-between text-slate-900 font-medium"
+                                                            class="navigation-menu-mobile-item-parent hover:bg-base-content/10 py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex items-center justify-between font-semibold"
                                                         >
                                                             <span>{{ $item->getLabel() }}</span>
                                                             <svg :class="{ '-rotate-180': open }"
@@ -140,10 +140,8 @@
                                                             @foreach ($item->children as $key => $childItem)
                                                                 <li class="navigation-menu-item relative">
                                                                     <x-website::link @class([
-                                                                        'hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full flex',
-                                                                        'text-primary font-semibold' => request()->url() === $item->getUrl(),
-                                                                        'text-slate-900 font-medium' => request()->url() !== $item->getUrl(),
-                                                                    ]) :href="$item->getUrl()">
+                                                                        'navigation-menu-mobile-item hover:bg-base-content/10 items-center py-2 px-4 pr-6 pl-8 text-sm outline-none transition-colors gap-4 w-full flex text-gray-600',
+                                                                    ]) :href="$childItem->getUrl()">
                                                                         {{ $childItem->getLabel() }}
                                                                     </x-website::link>
                                                                 </li>

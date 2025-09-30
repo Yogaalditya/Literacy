@@ -238,6 +238,35 @@ body {
     color: var(--color-accent) !important;
 }
 
+/* Mobile Navigation Menu Styles */
+.navigation-menu-mobile-item {
+    color: var(--color-text);
+}
+
+.navigation-menu-mobile-item-active {
+    color: var(--color-accent);
+}
+
+.navigation-menu-mobile-item-parent {
+    color: var(--color-text);
+}
+
+.dark .navigation-menu-mobile-item {
+    color: var(--color-text) !important;
+}
+
+.dark .navigation-menu-mobile-item:hover {
+    background-color: var(--color-border) !important;
+}
+
+.dark .text-slate-900 {
+    color: var(--color-text) !important;
+}
+
+.dark .text-gray-600 {
+    color: var(--color-text-secondary) !important;
+}
+
 /* Icon colors for dark mode */
 .dark svg {
     color: var(--color-text) !important;
