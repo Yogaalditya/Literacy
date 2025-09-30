@@ -11,7 +11,7 @@
                 <x-violence::navigation-menu-mobile />
             </div>
             <x-violence::logo
-                :headerLogo="null"
+                :headerLogo="$headerLogo"
                 :homeUrl="$homeUrl"
                 :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')"
                 class="no-underline-hover text-2xl sm:text-2xl font-semibold text-gray-800"
