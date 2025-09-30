@@ -19,8 +19,8 @@
 									/>
 
 									<!-- Name Card below image -->
-									<div class="bg-white px-4 py-3 rounded-2xl shadow-md mt-4 w-56 text-center" style="border: 1px solid var(--color-border);">
-										<h4 class="text-xl font-bold color-latest break-words leading-tight">
+									<div class="bg-white px-4 py-3 rounded-2xl shadow-md mt-4 w-56 text-center h-20 flex items-center justify-center" style="border: 1px solid var(--color-border);">
+										<h4 class="text-xl font-bold color-latest break-words leading-tight line-clamp-3">
 											{{ $speaker->fullName }}
 										</h4>
 									</div>
@@ -28,9 +28,11 @@
 									<!-- Affiliation and Academic Icons below name -->
 									<div class="w-full mt-4">
 										@if ($speaker->getMeta('affiliation'))
-											<p class="text-lg text-gray-600 dark:text-gray-400">
-												{{ $speaker->getMeta('affiliation') }}
-											</p>
+											<div class="min-h-16 flex items-start justify-center mb-3">
+												<p class="text-lg text-gray-600 dark:text-gray-400 line-clamp-2">
+													{{ $speaker->getMeta('affiliation') }}
+												</p>
+											</div>
 										@endif
 										@if($speaker->getMeta('scopus_url') || $speaker->getMeta('google_scholar_url') || $speaker->getMeta('orcid_url'))
 											<div class="cf-committee-scholar flex justify-center items-center gap-3 mt-2">
