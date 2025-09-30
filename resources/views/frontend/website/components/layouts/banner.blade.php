@@ -45,10 +45,23 @@
 
             @if($bannerUrl)
                 <div class="mt-4 relative">
-                    <img src="{{ $bannerUrl }}" alt="Conference Banner" class="banner-image w-full h-48 md:h-64 object-cover rounded-3xl shadow-md" />
+                    <!-- Background Layer with Blur Effect -->
+                    <div class="banner-background-wrapper relative w-full h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-md">
+                        <!-- Blurred Background Image -->
+                        <div class="absolute inset-0 bg-cover bg-center blur-2xl scale-110" 
+                             style="background-image: url('{{ $bannerUrl }}');">
+                        </div>
+                        <!-- Overlay to darken blur (optional, for better contrast) -->
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <!-- Main Image on Top -->
+                        <img src="{{ $bannerUrl }}" 
+                             alt="Conference Banner" 
+                             class="banner-image relative z-5 w-full h-full object-contain" 
+                             style="mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);" />
+                    </div>
                     
                     <!-- Info Card Overlay -->
-                    <div class="banner-info-card absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-full max-w-6xl bg-white rounded-2xl shadow-xl p-6 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-32 border border-gray-100 md:h-[120px]">
+                    <div class="banner-info-card absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-full max-w-6xl bg-white rounded-2xl shadow-xl p-6 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-32 border border-gray-100 md:h-[120px]">
                         
                         <!-- Location Component -->
                         <div class="flex flex-col items-start text-left">
