@@ -46,7 +46,7 @@
             @if($bannerUrl)
                 <div class="mt-4 relative">
                     <!-- Banner Image Container -->
-                    <div class="banner-background-wrapper relative w-full rounded-3xl overflow-hidden shadow-md">
+                    <div class="banner-background-wrapper relative w-full xl:h-[400px] rounded-3xl overflow-hidden shadow-md">
                         <!-- Main Banner Image -->
                         <img src="{{ $bannerUrl }}" 
                              alt="Conference Banner" 
