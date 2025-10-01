@@ -20,6 +20,7 @@ use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
 
 class ViolenceTheme extends Theme
 {
@@ -35,6 +36,9 @@ class ViolenceTheme extends Theme
 	public function getFormSchema(): array
 	{
 		return [
+			Toggle::make('enable_theme')
+				->label('Enable Dark/Light Theme Mode'),
+				
 			SpatieMediaLibraryFileUpload::make('images')
 				->collection('violence-header')
 				->label('Upload Header Images')
@@ -145,6 +149,7 @@ class ViolenceTheme extends Theme
 			'banner_buttons' => $this->getSetting('banner_buttons'),
 			'description' => $this->getSetting('description'),
 			'description_text_color' => $this->getSetting('description_text_color'),
+			'enable_theme' => $this->getSetting('enable_theme'),
 		];
 	}
 }

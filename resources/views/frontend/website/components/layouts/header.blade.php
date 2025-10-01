@@ -22,6 +22,7 @@
             <div class="absolute top-3 right-4 hidden lg:block">
                 <div class="flex items-center gap-3">
                     <!-- Dark/Light Mode Toggle Button -->
+                    @if(App\Facades\Plugin::getPlugin('Violence')->getSetting('enable_theme'))
                     <div class="navbar-custom-violence rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-3 h-14 w-14 flex items-center justify-center">
                         <button 
                             x-data="{ 
@@ -41,6 +42,7 @@
                             </svg>
                         </button>
                     </div>
+                    @endif
                     <!-- User Card -->
                     <div x-data="{ open: false }" x-on:mouseleave="open = false" class="navbar-custom-violence relative rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-3 lg:px-4 h-14 w-auto flex items-center z-40">
                     <button @@click="open = !open" x-on:mouseenter="open = true" class="btn btn-ghost btn-sm rounded-full inline-flex items-center justify-center px-4 transition-colors hover:text-primary-content focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-0 text-gray-800">
