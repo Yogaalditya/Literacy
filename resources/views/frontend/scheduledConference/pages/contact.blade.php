@@ -1,10 +1,24 @@
 <x-violence::layouts.main>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="mb-6">
-            <x-violence::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> 
+        <!-- Breadcrumbs Section -->
+        <div class="px-4 sm:px-6 lg:px-8 mb-6">
+            <x-violence::breadcrumbs 
+                :breadcrumbs="$this->getBreadcrumbs()" 
+                class="text-sm breadcrumbs-violence" 
+                style="color: var(--color-text-secondary);"
+            />
         </div>
-      
-        <div class="p-3 space-y-4">
+
+        <!-- Main Content Section -->
+        <div class="px-4 sm:px-6 lg:px-8">
+            <!-- Title Section -->
+            <div class="flex flex-col sm:flex-row items-center  ml-2">
+                <h1 class="text-3xl sm:text-4xl font-extrabold mb-4 sm:mb-0 sm:mr-8 color-latest">
+                    {{ __('general.contact') }}
+                </h1>
+            </div>
+
+            <div class="prose max-w-none layout-section space-y-4">
             <div class="grid sm:grid-cols-2 justify-items-start gap-y-8">
                 <div id="chair-contact" class="space-y-2">
                     <h2 class="font-bold">{{ __('general.principal_contact') }}</h2>
@@ -54,7 +68,7 @@
                     @endif
                 </div>
             </div>
+            </div>
         </div>
-       
     </div>
 </x-violence::layouts.main>
