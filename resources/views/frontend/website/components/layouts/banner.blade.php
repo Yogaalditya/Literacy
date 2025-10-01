@@ -45,19 +45,12 @@
 
             @if($bannerUrl)
                 <div class="mt-4 relative">
-                    <!-- Background Layer with Blur Effect -->
-                    <div class="banner-background-wrapper relative w-full h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-md">
-                        <!-- Blurred Background Image -->
-                        <div class="absolute inset-0 bg-cover bg-center blur-2xl scale-110" 
-                             style="background-image: url('{{ $bannerUrl }}');">
-                        </div>
-                        <!-- Overlay to darken blur (optional, for better contrast) -->
-                        <div class="absolute inset-0 bg-black/20"></div>
-                        <!-- Main Image on Top -->
+                    <!-- Banner Image Container -->
+                    <div class="banner-background-wrapper relative w-full rounded-3xl overflow-hidden shadow-md">
+                        <!-- Main Banner Image -->
                         <img src="{{ $bannerUrl }}" 
                              alt="Conference Banner" 
-                             class="banner-image relative z-5 w-full h-full object-contain" 
-                             style="mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);" />
+                             class="banner-image w-full h-full object-cover" />
                     </div>
                     
                     <!-- Info Card Overlay -->
