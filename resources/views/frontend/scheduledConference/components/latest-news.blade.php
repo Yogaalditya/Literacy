@@ -74,12 +74,14 @@
 							</div>
 
 							<!-- Title -->
-							<h3 class="text-xl font-bold mb-3 line-clamp-2">
-								<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" 
-								   class="block" style="color: var(--color-text);">
-									{{ $announcement->title }}
-								</a>
-							</h3>
+							<div class="min-h-[3.5rem] mb-3">
+								<h3 class="text-xl font-bold line-clamp-2">
+									<a href="{{ route('livewirePageGroup.scheduledConference.pages.announcement-page', ['announcement' => $announcement->id]) }}" 
+									   class="block" style="color: var(--color-text);">
+										{{ $announcement->title }}
+									</a>
+								</h3>
+							</div>
 
 							<!-- Summary -->
 							<p class="mb-4 line-clamp-3 leading-relaxed text-sm" style="color: var(--color-text-secondary);">
