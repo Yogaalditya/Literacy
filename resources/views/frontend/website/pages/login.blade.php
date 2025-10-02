@@ -1,7 +1,7 @@
-<x-violence::layouts.main class="min-h-screen bg-gray-50">
+<x-literacy::layouts.main class="min-h-screen bg-gray-50">
     <div class="max-w-md mx-auto px-4 py-8">
         <div class="mb-6">
-            <x-violence::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-600" />
+            <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-600" />
         </div>
         
         <div class="bg-white rounded-lg shadow-sm p-6">
@@ -58,9 +58,9 @@
                         />
                         <span class="ml-2 text-sm text-gray-700">{{ __('general.remember_me') }}</span>
                     </label>
-                    <x-violence::link :href="$resetPasswordUrl" class="text-sm text-primary-600 hover:text-blue-600">
+                    <x-literacy::link :href="$resetPasswordUrl" class="text-sm text-primary-600 hover:text-blue-600">
                         {{ __('general.forgot_password_question') }}
-                    </x-violence::link>
+                    </x-literacy::link>
                 </div>
 
                 <div class="flex gap-3 pt-4">
@@ -73,15 +73,15 @@
                         {{ __('general.login') }}
                     </button>
                     @if($registerUrl)
-                        <x-violence::link 
+                        <x-literacy::link 
                             class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" 
                             :href="$registerUrl"
                         >
                             {{ __('general.register') }}
-                        </x-violence::link>
+                        </x-literacy::link>
                     @endif
                 </div>
             </form>
         </div>
     </div>
-</x-violence::layouts.main>
+</x-literacy::layouts.main>

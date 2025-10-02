@@ -1,10 +1,10 @@
-<x-violence::layouts.main>
+<x-literacy::layouts.main>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> 
         <!-- Breadcrumbs Section -->
         <div class="px-4 sm:px-6 lg:px-8 mb-6">
-            <x-violence::breadcrumbs 
+            <x-literacy::breadcrumbs 
                 :breadcrumbs="$this->getBreadcrumbs()" 
-                class="text-sm breadcrumbs-violence" 
+                class="text-sm breadcrumbs-literacy" 
                 style="color: var(--color-text-secondary);"
             />
         </div>
@@ -71,4 +71,4 @@
             </div>
         </div>
     </div>
-</x-violence::layouts.main>
+</x-literacy::layouts.main>

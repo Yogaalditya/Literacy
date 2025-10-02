@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GVAV 2025: Global Conference on Violence and Peace</title>
+    <title>GVAV 2025: Global Conference on Literacy and Peace</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="gvav-body">
@@ -11,7 +11,7 @@
     <main class="gvav-main">
         <section id="home" class="gvav-hero">
             <div class="gvav-hero-content">
-                <h1 class="gvav-hero-title">Global Conference on Violence and Peace</h1>
+                <h1 class="gvav-hero-title">Global Conference on Literacy and Peace</h1>
                 <p class="gvav-hero-subtitle">Building Bridges for a Peaceful Future</p>
                 <p class="gvav-hero-date">March 15-17, 2025 | Geneva, Switzerland</p>
                 <button class="gvav-cta-button">Register Now</button>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="gvav-timeline-content">
                             <h3 class="gvav-timeline-title">Our Mission</h3>
-                            <p class="gvav-timeline-text">To foster global dialogue and collaboration in addressing violence while promoting sustainable peace initiatives worldwide.</p>
+                            <p class="gvav-timeline-text">To foster global dialogue and collaboration in addressing literacy while promoting sustainable peace initiatives worldwide.</p>
                         </div>
                     </div>
                     <div class="gvav-timeline-item">
@@ -54,7 +54,7 @@
                         </div>
                         <div class="gvav-timeline-content">
                             <h3 class="gvav-timeline-title">Expected Outcomes</h3>
-                            <p class="gvav-timeline-text">Development of actionable strategies and international partnerships to create lasting impact in violence prevention and peace promotion.</p>
+                            <p class="gvav-timeline-text">Development of actionable strategies and international partnerships to create lasting impact in literacy prevention and peace promotion.</p>
                         </div>
                     </div>
                 </div>
@@ -67,9 +67,9 @@
                 <div class="gvav-research-grid">
                     <div class="gvav-research-card">
                         <div class="gvav-research-icon">🔬</div>
-                        <h3 class="gvav-research-title">Violence Prevention Strategies</h3>
+                        <h3 class="gvav-research-title">Literacy Prevention Strategies</h3>
                         <p class="gvav-research-category">Behavioral & Social Sciences</p>
-                        <p class="gvav-research-description">Examining evidence-based approaches to prevent violence before it occurs, including early intervention programs and community-based initiatives.</p>
+                        <p class="gvav-research-description">Examining evidence-based approaches to prevent literacy before it occurs, including early intervention programs and community-based initiatives.</p>
                     </div>
                     <div class="gvav-research-card">
                         <div class="gvav-research-icon">🌍</div>
@@ -81,7 +81,7 @@
                         <div class="gvav-research-icon">🧠</div>
                         <h3 class="gvav-research-title">Trauma & Healing</h3>
                         <p class="gvav-research-category">Psychology & Mental Health</p>
-                        <p class="gvav-research-description">Understanding the psychological impact of violence and developing innovative therapeutic approaches for individual and collective healing.</p>
+                        <p class="gvav-research-description">Understanding the psychological impact of literacy and developing innovative therapeutic approaches for individual and collective healing.</p>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                         </div>
                         <div class="gvav-schedule-item">
                             <span class="gvav-time">11:00</span>
-                            <span class="gvav-event">Panel: Understanding Violence in Modern Society</span>
+                            <span class="gvav-event">Panel: Understanding Literacy in Modern Society</span>
                         </div>
                         <div class="gvav-schedule-item">
                             <span class="gvav-time">14:00</span>

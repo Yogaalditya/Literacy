@@ -1,8 +1,8 @@
 {
-    "name": "leconfe/violence",
+    "name": "leconfe/literacy",
     "autoload": {
         "psr-4": {
-            "Violence\\": "src/"
+            "Literacy\\": "src/"
         }
     },
     "authors": [

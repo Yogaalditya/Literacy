@@ -24,14 +24,14 @@
                             class="w-screen max-w-xs">
                             <div class="bg-white border-neutral-100/70 border-r shadow-lg h-svh overflow-y-scroll">
                                 <div class="navigation-menu-mobile ps-4 py-2 text-primary-content flex justify-between items-center">
-                                    <x-violence::logo 
+                                    <x-literacy::logo 
                                     :headerLogo="$headerLogo" 
                                     :homeUrl="$homeUrl" 
                                     :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')" 
                                     class="font-bold text-white" />
                                     <div class="flex items-center gap-2">
                                         <!-- Dark/Light Mode Toggle Button -->
-                                        @if(App\Facades\Plugin::getPlugin('Violence')->getSetting('enable_theme'))
+                                        @if(App\Facades\Plugin::getPlugin('Literacy')->getSetting('enable_theme'))
                                         <button 
                                             @@click="$store.darkMode.toggle()" 
                                             class="btn btn-sm btn-square btn-ghost rounded-full p-1.5 transition-colors hover:bg-white/20 focus:outline-none group"

@@ -109,21 +109,21 @@ body {
     font-size: 25px;
 }
 
-.navbar-custom-violence {
+.navbar-custom-literacy {
     background-color: var(--color-navbar-bg) !important;
     border-color: var(--color-navbar-border) !important;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
-.navbar-custom-violence a {
+.navbar-custom-literacy a {
     position: relative;
     overflow: hidden;
     color: var(--color-text) !important;
     transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-.navbar-custom-violence a::before {
+.navbar-custom-literacy a::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -136,16 +136,16 @@ body {
     transition: transform 0.3s ease;
 }
 
-.navbar-custom-violence a.no-underline-hover::before {
+.navbar-custom-literacy a.no-underline-hover::before {
     content: none !important;
 }
 
-.navbar-custom-violence a:hover::before {
+.navbar-custom-literacy a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-.navbar-custom-violence a:hover {
+.navbar-custom-literacy a:hover {
     transform: translateY(-2px);
     color: oklch(var(--p)) !important;
 }
@@ -320,11 +320,11 @@ body {
     color: var(--color-text);
 }
 
-.dark .home-violence li {
+.dark .home-literacy li {
     color: var(--color-text-secondary) !important;
 }
 
-.dark .home-violence li::before {
+.dark .home-literacy li::before {
     color: oklch(var(--p)) !important;
 }
 
@@ -732,12 +732,12 @@ body {
 }
 
 /* About page specific styles */
-.breadcrumbs-violence {
+.breadcrumbs-literacy {
     color: var(--color-text-secondary) !important;
     transition: color 0.3s ease;
 }
 
-.breadcrumbs-violence:hover {
+.breadcrumbs-literacy:hover {
     color: oklch(var(--p)) !important;
 }
 
@@ -1059,28 +1059,28 @@ body {
 }
 
 /* Dark mode toggle icon styles */
-.navbar-custom-violence button svg {
+.navbar-custom-literacy button svg {
     transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 /* Prevent icon overlap during transitions */
-.navbar-custom-violence button {
+.navbar-custom-literacy button {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.navbar-custom-violence button svg[x-show] {
+.navbar-custom-literacy button svg[x-show] {
     position: absolute;
 }
 
 /* Maintain hover effects */
-.navbar-custom-violence button:hover svg {
+.navbar-custom-literacy button:hover svg {
     transform: rotate(12deg);
 }
 
-.navbar-custom-violence button:hover svg[x-show="isDark"] {
+.navbar-custom-literacy button:hover svg[x-show="isDark"] {
     transform: rotate(-12deg);
 }
 
@@ -1098,19 +1098,19 @@ body {
     }
 }
 
-.navbar-custom-violence a {
+.navbar-custom-literacy a {
     animation: menuFadeIn 0.5s ease-in-out;
 }
 
-.navbar-custom-violence a:nth-child(1) {
+.navbar-custom-literacy a:nth-child(1) {
     animation-delay: 0.1s;
 }
 
-.navbar-custom-violence a:nth-child(2) {
+.navbar-custom-literacy a:nth-child(2) {
     animation-delay: 0.2s;
 }
 
-.navbar-custom-violence a:nth-child(3) {
+.navbar-custom-literacy a:nth-child(3) {
     animation-delay: 0.3s;
 }
 
@@ -1323,7 +1323,7 @@ body {
 }
 
 /* Container styles */
-.register-status-violence {
+.register-status-literacy {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
@@ -1334,7 +1334,7 @@ body {
 }
 
 /* Main title */
-.register-status-violence>p {
+.register-status-literacy>p {
     font-size: 1.8rem;
     color: #2c3e50;
     text-align: center;
@@ -1344,13 +1344,13 @@ body {
 }
 
 /* Ordered list styles */
-.register-status-violence ol {
+.register-status-literacy ol {
     counter-reset: section;
     list-style-type: none;
     padding-left: 0;
 }
 
-.register-status-violence ol>li {
+.register-status-literacy ol>li {
     margin-bottom: 1.5rem;
     padding: 1.5rem;
     background: white;
@@ -1359,12 +1359,12 @@ body {
     transition: transform 0.2s ease;
 }
 
-.register-status-violence ol>li:hover {
+.register-status-literacy ol>li:hover {
     transform: translateX(5px);
 }
 
 /* Section titles */
-.register-status-violence ol>li>p {
+.register-status-literacy ol>li>p {
     color: #2c3e50;
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -1373,18 +1373,18 @@ body {
 }
 
 /* Unordered list styles */
-.register-status-violence ul {
+.register-status-literacy ul {
     list-style-type: none;
     padding-left: 1.5rem;
 }
 
-.register-status-violence ul li {
+.register-status-literacy ul li {
     position: relative;
     margin-bottom: 0.5rem;
     padding-left: 1.2rem;
 }
 
-.register-status-violence ul li::before {
+.register-status-literacy ul li::before {
     content: "•";
     color: oklch(var(--p));
     position: absolute;
@@ -1393,37 +1393,37 @@ body {
 }
 
 /* Links */
-.register-status-violence a {
+.register-status-literacy a {
     color: oklch(var(--p));
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.register-status-violence a:hover {
+.register-status-literacy a:hover {
     color: #2980b9;
     text-decoration: underline;
 }
 
 /* Strong text */
-.register-status-violence strong {
+.register-status-literacy strong {
     color: #2c3e50;
     font-weight: 600;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .register-status-violence {
+    .register-status-literacy {
         padding: 1rem;
     }
 
-    .register-status-violence ol>li {
+    .register-status-literacy ol>li {
         padding: 1rem;
     }
 }
 
 /* End Template */
 
-.navbar-violence {
+.navbar-literacy {
     max-width: 94rem
         /* 1280px */
     ;
@@ -2042,44 +2042,44 @@ body {
 /* End GVAV Conference Template Styles */
 
 /* Banner specific styles */
-.banner-violence {
+.banner-literacy {
     padding-top: 2rem;   /* give space from top */
     padding-bottom: 2rem;
 }
 
 /* Prevent global shift inside banner */
-.banner-violence .section-line-1 {
+.banner-literacy .section-line-1 {
     transform: none !important;
     margin-bottom: 2rem;
 }
 
 /* Larger banner image height */
-.banner-violence .banner-image {
+.banner-literacy .banner-image {
     height: 16rem !important; /* ~h-64 */
 }
 
 @media (min-width: 768px) {
-    .banner-violence {
+    .banner-literacy {
         padding-top: 0rem;
         padding-bottom: 3rem;
     }
-    .banner-violence .banner-image {
+    .banner-literacy .banner-image {
         height: 28rem !important;
     }
 }
 
 @media (min-width: 1024px) {
-    .banner-violence {
+    .banner-literacy {
         padding-top: 0rem;
     }
 }
 
 @media (max-width: 767px) {
-    .banner-violence .banner-image {
+    .banner-literacy .banner-image {
         height: 14rem !important;
     }
 
-    .banner-violence .banner-info-card {
+    .banner-literacy .banner-info-card {
         position: static;
         transform: none;
         margin-top: 1.5rem;
@@ -2088,21 +2088,21 @@ body {
         box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
     }
 
-    .banner-violence .banner-info-card > div {
+    .banner-literacy .banner-info-card > div {
         width: 100%;
     }
 
-    .banner-violence .banner-info-card > div + div {
+    .banner-literacy .banner-info-card > div + div {
         border-top: 1px solid rgba(226, 232, 240, 0.8);
         padding-top: 1rem;
     }
 
-    .banner-violence .banner-info-card svg {
+    .banner-literacy .banner-info-card svg {
         height: 20px;
         width: 20px;
     }
 
-    .banner-violence .banner-info-card p {
+    .banner-literacy .banner-info-card p {
         font-size: 0.95rem;
     }
 }

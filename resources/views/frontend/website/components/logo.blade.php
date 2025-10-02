@@ -5,7 +5,7 @@
 ])
 
 @if ($headerLogo)
-    <x-violence::link
+    <x-literacy::link
         {{ $attributes->merge(['class' => 'inline-flex items-center no-underline-hover']) }}
         :href="$homeUrl"
     >
@@ -16,9 +16,9 @@
                 class="absolute inset-0 w-full h-full object-contain"
             />
         </div>
-    </x-violence::link>
+    </x-literacy::link>
 @else
-    <x-violence::link
+    <x-literacy::link
         :href="$homeUrl"
         {{ $attributes->merge([
             'class' => '
@@ -27,5 +27,5 @@
         ]) }}
     >
         {{ $headerLogoAltText }}
-    </x-violence::link>
+    </x-literacy::link>
 @endif

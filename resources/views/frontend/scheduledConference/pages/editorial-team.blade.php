@@ -1,7 +1,7 @@
-<x-violence::layouts.main>
+<x-literacy::layouts.main>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-6">
-        <x-violence::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
+        <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
     </div>
     <div class="relative">
         <div class="flex mb-5 space-x-4">
@@ -19,4 +19,4 @@
         @endif
     </div>
 </div>
-</x-violence::layouts.main>
+</x-literacy::layouts.main>

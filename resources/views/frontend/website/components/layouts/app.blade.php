@@ -1,12 +1,12 @@
 @props([
     'title' => null,
 ])
-<x-violence::layouts.base :title="$title">
+<x-literacy::layouts.base :title="$title">
     <div class="flex h-full min-h-screen flex-col">
         @hook('Frontend::Views::Header')
 
         {{-- Load Header Layout --}}
-        <x-violence::layouts.header />
+        <x-literacy::layouts.header />
 
 
         <main class="py-3 ">
@@ -15,9 +15,9 @@
         </main>
 
         {{-- Load Footer Layout --}}
-        <x-violence::layouts.footer />
+        <x-literacy::layouts.footer />
 
         @hook('Frontend::Views::Footer')
     </div>
-</x-violence::layouts.base>
+</x-literacy::layouts.base>
 

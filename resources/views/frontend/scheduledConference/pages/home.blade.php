@@ -1,10 +1,10 @@
-<x-violence::layouts.main>
+<x-literacy::layouts.main>
 
-    <x-violence::layouts.banner></x-violence::layouts.banner>
+    <x-literacy::layouts.banner></x-literacy::layouts.banner>
 
     <div class="space-y-8">
         @php
-            $layouts = App\Facades\Plugin::getPlugin('Violence')->getSetting('layouts');
+            $layouts = App\Facades\Plugin::getPlugin('Literacy')->getSetting('layouts');
             // dd($layouts)
         @endphp
 
@@ -48,4 +48,4 @@
         @endif
 
     </div>
-</x-violence::layouts.main>
+</x-literacy::layouts.main>

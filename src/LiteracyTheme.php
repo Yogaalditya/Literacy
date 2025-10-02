@@ -1,6 +1,6 @@
 <?php
 
-namespace Violence;
+namespace Literacy;
 
 use App\Classes\Theme;
 
@@ -22,15 +22,15 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 
-class ViolenceTheme extends Theme
+class LiteracyTheme extends Theme
 {
 	public function boot()
 	{
-		if (app()->getCurrentScheduledConference()?->getMeta('theme') == 'Violence') {
+		if (app()->getCurrentScheduledConference()?->getMeta('theme') == 'Literacy') {
             Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/website/components'), prefix: 'website');
             Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/scheduledConference/components'), prefix: 'scheduledConference');
         }
-		Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/website/components'), 'violence');
+		Blade::anonymousComponentPath($this->getPluginPath('resources/views/frontend/website/components'), 'literacy');
 	}
 
 	public function getFormSchema(): array
@@ -40,7 +40,7 @@ class ViolenceTheme extends Theme
 				->label('Enable Dark/Light Theme Mode'),
 				
 			SpatieMediaLibraryFileUpload::make('images')
-				->collection('violence-header')
+				->collection('literacy-header')
 				->label('Upload Header Images')
 				->multiple()
 				->maxFiles(4)
@@ -118,7 +118,7 @@ class ViolenceTheme extends Theme
 		Hook::add('Frontend::Views::Head', function ($hookName, &$output) {
 			$output .= '<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>';
 			$output .= '<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />';
-			$css = $this->url('violence.css');
+			$css = $this->url('literacy.css');
 			$output .= "<link rel='stylesheet' type='text/css' href='$css'/> ";
 
 			if ($appearanceColor = $this->getSetting('appearance_color')) {

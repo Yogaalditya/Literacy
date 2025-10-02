@@ -1,6 +1,6 @@
-<section class="hero-banner banner-violence">
+<section class="hero-banner banner-literacy">
     @php
-        $images = $currentScheduledConference->getMedia('violence-header');
+        $images = $currentScheduledConference->getMedia('literacy-header');
         $bannerUrl = null;
         foreach ($images as $image) {
             // Get the largest available version for a crisp banner image

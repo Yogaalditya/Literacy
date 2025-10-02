@@ -1,7 +1,7 @@
 <?php
 
-use Violence\ViolenceTheme;
+use Literacy\LiteracyTheme;
 
 require 'vendor/autoload.php';
 
-return new ViolenceTheme;
+return new LiteracyTheme;

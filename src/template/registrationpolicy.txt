@@ -1,4 +1,4 @@
-<div class="register-status-violence">
+<div class="register-status-literacy">
     <p><strong>Conference Registration Policy</strong></p>
     <ol>
         <li>

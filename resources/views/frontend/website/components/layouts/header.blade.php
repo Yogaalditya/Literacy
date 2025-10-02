@@ -8,22 +8,22 @@
     <div id="navbar" class="sticky-navbar top-0 z-50 w-full text-gray-800 transition-all duration-300 relative">
         <div class="absolute top-[22px] left-5 flex items-center gap-3">
             <div class="lg:hidden">
-                <x-violence::navigation-menu-mobile />
+                <x-literacy::navigation-menu-mobile />
             </div>
-            <x-violence::logo
+            <x-literacy::logo
                 :headerLogo="$headerLogo"
                 :homeUrl="$homeUrl"
                 :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')"
                 class="no-underline-hover text-2xl sm:text-2xl font-semibold text-gray-800"
             />
         </div>
-        <div class="navbar-violence container mx-auto px-4 lg:px-8 py-3">
+        <div class="navbar-literacy container mx-auto px-4 lg:px-8 py-3">
             <!-- Dark/Light Mode Toggle & User Card (Right) -->
             <div class="absolute top-3 right-4 hidden lg:block">
                 <div class="flex items-center gap-3">
                     <!-- Dark/Light Mode Toggle Button -->
-                    @if(App\Facades\Plugin::getPlugin('Violence')->getSetting('enable_theme'))
-                    <div class="navbar-custom-violence rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-3 h-14 w-14 flex items-center justify-center">
+                    @if(App\Facades\Plugin::getPlugin('Literacy')->getSetting('enable_theme'))
+                    <div class="navbar-custom-literacy rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-3 h-14 w-14 flex items-center justify-center">
                         <button 
                             x-data="{ 
                                 get isDark() { return $store.darkMode.isDark },
@@ -44,7 +44,7 @@
                     </div>
                     @endif
                     <!-- User Card -->
-                    <div x-data="{ open: false }" x-on:mouseleave="open = false" class="navbar-custom-violence relative rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-3 lg:px-4 h-14 w-auto flex items-center z-40">
+                    <div x-data="{ open: false }" x-on:mouseleave="open = false" class="navbar-custom-literacy relative rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-3 lg:px-4 h-14 w-auto flex items-center z-40">
                     <button @@click="open = !open" x-on:mouseenter="open = true" class="btn btn-ghost btn-sm rounded-full inline-flex items-center justify-center px-4 transition-colors hover:text-primary-content focus:outline-none disabled:opacity-50 disabled:pointer-events-none group w-max gap-0 text-gray-800">
                         <x-heroicon-o-user class="h-6 w-6 text-gray-800" />
                         <svg :class="{ '-rotate-180': open }"
@@ -61,28 +61,28 @@
                                     @continue
                                 @endif
                                 @if ($item->children->isEmpty())
-                                    <x-violence::link
+                                    <x-literacy::link
                                         class="first:rounded-t-md last:rounded-b-md relative flex hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full"
                                         :href="$item->getUrl()"
                                     >
                                         {{ $item->getLabel() }}
-                                    </x-violence::link>
+                                    </x-literacy::link>
                                 @else
                                     <!-- Parent item -->
-                                    <x-violence::link
+                                    <x-literacy::link
                                         class="relative flex hover:bg-base-content/10 items-center py-2 px-4 pr-6 text-sm outline-none transition-colors gap-4 w-full font-semibold"
                                         :href="$item->getUrl()"
                                     >
                                         {{ $item->getLabel() }}
-                                    </x-violence::link>
+                                    </x-literacy::link>
                                     <!-- Child items -->
                                     @foreach ($item->children as $childItem)
-                                        <x-violence::link
+                                        <x-literacy::link
                                             class="relative flex hover:bg-base-content/10 items-center py-2 px-4 pr-6 pl-8 text-sm outline-none transition-colors gap-4 w-full text-gray-600"
                                             :href="$childItem->getUrl()"
                                         >
                                             {{ $childItem->getLabel() }}
-                                        </x-violence::link>
+                                        </x-literacy::link>
                                     @endforeach
                                 @endif
                             @endforeach
@@ -92,10 +92,10 @@
                 </div>
             </div>
             <div class="hidden lg:flex justify-center">
-                <div class="navbar-custom-violence rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-4 lg:px-6 h-14 w-auto max-w-full flex items-center gap-x-4">
+                <div class="navbar-custom-literacy rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-md px-4 lg:px-6 h-14 w-auto max-w-full flex items-center gap-x-4">
                     <!-- Desktop Navigation -->
                     <div class="flex items-center gap-x-6">
-                        <x-violence::navigation-menu
+                        <x-literacy::navigation-menu
                             :items="$primaryNavigationItems"
                             class="flex items-center gap-x-6 text-gray-800 hover:text-gray-600 transition-colors duration-200"
                         />
