@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GVAV 2025: Global Conference on Literacy and Peace</title>
+    <title>Three Days of Literacy Innovation 2025: Global Conference on Literacy and Education</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="gvav-body">
@@ -11,19 +11,19 @@
     <main class="gvav-main">
         <section id="home" class="gvav-hero">
             <div class="gvav-hero-content">
-                <h1 class="gvav-hero-title">Global Conference on Literacy and Peace</h1>
-                <p class="gvav-hero-subtitle">Building Bridges for a Peaceful Future</p>
+                <h1 class="gvav-hero-title">Global Conference on Literacy and Education</h1>
+                <p class="gvav-hero-subtitle">Empowering Minds Through Literacy</p>
                 <p class="gvav-hero-date">March 15-17, 2025 | Geneva, Switzerland</p>
                 <button class="gvav-cta-button">Register Now</button>
             </div>
             <div class="gvav-hero-visual">
-                <div class="gvav-peace-symbol">☮</div>
+                <div class="gvav-peace-symbol">📖</div>
             </div>
         </section>
 
         <section id="about" class="gvav-section">
             <div class="gvav-container">
-                <h2 class="gvav-section-title">About GVAV 2025</h2>
+                <h2 class="gvav-section-title">About Three Days of Literacy Innovation 2025</h2>
                 <div class="gvav-timeline">
                     <div class="gvav-timeline-item">
                         <div class="gvav-timeline-marker">
@@ -31,7 +31,7 @@
                         </div>
                         <div class="gvav-timeline-content">
                             <h3 class="gvav-timeline-title">Our Mission</h3>
-                            <p class="gvav-timeline-text">To foster global dialogue and collaboration in addressing literacy while promoting sustainable peace initiatives worldwide.</p>
+                            <p class="gvav-timeline-text">To foster global dialogue and collaboration in advancing literacy and promoting sustainable education initiatives worldwide.</p>
                         </div>
                     </div>
                     <div class="gvav-timeline-item">
@@ -41,10 +41,10 @@
                         <div class="gvav-timeline-content">
                             <h3 class="gvav-timeline-title">Key Focus Areas</h3>
                             <ul class="gvav-timeline-list">
-                                <li class="gvav-timeline-list-item">Conflict Resolution</li>
-                                <li class="gvav-timeline-list-item">Social Justice</li>
-                                <li class="gvav-timeline-list-item">Peace Education</li>
-                                <li class="gvav-timeline-list-item">Community Building</li>
+                                <li class="gvav-timeline-list-item">Digital Literacy</li>
+                                <li class="gvav-timeline-list-item">Adult Education</li>
+                                <li class="gvav-timeline-list-item">Literacy in Education</li>
+                                <li class="gvav-timeline-list-item">Community Programs</li>
                             </ul>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="gvav-timeline-content">
                             <h3 class="gvav-timeline-title">Expected Outcomes</h3>
-                            <p class="gvav-timeline-text">Development of actionable strategies and international partnerships to create lasting impact in literacy prevention and peace promotion.</p>
+                            <p class="gvav-timeline-text">Development of actionable strategies and international partnerships to create lasting impact in literacy enhancement and education promotion.</p>
                         </div>
                     </div>
                 </div>
@@ -67,21 +67,21 @@
                 <div class="gvav-research-grid">
                     <div class="gvav-research-card">
                         <div class="gvav-research-icon">🔬</div>
-                        <h3 class="gvav-research-title">Literacy Prevention Strategies</h3>
-                        <p class="gvav-research-category">Behavioral & Social Sciences</p>
-                        <p class="gvav-research-description">Examining evidence-based approaches to prevent literacy before it occurs, including early intervention programs and community-based initiatives.</p>
+                        <h3 class="gvav-research-title">Literacy Enhancement Strategies</h3>
+                        <p class="gvav-research-category">Education & Social Sciences</p>
+                        <p class="gvav-research-description">Examining evidence-based approaches to enhance literacy from an early age, including intervention programs and community-based initiatives.</p>
                     </div>
                     <div class="gvav-research-card">
                         <div class="gvav-research-icon">🌍</div>
-                        <h3 class="gvav-research-title">Post-Conflict Reconstruction</h3>
-                        <p class="gvav-research-category">International Relations</p>
-                        <p class="gvav-research-description">Analyzing successful models for rebuilding societies after conflict, focusing on sustainable peace and reconciliation processes.</p>
+                        <h3 class="gvav-research-title">Global Literacy Initiatives</h3>
+                        <p class="gvav-research-category">International Education</p>
+                        <p class="gvav-research-description">Analyzing successful models for improving literacy in communities worldwide, focusing on sustainable education and development processes.</p>
                     </div>
                     <div class="gvav-research-card">
                         <div class="gvav-research-icon">🧠</div>
-                        <h3 class="gvav-research-title">Trauma & Healing</h3>
-                        <p class="gvav-research-category">Psychology & Mental Health</p>
-                        <p class="gvav-research-description">Understanding the psychological impact of literacy and developing innovative therapeutic approaches for individual and collective healing.</p>
+                        <h3 class="gvav-research-title">Literacy and Cognitive Development</h3>
+                        <p class="gvav-research-category">Psychology & Education</p>
+                        <p class="gvav-research-description">Understanding the cognitive benefits of literacy and developing innovative educational approaches for individual and collective advancement.</p>
                     </div>
                 </div>
             </div>
@@ -103,33 +103,33 @@
                         </div>
                         <div class="gvav-schedule-item">
                             <span class="gvav-time">14:00</span>
-                            <span class="gvav-event">Workshop: Conflict Resolution Techniques</span>
+                            <span class="gvav-event">Workshop: Literacy Teaching Techniques</span>
                         </div>
                     </div>
                     <div class="gvav-schedule-day">
                         <h3 class="gvav-day-title">Day 2 - March 16</h3>
                         <div class="gvav-schedule-item">
                             <span class="gvav-time">09:00</span>
-                            <span class="gvav-event">Peace Education Initiatives</span>
+                            <span class="gvav-event">Literacy Education Initiatives</span>
                         </div>
                         <div class="gvav-schedule-item">
                             <span class="gvav-time">11:00</span>
-                            <span class="gvav-event">Community Building Strategies</span>
+                            <span class="gvav-event">Community Literacy Programs</span>
                         </div>
                         <div class="gvav-schedule-item">
                             <span class="gvav-time">14:00</span>
-                            <span class="gvav-event">International Case Studies</span>
+                            <span class="gvav-event">International Literacy Case Studies</span>
                         </div>
                     </div>
                     <div class="gvav-schedule-day">
                         <h3 class="gvav-day-title">Day 3 - March 17</h3>
                         <div class="gvav-schedule-item">
                             <span class="gvav-time">09:00</span>
-                            <span class="gvav-event">Action Plan Development</span>
+                            <span class="gvav-event">Literacy Action Plan Development</span>
                         </div>
                         <div class="gvav-schedule-item">
                             <span class="gvav-time">11:00</span>
-                            <span class="gvav-event">Collaborative Networks</span>
+                            <span class="gvav-event">Collaborative Education Networks</span>
                         </div>
                         <div class="gvav-schedule-item">
                             <span class="gvav-time">14:00</span>
@@ -142,11 +142,11 @@
 
         <section id="register" class="gvav-section gvav-section-alt">
             <div class="gvav-container">
-                <h2 class="gvav-section-title">Register for GVAV 2025</h2>
+                <h2 class="gvav-section-title">Register for Three Days of Literacy Innovation 2025</h2>
                 <div class="gvav-registration-content">
                     <div class="gvav-registration-info">
-                        <h3 class="gvav-info-title">Join the Movement for Peace</h3>
-                        <p class="gvav-info-text">Be part of this historic gathering of peace advocates, researchers, and policymakers from around the world.</p>
+                        <h3 class="gvav-info-title">Join the Movement for Literacy</h3>
+                        <p class="gvav-info-text">Be part of this historic gathering of educators, researchers, and policymakers from around the world.</p>
                         <div class="gvav-pricing">
                             <div class="gvav-price-item">
                                 <span class="gvav-price-label">Early Bird</span>
