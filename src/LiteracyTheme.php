@@ -50,16 +50,6 @@ class LiteracyTheme extends Theme
 				->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
 				->label(__('general.appearance_color')),
 
-			Textarea::make('description')
-			->label('Description')
-			->rows(4)
-			->maxLength(1000),
-
-			ColorPicker::make('description_text_color')
-				->regex('/^#?(([a-f0-9]{3}){1,2})$/i')
-				->label('Description Text Color')
-				->default('#ffffff'),
-
 			// Layouts
 			Builder::make('layouts')
 				->collapsible()
@@ -147,8 +137,6 @@ class LiteracyTheme extends Theme
 			'name_content' => $this->getSetting('name_content'),
 			'about' => $this->getSetting('about'),
 			'banner_buttons' => $this->getSetting('banner_buttons'),
-			'description' => $this->getSetting('description'),
-			'description_text_color' => $this->getSetting('description_text_color'),
 			'enable_theme' => $this->getSetting('enable_theme'),
 		];
 	}
