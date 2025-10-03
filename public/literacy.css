@@ -2166,10 +2166,6 @@ body {
     color: var(--color-text) !important;
 }
 
-.dark .latest-news-card .text-sm {
-    color: var(--color-text-secondary) !important;
-}
-
 /* Responsive adjustments for latest news */
 @media (max-width: 768px) {
     .latest-news-card {
