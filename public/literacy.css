@@ -14,6 +14,8 @@
     --color-navbar-border: rgba(255, 255, 255, 0.2);
     --color-card-bg: #ffffff;
     --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-footer-bg: var(--color-card-bg);
+    --color-footer-text: var(--color-text);
 }
 
 .dark {
@@ -27,6 +29,8 @@
     --color-navbar-border: rgba(48, 54, 61, 0.5);
     --color-card-bg: #21262d;
     --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-footer-bg: var(--color-bg-secondary);
+    --color-footer-text: var(--color-text);
 }
 
 body {
@@ -94,8 +98,8 @@ body {
 
 /* Contoh penggunaan di footer */
 .footer-container {
-    background-color: oklch(var(--p));
-    color: #e2e8f0;
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
     padding: 4rem 1rem;
     font-family: "Inter Tight", sans-serif;
 }
@@ -1148,8 +1152,8 @@ body {
 
 /* Footer Style */
 .footer-container {
-    background-color: oklch(var(--p));
-    color: #e2e8f0;
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
     padding: 4rem 1rem;
     font-family: "Inter Tight", sans-serif;
 }
@@ -1176,10 +1180,10 @@ body {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 1.25rem;
-    color: #ffffff;
+    color: var(--color-footer-text);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border-bottom: 2px solid #4a5568;
+    border-bottom: 2px solid var(--color-border);
     padding-bottom: 0.5rem;
 }
 
@@ -1199,6 +1203,16 @@ body {
 .footer-section a:hover {
     color: #90cdf4;
     text-decoration: underline;
+}
+
+/* Dark mode footer adjustments */
+.dark .footer-section h4 {
+    color: var(--color-footer-text);
+    border-bottom-color: var(--color-border);
+}
+
+.dark .footer-section a:hover {
+    color: #90cdf4;
 }
 
 .social-icons {
