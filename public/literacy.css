@@ -2224,6 +2224,12 @@ body {
     }
 }
 
+@media (max-width: 767px) {
+    .banner-content {
+        margin-left: 1.5rem;
+    }
+}
+
 /* Ensure proper spacing on all devices */
 .banner-info-card {
     z-index: 10;
@@ -2378,4 +2384,24 @@ body {
 .button-banner.button-banner-square:hover {
     opacity: 0.8 !important;
     transform: translateY(-1px) !important;
+}
+
+/* Banner spacing for tablet/medium screens (768px - 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .banner-hero-wrapper .banner-content {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        max-width: calc(100% - 4rem);
+    }
+    
+    .banner-info-card {
+        width: 85% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .banner-hero-wrapper > div:first-of-type {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
 }

@@ -39,6 +39,10 @@ class LiteracyTheme extends Theme
 			Toggle::make('enable_theme')
 				->label('Enable Dark/Light Theme Mode'),
 				
+			Toggle::make('enable_countdown')
+				->label('Enable Countdown Timer')
+				->helperText('When enabled, only countdown timer will be shown in banner card. When disabled, location and date information will be displayed instead.'),
+				
 			SpatieMediaLibraryFileUpload::make('images')
 				->collection('literacy-header')
 				->label('Upload Header Images')
@@ -138,6 +142,7 @@ class LiteracyTheme extends Theme
 			'about' => $this->getSetting('about'),
 			'banner_buttons' => $this->getSetting('banner_buttons'),
 			'enable_theme' => $this->getSetting('enable_theme'),
+			'enable_countdown' => $this->getSetting('enable_countdown'),
 		];
 	}
 }
