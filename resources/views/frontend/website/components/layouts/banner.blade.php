@@ -86,7 +86,7 @@
 
                         <!-- Buttons Section -->
                         @if($theme->getSetting('banner_buttons'))
-                            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 md:mt-4">
+                            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 md:mt-4 w-fit">
                                 @foreach($theme->getSetting('banner_buttons') ?? [] as $button)
                                     <a 
                                         @style([
@@ -94,7 +94,7 @@
                                             'color: ' . data_get($button, 'text_color') => data_get($button, 'text_color'), 
                                         ])
                                         href="{{ data_get($button, 'url') }}" 
-                                        class="button-banner button-banner-square text-sm md:text-base justify-start"
+                                        class="button-banner button-banner-square text-sm md:text-base w-full sm:w-fit"
                                         >
                                         {{ data_get($button, 'text') }}
                                     </a>
