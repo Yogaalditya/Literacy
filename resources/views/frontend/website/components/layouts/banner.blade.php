@@ -48,37 +48,42 @@
                             </h1>
                         </div>
 
-                        <!-- Date and Location Section -->
-                        <div class="space-y-3 md:space-y-4">
-                            <!-- Date Section -->
-                            <div class="flex items-start md:items-center">
-                                <div class="flex items-center banner-info-overlay px-3 py-2 rounded-lg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    </svg>
-                                    <span class="text-gray-800 font-semibold text-sm md:text-base">
-                                        @if($currentScheduledConference->date_start && $currentScheduledConference->date_end)
-                                            {{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }} - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}
-                                        @else
-                                            <span class="text-gray-400">Dates to be announced</span>
-                                        @endif
-                                    </span>
+                        <!-- Date and Location Section (Only shown when countdown is enabled) -->
+                        @if($theme->getSetting('enable_countdown'))
+                            <div class="space-y-3 md:space-y-4">
+                                <!-- Date Section -->
+                                <div class="flex items-start md:items-center">
+                                    <div class="flex items-center banner-info-overlay px-3 py-2 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <span class="text-gray-800 font-semibold text-sm md:text-base">
+                                            @if($currentScheduledConference->date_start && $currentScheduledConference->date_end)
+                                                {{ $currentScheduledConference->date_start->format(Setting::get('format_date')) }} - {{ $currentScheduledConference->date_end->format(Setting::get('format_date')) }}
+                                            @else
+                                                <span class="text-gray-400">Dates to be announced</span>
+                                            @endif
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Location Section -->
-                            <div class="flex items-start md:items-center">
-                                <div class="flex items-center banner-info-overlay px-3 py-2 rounded-lg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                    <span class="text-gray-800 font-semibold text-sm md:text-base">
-                                        {{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'Location to be announced') }}
-                                    </span>
+                                
+                                <!-- Location Section -->
+                                 @if ($currentScheduledConference->getMeta('location'))
+                                <div class="flex items-start md:items-center">
+                                    <div class="flex items-center banner-info-overlay px-3 py-2 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        <span class="text-gray-800 font-semibold text-sm md:text-base">
+                                            {{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'Location to be announced') }}
+                                        </span>
+                                    </div>
                                 </div>
+                                @endif
                             </div>
-                        </div>
+                        @endif
 
                         <!-- Buttons Section -->
                         @if($theme->getSetting('banner_buttons'))
@@ -152,6 +157,7 @@
                     <!-- Location and Date Components (Only when countdown is disabled) -->
                     
                     <!-- Location Component -->
+                    @if ($currentScheduledConference->getMeta('location'))
                     <div class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-auto">
                         <div class="flex items-center gap-2 mb-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -164,6 +170,7 @@
                             {{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}
                         </p>
                     </div>
+                    @endif
 
                     <!-- Start In Component -->
                     <div class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-auto border-t md:border-t-0 pt-4 md:pt-0">
