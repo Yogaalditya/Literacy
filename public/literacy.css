@@ -2109,14 +2109,16 @@ body {
     }
 
     .banner-literacy .banner-info-card {
-        position: static;
-        transform: none;
-        margin-top: 1.5rem;
-        width: 100%;
-        max-width: none;
-        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
-        left: auto;
-        bottom: auto;
+        position: relative !important;
+        transform: none !important;
+        margin-top: 1rem !important;
+        width: 95% !important;
+        max-width: none !important;
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12) !important;
+        left: auto !important;
+        bottom: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .banner-literacy .banner-info-card > div {
@@ -2129,12 +2131,51 @@ body {
     }
 
     .banner-literacy .banner-info-card svg {
-        height: 20px;
-        width: 20px;
+        height: 16px;
+        width: 16px;
     }
 
     .banner-literacy .banner-info-card p {
-        font-size: 0.95rem;
+        font-size: 0.875rem;
+    }
+    
+    .banner-literacy {
+        padding-bottom: 2rem;
+    }
+    
+    .banner-literacy .mb-16 {
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    .banner-hero-wrapper {
+        height: 60vh;
+        min-height: 350px;
+        max-height: 500px;
+    }
+}
+
+/* Mobile landscape adjustments */
+@media (max-width: 767px) and (orientation: landscape) {
+    .banner-hero-wrapper {
+        height: 80vh;
+        min-height: 300px;
+        max-height: 500px;
+    }
+    
+    .banner-literacy .section-line-1 h1 {
+        font-size: 1.25rem !important;
+    }
+    
+    .banner-info-card {
+        padding: 0.75rem !important;
+        gap: 0.5rem !important;
+    }
+    
+    .banner-info-card p {
+        font-size: 0.75rem !important;
     }
 }
 
@@ -2147,12 +2188,23 @@ body {
     }
 }
 
-/* Desktop adjustments */
+/* Desktop adjustments - Keep original size */
 @media (min-width: 1024px) {
     .banner-hero-wrapper {
         height: 100vh;
         min-height: 80%;
         max-height: 100%;
+    }
+}
+
+/* Ensure proper spacing on all devices */
+.banner-info-card {
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .banner-info-card {
+        z-index: 20;
     }
 }
 
@@ -2219,32 +2271,80 @@ body {
     }
 }
 
-/* Banner title customization */
+/* Banner title customization - Mobile First */
 .banner-literacy .section-line-1 h1 {
-    font-size: 2.8rem !important;
-    max-width: 600px !important;
-    margin-top: -2rem !important;
-    margin-left: 100px; 
+    font-size: 1.5rem !important;
+    max-width: 100% !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    line-height: 1.2 !important;
 }
 
 /* Responsive adjustments for banner title */
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
     .banner-literacy .section-line-1 h1 {
-        font-size: 2.5rem !important;
+        font-size: 2rem !important;
     }
 }
 
-/* Banner buttons positioning and styling */
-.banner-literacy .banner-buttons-container {
-    margin-left: 100px;
-    max-width: 600px;
+@media (min-width: 768px) {
+    .banner-literacy .section-line-1 h1 {
+        font-size: 2.5rem !important;
+        margin-left: 50px !important;
+        max-width: 80% !important;
+    }
 }
 
-/* Override existing button-banner rounded styling */
+@media (min-width: 1024px) {
+    .banner-literacy .section-line-1 h1 {
+        font-size: 2.8rem !important;
+        margin-left: 100px !important;
+        max-width: 600px !important;
+        margin-top: -2rem !important;
+    }
+}
+
+/* Banner buttons positioning and styling - Mobile First */
+.banner-literacy .banner-buttons-container {
+    margin-left: 0;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .banner-literacy .banner-buttons-container {
+        margin-left: 50px;
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .banner-literacy .banner-buttons-container {
+        margin-left: 100px;
+        max-width: 600px;
+    }
+}
+
+/* Override existing button-banner rounded styling - Responsive */
 .button-banner.button-banner-square {
     border-radius: 4px !important;
-    padding: 0.5rem 2.5rem !important;
+    padding: 0.5rem 1.5rem !important;
     transition: all 0.3s ease !important;
+    font-size: 0.875rem !important;
+    min-width: auto !important;
+    white-space: nowrap !important;
+}
+
+@media (min-width: 640px) {
+    .button-banner.button-banner-square {
+        padding: 0.5rem 2rem !important;
+        font-size: 1rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .button-banner.button-banner-square {
+        padding: 0.5rem 2.5rem !important;
+    }
 }
 
 /* Simple hover effect for banner buttons */
