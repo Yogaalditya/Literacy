@@ -20,15 +20,15 @@
             <!-- Content Overlay -->
             <div class="absolute inset-0 flex flex-col justify-center items-center px-4 pt-16 md:pt-20">
                 <div class="container mx-auto max-w-full">
-                    <div class="section-line-1 relative mb-8 xl:flex xl:items-start xl:gap-x-8">
-                        <div class="xl:w-3/5">
+                    <div class="section-line-1 relative mb-8">
+                        <div class="mb-6">
                             <h1 class="font-bold text-3xl lg:text-6xl tracking-tight drop-shadow-lg leading-tight break-words color-latest">
                                 {{ $currentScheduledConference->title }}
                             </h1>
                         </div>
                         @if($theme->getSetting('banner_buttons'))
-                            <div class="xl:w-2/5">
-                                <div class="flex flex-col flex-wrap sm:flex-row gap-4 mt-4">
+                            <div class="banner-buttons-container">
+                                <div class="flex flex-col flex-wrap sm:flex-row gap-4">
                                     @foreach($theme->getSetting('banner_buttons') ?? [] as $button)
                                         <a 
                                             @style([
@@ -36,7 +36,7 @@
                                                 'color: ' . data_get($button, 'text_color') => data_get($button, 'text_color'), 
                                             ])
                                             href="{{ data_get($button, 'url') }}" 
-                                            class="button-banner"
+                                            class="button-banner button-banner-square"
                                             >
                                             {{ data_get($button, 'text') }}
                                         </a>
@@ -104,15 +104,15 @@
         <!-- Fallback when no banner image -->
         <div class="container mx-auto px-4 pt-16 md:pt-20 pb-8">
             <div class="max-w-full">
-                <div class="section-line-1 relative mb-8 xl:flex xl:items-start xl:gap-x-8">
-                    <div class="xl:w-3/5">
+                <div class="section-line-1 relative mb-8">
+                    <div class="mb-6">
                         <h1 class="font-bold text-3xl lg:text-6xl tracking-tight drop-shadow-lg leading-tight break-words color-latest">
                             {{ $currentScheduledConference->title }}
                         </h1>
                     </div>
                     @if($theme->getSetting('banner_buttons'))
-                        <div class="xl:w-2/5">
-                            <div class="flex flex-col flex-wrap sm:flex-row gap-4 mt-4">
+                        <div class="banner-buttons-container">
+                            <div class="flex flex-col flex-wrap sm:flex-row gap-4">
                                 @foreach($theme->getSetting('banner_buttons') ?? [] as $button)
                                     <a 
                                         @style([
@@ -120,7 +120,7 @@
                                             'color: ' . data_get($button, 'text_color') => data_get($button, 'text_color'), 
                                         ])
                                         href="{{ data_get($button, 'url') }}" 
-                                        class="button-banner"
+                                        class="button-banner button-banner-square"
                                         >
                                         {{ data_get($button, 'text') }}
                                     </a>
