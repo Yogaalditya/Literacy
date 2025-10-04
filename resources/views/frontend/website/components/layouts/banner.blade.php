@@ -83,6 +83,41 @@
                             </div>
                         @endif
 
+                        <!-- Mobile Countdown Section (Only visible on mobile when countdown is enabled) -->
+                        @if($theme->getSetting('enable_countdown') && $countdownTarget)
+                            <div class="countdown-mobile-overlay space-y-3">
+                                <div class="banner-info-overlay px-3 py-2 rounded-lg inline-block">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        <span class="text-gray-800 font-semibold text-xs">Time Remaining</span>
+                                    </div>
+                                    <div 
+                                        class="grid grid-cols-4 gap-2"
+                                        data-countdown-target="{{ $countdownTarget->format('c') }}"
+                                    >
+                                        <div class="flex flex-col items-center">
+                                            <div id="days-mobile" class="text-xl font-bold text-gray-800">00</div>
+                                            <div class="text-xs text-gray-600">Days</div>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div id="hours-mobile" class="text-xl font-bold text-gray-800">00</div>
+                                            <div class="text-xs text-gray-600">Hours</div>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div id="minutes-mobile" class="text-xl font-bold text-gray-800">00</div>
+                                            <div class="text-xs text-gray-600">Mins</div>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div id="seconds-mobile" class="text-xl font-bold text-gray-800">00</div>
+                                            <div class="text-xs text-gray-600">Secs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+
                         <!-- Buttons Section -->
                         @if($theme->getSetting('banner_buttons'))
                             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 md:mt-4 w-fit">
@@ -112,29 +147,29 @@
                 @if($theme->getSetting('enable_countdown') && $countdownTarget)
                     <!-- Countdown Timer Component (Only when countdown is enabled) -->
                     <div 
-                        class="flex flex-col items-center text-center w-full sm:w-auto"
+                        class="flex flex-col items-center text-center w-full"
                         data-countdown-target="{{ $countdownTarget->format('c') }}"
                     >
-                        <div class="flex items-center gap-2 mb-3 sm:mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <p class="text-gray-500 text-xs sm:text-sm font-medium">Time Remaining</p>
+                            <p class="text-gray-500 text-sm sm:text-base font-medium">Time Remaining</p>
                         </div>
-                        <div class="countdown-con flex flex-row flex-wrap gap-[32px] sm:gap-[48px] md:gap-[64px] lg:gap-[150px] items-center justify-center">
-                            <div class="time-segment flex flex-col items-center">
+                        <div class="countdown-con grid grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center justify-center w-full max-w-4xl">
+                            <div class="time-segment flex flex-col items-center min-w-[50px] sm:min-w-[60px] md:min-w-[70px]">
                                 <div id="days" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">00</div>
                                 <div class="uppercase text-sm sm:text-base md:text-lg text-gray-500 font-medium">Days</div>
                             </div>
-                            <div class="time-segment flex flex-col items-center">
+                            <div class="time-segment flex flex-col items-center min-w-[50px] sm:min-w-[60px] md:min-w-[70px]">
                                 <div id="hours" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">00</div>
                                 <div class="uppercase text-sm sm:text-base md:text-lg text-gray-500 font-medium">Hours</div>
                             </div>
-                            <div class="time-segment flex flex-col items-center">
+                            <div class="time-segment flex flex-col items-center min-w-[50px] sm:min-w-[60px] md:min-w-[70px]">
                                 <div id="minutes" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">00</div>
                                 <div class="uppercase text-sm sm:text-base md:text-lg text-gray-500 font-medium">Minutes</div>
                             </div>
-                            <div class="time-segment flex flex-col items-center">
+                            <div class="time-segment flex flex-col items-center min-w-[50px] sm:min-w-[60px] md:min-w-[70px]">
                                 <div id="seconds" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">00</div>
                                 <div class="uppercase text-sm sm:text-base md:text-lg text-gray-500 font-medium">Seconds</div>
                             </div>
@@ -344,13 +379,33 @@
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById('days').innerText = days.toString().padStart(2, '0');
-            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            // Update desktop countdown
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            
+            if (daysEl) daysEl.innerText = days.toString().padStart(2, '0');
+            if (hoursEl) hoursEl.innerText = hours.toString().padStart(2, '0');
+            if (minutesEl) minutesEl.innerText = minutes.toString().padStart(2, '0');
+            if (secondsEl) secondsEl.innerText = seconds.toString().padStart(2, '0');
+
+            // Update mobile countdown
+            const daysMobileEl = document.getElementById('days-mobile');
+            const hoursMobileEl = document.getElementById('hours-mobile');
+            const minutesMobileEl = document.getElementById('minutes-mobile');
+            const secondsMobileEl = document.getElementById('seconds-mobile');
+            
+            if (daysMobileEl) daysMobileEl.innerText = days.toString().padStart(2, '0');
+            if (hoursMobileEl) hoursMobileEl.innerText = hours.toString().padStart(2, '0');
+            if (minutesMobileEl) minutesMobileEl.innerText = minutes.toString().padStart(2, '0');
+            if (secondsMobileEl) secondsMobileEl.innerText = seconds.toString().padStart(2, '0');
         } else {
             clearInterval(countdownTimer);
-            document.querySelector('.countdown-section').innerHTML = '<div class="text-2xl text-center text-gray-600">Event has ended!</div>';
+            const countdownSection = document.querySelector('.countdown-section');
+            if (countdownSection) {
+                countdownSection.innerHTML = '<div class="text-2xl text-center text-gray-600">Event has ended!</div>';
+            }
         }
     }
 

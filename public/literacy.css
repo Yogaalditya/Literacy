@@ -582,6 +582,37 @@ body {
     background-color: rgba(13, 17, 23, 0.75);
 }
 
+/* Hide banner info card on mobile (below 767px) */
+@media (max-width: 767px) {
+    .banner-info-card {
+        display: none !important;
+    }
+}
+
+/* Mobile countdown overlay styles */
+.countdown-mobile-overlay {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .countdown-mobile-overlay {
+        display: block;
+    }
+}
+
+/* Dark mode for mobile countdown */
+.dark .countdown-mobile-overlay .text-gray-800 {
+    color: var(--color-text) !important;
+}
+
+.dark .countdown-mobile-overlay .text-gray-600 {
+    color: var(--color-text-secondary) !important;
+}
+
+.dark .countdown-mobile-overlay svg {
+    color: var(--color-text) !important;
+}
+
 /* Partner Carousel Styles */
 .partner-carousel-container {
     position: relative;
@@ -2157,9 +2188,9 @@ body {
 /* Small mobile adjustments */
 @media (max-width: 480px) {
     .banner-hero-wrapper {
-        height: 60vh;
-        min-height: 350px;
-        max-height: 500px;
+        height: 75vh;
+        min-height: 500px;
+        max-height: 650px;
     }
 }
 
