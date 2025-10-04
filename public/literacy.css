@@ -80,20 +80,14 @@ body {
 
 .button-banner.register {
     border: 2px solid oklch(var(--p));
-    /* Border dengan warna utama */
     color: oklch(var(--p));
-    /* Teks dengan warna utama */
     background-color: transparent;
-    /* Latar belakang transparan */
 }
 
 .button-banner.register:hover {
     background-color: oklch(var(--p));
-    /* Latar belakang hover untuk Register Now */
     color: #fff;
-    /* Teks putih saat hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    /* hover:shadow-lg */
 }
 
 /* Contoh penggunaan di footer */
@@ -2194,6 +2188,39 @@ body {
         height: 100vh;
         min-height: 80%;
         max-height: 100%;
+    }
+}
+    
+/* Move banner content higher up on tablets */
+.banner-content {
+        top: 8rem !important; 
+        bottom: auto !important;
+}
+
+/* Banner content positioning - move content higher */
+.banner-content {
+    position: absolute !important;
+    top: 6rem !important; 
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    padding-top: 2rem !important;
+}
+
+/* Mobile specific adjustments for banner content */
+@media (max-width: 767px) {
+    .banner-content {
+        top: 100px !important;
+        padding-top: 1rem !important;
+    }
+}
+
+/* Desktop specific adjustments for banner content */
+@media (min-width: 1024px) {
+    .banner-content {
+        top: 300px !important;
+        margin-left: 100px !important;
+        padding-top: 3rem !important;
     }
 }
 
