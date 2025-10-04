@@ -69,7 +69,6 @@
 
                                 
                                 <!-- Location Section -->
-                                 @if ($currentScheduledConference->getMeta('location'))
                                 <div class="flex items-start md:items-center">
                                     <div class="flex items-center banner-info-overlay px-3 py-2 rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,7 +80,6 @@
                                         </span>
                                     </div>
                                 </div>
-                                @endif
                             </div>
                         @endif
 
@@ -157,7 +155,6 @@
                     <!-- Location and Date Components (Only when countdown is disabled) -->
                     
                     <!-- Location Component -->
-                    @if ($currentScheduledConference->getMeta('location'))
                     <div class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-auto">
                         <div class="flex items-center gap-2 mb-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -170,7 +167,6 @@
                             {{ new Illuminate\Support\HtmlString($currentScheduledConference->getMeta('location') ?? 'To be announced') }}
                         </p>
                     </div>
-                    @endif
 
                     <!-- Start In Component -->
                     <div class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-auto border-t md:border-t-0 pt-4 md:pt-0">
