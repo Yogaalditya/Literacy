@@ -339,12 +339,20 @@ body {
     background-color: var(--color-card-bg) !important;
 }
 
+.dark .bg-white\/80 {
+    background-color: rgba(33, 38, 45, 0.8) !important;
+}
+
 .dark .border-white\/20 {
     border-color: var(--color-border) !important;
 }
 
 .dark .bg-white\/10 {
     background-color: var(--color-navbar-bg) !important;
+}
+
+.dark .border-gray-200 {
+    border-color: var(--color-border) !important;
 }
 
 /* Banner info card dark mode styles */
@@ -580,6 +588,23 @@ body {
 
 .dark .banner-info-overlay {
     background-color: rgba(13, 17, 23, 0.75);
+}
+
+/* Dark mode support for banner date and location when no banner image */
+.dark .banner-content .text-gray-800 {
+    color: var(--color-text) !important;
+}
+
+.dark .banner-content .text-gray-600 {
+    color: var(--color-text-secondary) !important;
+}
+
+.dark .banner-content .text-gray-400 {
+    color: var(--color-text-secondary) !important;
+}
+
+.dark .banner-content svg {
+    color: var(--color-text) !important;
 }
 
 /* Hide banner info card on mobile (below 767px) */
