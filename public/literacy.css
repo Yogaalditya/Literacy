@@ -2313,13 +2313,7 @@ body {
     }
 }
     
-/* Move banner content higher up on tablets */
-.banner-content {
-        top: 8rem !important; 
-        bottom: auto !important;
-}
-
-/* Banner content positioning - move content higher */
+/* Banner content positioning - base styles */
 .banner-content {
     position: absolute !important;
     top: 6rem !important; 
@@ -2338,18 +2332,19 @@ body {
     }
 }
 
+/* Tablet specific adjustments for banner content */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .banner-content {
+        top: 90px !important;
+    }
+}
+
 /* Desktop specific adjustments for banner content */
 @media (min-width: 1024px) {
     .banner-content {
         top: 300px !important;
         margin-left: 100px !important;
         padding-top: 3rem !important;
-    }
-}
-
-@media (min-width: 768px) {
-    .banner-content {
-        top: 130px !important;
     }
 }
 
