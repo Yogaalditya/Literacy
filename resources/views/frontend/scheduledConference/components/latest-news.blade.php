@@ -16,7 +16,7 @@
 			<!-- Load More Button -->
 			<div>
 				<a href="{{ route(App\Frontend\ScheduledConference\Pages\Announcements::getRouteName('scheduledConference')) }}"
-					class="inline-flex items-center justify-center px-8 py-3 text-base font-semibold rounded-lg transition-all duration-300 hover:border-accent hover:text-accent"
+					class="inline-flex items-center justify-center px-8 py-3 text-base font-semibold rounded-lg transition-all duration-300 hover:border-accent hover:text-accent whitespace-nowrap"
 					style="background-color: var(--color-card-bg); color: var(--color-text); border: 2px solid var(--color-border);"
 					onmouseover="this.style.borderColor='oklch(var(--p))'; this.style.color='oklch(var(--p))';"
 					onmouseout="this.style.borderColor='var(--color-border)'; this.style.color='var(--color-text)';">
