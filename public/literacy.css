@@ -2268,6 +2268,13 @@ body {
     margin-bottom: 0 !important;
 }
 
+/* Desktop only: Higher position for better visibility */
+@media (min-width: 1024px) {
+    .banner-info-card {
+        bottom: 2rem !important;
+    }
+}
+
 /* Make banner image scale smoothly with container */
 .banner-image-hero {
     min-height: 100%;
