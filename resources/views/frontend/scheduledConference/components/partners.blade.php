@@ -95,16 +95,19 @@ foreach ($partners as $partner) {
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
+			const totalPartners = {{ $allPartners->count() }};
 			new Splide('#partner-slider', {
-				type: 'loop',
+				type: totalPartners > 1 ? 'loop' : 'slide',
 				focus: 'center',
 				perPage: 3,
-				autoplay: true,
+				autoplay: totalPartners > 1,
 				pagination: false,
+				arrows: totalPartners > 1,
+				drag: totalPartners > 1,
 				breakpoints: {
 					768: {
 						perPage: 1,
-						pagination: true,
+						pagination: totalPartners > 1,
 					},
 				},
 			}).mount();

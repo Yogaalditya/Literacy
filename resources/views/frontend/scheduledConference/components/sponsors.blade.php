@@ -116,16 +116,19 @@ foreach ($sponsorLevels as $sponsorLevel) {
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
+			const totalSponsors = {{ $allSponsors->count() }};
 			new Splide('#sponsor-slider', {
-				type: 'loop',
+				type: totalSponsors > 1 ? 'loop' : 'slide',
 				focus: 'center',
 				perPage: 3,
-				autoplay: true,
+				autoplay: totalSponsors > 1,
 				pagination: false,
+				arrows: totalSponsors > 1,
+				drag: totalSponsors > 1,
 				breakpoints: {
 					768: {
 						perPage: 1,
-						pagination: true,
+						pagination: totalSponsors > 1,
 					},
 				},
 			}).mount();
