@@ -29,7 +29,7 @@
     --color-navbar-border: rgba(48, 54, 61, 0.5);
     --color-card-bg: #21262d;
     --color-shadow: rgba(0, 0, 0, 0.3);
-    --color-footer-bg: var(--color-bg-secondary);
+    --color-footer-bg: var(--color-card-bg);
     --color-footer-text: var(--color-text);
 }
 
@@ -879,6 +879,13 @@ body {
     color: var(--color-text) !important;
 }
 
+/* Sponsors, Partners, and Latest News sections use secondary background */
+#sponsors,
+#partners,
+.latest-news {
+    background-color: var(--color-bg-secondary) !important;
+}
+
 .gvav-container,
 .gvav-timeline {
     background-color: transparent !important;
@@ -946,6 +953,13 @@ body {
 .dark .gvav-section-alt {
     background-color: var(--color-bg-secondary) !important;
     color: var(--color-text) !important;
+}
+
+/* Ensure sponsors, partners, and latest news sections use secondary background in dark mode too */
+.dark #sponsors,
+.dark #partners,
+.dark .latest-news {
+    background-color: var(--color-bg-secondary) !important;
 }
 
 .dark .gvav-container {
