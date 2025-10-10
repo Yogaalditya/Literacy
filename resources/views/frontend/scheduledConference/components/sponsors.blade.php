@@ -24,7 +24,7 @@ foreach ($sponsorLevels as $index => $sponsorLevel) {
                 $allSponsors->push([
                     'sponsor' => $sponsor,
                     'level' => $sponsorLevel->name,
-                    'levelId' => $sponsorLevel->id ?? ($index + 1)
+                    'levelId' => $index + 1
                 ]);
             }
         }
