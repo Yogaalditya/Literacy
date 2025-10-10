@@ -17,13 +17,14 @@ if ($sponsorsWithoutLevel->isNotEmpty()) {
 }
 
 // Add sponsors with levels
-foreach ($sponsorLevels as $sponsorLevel) {
+foreach ($sponsorLevels as $index => $sponsorLevel) {
     if ($sponsorLevel->stakeholders->isNotEmpty()) {
         foreach ($sponsorLevel->stakeholders as $sponsor) {
             if ($sponsor->getFirstMedia('logo')) {
                 $allSponsors->push([
                     'sponsor' => $sponsor,
-                    'level' => $sponsorLevel->name
+                    'level' => $sponsorLevel->name,
+                    'levelId' => $sponsorLevel->id ?? ($index + 1)
                 ]);
             }
         }
@@ -48,12 +49,27 @@ foreach ($sponsorLevels as $sponsorLevel) {
 						@php 
 							$sponsor = $item['sponsor'];
 							$level = $item['level'];
-							$tag = $sponsor->getMeta('url') ? 'a' : 'div'; 
+							$levelId = $item['levelId'] ?? null;
+							$tag = $sponsor->getMeta('url') ? 'a' : 'div';
+							
+							// Determine level class based on ID
+							$levelClass = '';
+							if ($levelId == 1) {
+								$levelClass = 'sponsor-level-gold';
+							} elseif ($levelId == 2) {
+								$levelClass = 'sponsor-level-silver';
+							} elseif ($levelId == 3) {
+								$levelClass = 'sponsor-level-bronze';
+							} else {
+								$levelClass = 'sponsor-level-default';
+							}
 						@endphp
 						<li class="splide__slide">
 							<div class="text-center">
 								@if($level)
-									<h3 class="text-xl font-medium mb-6" style="color: var(--color-text);">{{ $level }}</h3>
+									<h3 class="text-xl font-medium mb-6 {{ $levelClass }}">{{ $level }}</h3>
+								@else
+									<h3 class="text-xl font-medium mb-6" style="visibility: hidden;">Placeholder</h3>
 								@endif
 								<{{$tag}} 
 									@if($sponsor->getMeta('url'))
@@ -111,6 +127,56 @@ foreach ($sponsorLevels as $sponsorLevel) {
 			background: var(--color-text);
 			opacity: 1;
 			transform: scale(1.2);
+		}
+
+		/* Sponsor Level Colors - Gemerlang */
+		.sponsor-level-gold {
+			background: linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FFD700 50%, #FFED4E 75%, #FFD700 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			background-size: 200% auto;
+			animation: shimmer 3s linear infinite;
+			font-weight: 700;
+			filter: drop-shadow(0 2px 4px rgba(218, 165, 32, 0.6)) drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+		}
+
+		.sponsor-level-silver {
+			background: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 25%, #C0C0C0 50%, #F5F5F5 75%, #C0C0C0 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			background-size: 200% auto;
+			animation: shimmer 3s linear infinite;
+			font-weight: 700;
+			filter: drop-shadow(0 2px 4px rgba(128, 128, 128, 0.6)) drop-shadow(0 0 8px rgba(192, 192, 192, 0.4));
+		}
+
+		.sponsor-level-bronze {
+			background: linear-gradient(135deg, #CD7F32 0%, #B87333 25%, #CD7F32 50%, #E59866 75%, #CD7F32 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			background-size: 200% auto;
+			animation: shimmer 3s linear infinite;
+			font-weight: 700;
+			filter: drop-shadow(0 2px 4px rgba(160, 82, 45, 0.6)) drop-shadow(0 0 8px rgba(205, 127, 50, 0.4));
+		}
+
+		.sponsor-level-default {
+			color: var(--color-text);
+		}
+
+		@keyframes shimmer {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
 		}
 	</style>
 
