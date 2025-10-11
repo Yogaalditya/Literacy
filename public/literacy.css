@@ -5,12 +5,12 @@
     font-family: "Inter Tight", sans-serif;
     
     /* Light Mode Colors */
-    --color-bg: #ffffff;
-    --color-bg-secondary: #FAFAFA;
+    --color-bg: #FAFAFA;
+    --color-bg-secondary: #ffffff;
     --color-text: #000000;
     --color-text-secondary: #4b5563;
     --color-border: #d0d0d0;
-    --color-navbar-bg: var(--color-bg);
+    --color-navbar-bg: var(--color-bg-secondary);
     --color-navbar-border: var(--color-border);
     --color-card-bg: #ffffff;
     --color-shadow: rgba(0, 0, 0, 0.1);
@@ -20,13 +20,13 @@
 
 .dark {
     /* Dark Mode Colors */
-    --color-bg: #0d1117;
-    --color-bg-secondary: #161b22;
+    --color-bg: #161b22;
+    --color-bg-secondary: #0d1117;
     --color-text: #c9d1d9;
     --color-text-secondary: #8b949e;
     --color-border: #30363d;
-    --color-navbar-bg: rgba(13, 17, 23, 0.8);
-    --color-navbar-border: rgba(48, 54, 61, 0.5);
+    --color-navbar-bg: var(--color-bg-secondary);
+    --color-navbar-border: var(--color-border);
     --color-card-bg: #21262d;
     --color-shadow: rgba(0, 0, 0, 0.3);
     --color-footer-bg: var(--color-card-bg);
@@ -34,7 +34,7 @@
 }
 
 body {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg);
     color: var(--color-text);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -75,7 +75,6 @@ body {
 
 .button-banner.submit:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    /* hover:shadow-lg */
 }
 
 .button-banner.register {
@@ -883,7 +882,7 @@ body {
 #sponsors,
 #partners,
 .latest-news {
-    background-color: var(--color-bg-secondary) !important;
+    background-color: var(--color-bg) !important;
 }
 
 .gvav-container,
@@ -902,16 +901,16 @@ body {
 
 /* Dark mode styles for GVAV template */
 .dark .gvav-body {
-    background-color: var(--color-bg) !important;
+    background-color: var(--color-bg-secondary) !important;
     color: var(--color-text) !important;
 }
 
 .dark .gvav-main {
-    background-color: var(--color-bg) !important;
+    background-color: var(--color-bg-secondary) !important;
 }
 
 .dark .gvav-hero {
-    background-color: var(--color-bg) !important;
+    background-color: var(--color-bg-secondary) !important;
     color: var(--color-text) !important;
 }
 
@@ -946,12 +945,12 @@ body {
 }
 
 .dark .gvav-section {
-    background-color: var(--color-bg) !important;
+    background-color: var(--color-bg-secondary) !important;
     color: var(--color-text) !important;
 }
 
 .dark .gvav-section-alt {
-    background-color: var(--color-bg-secondary) !important;
+    background-color: var(--color-bg) !important;
     color: var(--color-text) !important;
 }
 
@@ -959,7 +958,7 @@ body {
 .dark #sponsors,
 .dark #partners,
 .dark .latest-news {
-    background-color: var(--color-bg-secondary) !important;
+    background-color: var(--color-bg) !important;
 }
 
 .dark .gvav-container {
@@ -1136,7 +1135,7 @@ body {
 }
 
 .dark .gvav-input {
-    background-color: var(--color-bg-secondary) !important;
+    background-color: var(--color-bg) !important;
     border-color: var(--color-border) !important;
     color: var(--color-text) !important;
 }
@@ -1146,7 +1145,7 @@ body {
 }
 
 .dark .gvav-select {
-    background-color: var(--color-bg-secondary) !important;
+    background-color: var(--color-bg) !important;
     border-color: var(--color-border) !important;
     color: var(--color-text) !important;
 }

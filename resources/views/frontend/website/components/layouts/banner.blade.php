@@ -30,7 +30,7 @@
     @endphp
 
     <!-- Hero Banner Wrapper - Always present with consistent layout -->
-    <div class="banner-hero-wrapper relative w-full overflow-hidden" style="min-height: 500px; background-color: var(--color-bg);">
+    <div class="banner-hero-wrapper relative w-full overflow-hidden" style="min-height: 500px; background-color: var(--color-bg-secondary);">
         @if($bannerUrl)
             <!-- Main Banner Image -->
             <img src="{{ $bannerUrl }}" 

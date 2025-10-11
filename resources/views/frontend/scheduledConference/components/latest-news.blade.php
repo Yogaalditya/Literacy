@@ -56,7 +56,7 @@
 									@if($imageUrl)
 										<img src="{{ $imageUrl }}" alt="{{ $announcement->title }}" class="w-full h-full object-cover" loading="lazy">
 									@else
-										<div class="w-full h-full flex items-center justify-center" style="background-color: var(--color-bg-secondary);">
+										<div class="w-full h-full flex items-center justify-center" style="background-color: var(--color-bg);">
 											<span class="text-xl" style="color: var(--color-text-secondary);">No Image Available</span>
 										</div>
 									@endif
