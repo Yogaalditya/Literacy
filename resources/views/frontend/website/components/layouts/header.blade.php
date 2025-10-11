@@ -5,11 +5,23 @@
 @endphp
 
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
+    <!-- Logo (non-sticky, hanya untuk mobile) -->
+    <div class="lg:hidden absolute top-[22px] left-16 z-40">
+        <x-literacy::logo
+            :headerLogo="$headerLogo"
+            :homeUrl="$homeUrl"
+            :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')"
+            class="no-underline-hover text-2xl sm:text-2xl font-semibold text-gray-800"
+        />
+    </div>
+    
     <div id="navbar" class="sticky-navbar top-0 z-50 w-full text-gray-800 transition-all duration-300 relative">
-        <div class="absolute top-[22px] left-5 flex items-center gap-3">
-            <div class="lg:hidden">
-                <x-literacy::navigation-menu-mobile />
-            </div>
+        <!-- Menu Icon Sidebar (sticky, untuk mobile) -->
+        <div class="absolute top-[22px] left-5 lg:hidden">
+            <x-literacy::navigation-menu-mobile />
+        </div>
+        <!-- Logo untuk desktop (sticky) -->
+        <div class="absolute top-[22px] left-5 hidden lg:flex items-center gap-3">
             <x-literacy::logo
                 :headerLogo="$headerLogo"
                 :homeUrl="$homeUrl"
