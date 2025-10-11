@@ -9,7 +9,7 @@
         {{ $attributes->merge(['class' => 'inline-flex items-center no-underline-hover']) }}
         :href="$homeUrl"
     >
-        <div class="relative h-12 min-w-[100px] max-w-[200px]"> {{-- Sesuaikan ukuran --}}
+        <div class="relative h-8 sm:h-10 lg:h-12 min-w-[80px] sm:min-w-[100px] max-w-[150px] sm:max-w-[200px]"> {{-- Responsive logo size --}}
             <img
                 src="{{ $headerLogo }}"
                 alt="{{ $headerLogoAltText }}"

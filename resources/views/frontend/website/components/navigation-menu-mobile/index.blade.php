@@ -28,7 +28,10 @@
                                     :headerLogo="$headerLogo" 
                                     :homeUrl="$homeUrl" 
                                     :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')" 
-                                    class="font-bold text-white" />
+                                    @class([
+                                        'font-bold text-white',
+                                        '-ml-6' => $headerLogo, // Image logo lebih ke kiri
+                                    ]) />
                                     <div class="flex items-center gap-2">
                                         <!-- Dark/Light Mode Toggle Button -->
                                         @if(App\Facades\Plugin::getPlugin('Literacy')->getSetting('enable_theme'))

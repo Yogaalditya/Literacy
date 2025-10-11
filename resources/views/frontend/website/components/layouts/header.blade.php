@@ -6,7 +6,11 @@
 
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
     <!-- Logo (non-sticky, hanya untuk mobile) -->
-    <div class="lg:hidden absolute top-[22px] left-16 z-40">
+    <div @class([
+        'lg:hidden absolute top-[22px] z-40',
+        'left-8' => $headerLogo, // Image logo lebih ke kiri
+        'left-16' => !$headerLogo, // Text logo posisi normal
+    ])>
         <x-literacy::logo
             :headerLogo="$headerLogo"
             :homeUrl="$homeUrl"
