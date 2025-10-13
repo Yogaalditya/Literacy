@@ -5,7 +5,7 @@
 			@foreach ($currentScheduledConference->speakerRoles as $role)
 				@if ($role->speakers->isNotEmpty())
 					<div class="flex flex-col items-center">
-						<h3 class="text-4xl font-bold text-gray-800 mb-16 text-center section-title-with-underline">{{ $role->name }}
+						<h3 class="text-4xl font-bold mb-16 text-center section-title-with-underline" style="color: var(--color-text);">{{ $role->name }}
 						</h3>
 						<div class="speakers-grid">
 							@foreach ($role->speakers as $speaker)
