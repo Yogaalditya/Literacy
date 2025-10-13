@@ -7,7 +7,7 @@
     /* Light Mode Colors */
     --color-bg: #FAFAFA;
     --color-bg-secondary: #ffffff;
-    --color-text: #000000;
+    --color-text: #495057;
     --color-text-secondary: #4b5563;
     --color-border: #d0d0d0;
     --color-navbar-bg: var(--color-bg-secondary);
@@ -460,6 +460,96 @@ body {
     display: none !important;
 }
 
+/* Logo text gradient effect */
+.logo-text-gradient {
+    color: var(--color-text);
+    background: radial-gradient(circle at 30% 20%, oklch(var(--p)), var(--color-text) 40%, oklch(var(--p)) 70%, var(--color-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.dark .logo-text-gradient {
+    color: var(--color-text);
+    background: radial-gradient(circle at 30% 20%, oklch(var(--p)), var(--color-text) 40%, oklch(var(--p)) 70%, var(--color-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShiftDark 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradientShiftDark {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hover effect for logo gradient */
+.logo-text-gradient:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+    animation-duration: 2s;
+}
+
+/* Countdown text gradient effect */
+.text-gradient {
+    color: var(--color-text);
+    background: radial-gradient(circle at 30% 20%, oklch(var(--p)), var(--color-text) 40%, oklch(var(--p)) 70%, var(--color-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.dark .text-gradient {
+    color: var(--color-text);
+    background: radial-gradient(circle at 30% 20%, oklch(var(--p)), var(--color-text) 40%, oklch(var(--p)) 70%, var(--color-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShiftDark 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
 /* Sponsor Carousel Styles */
 .sponsor-carousel-container {
     position: relative;
@@ -874,7 +964,7 @@ body {
 
 /* About section: only cards (.gvav-timeline-item) are colored; outside stays outer background */
 .gvav-section {
-    background-color: transparent !important; /* inherit outer (body) background */
+    background-color: var(--color-bg-secondary) !important; /* inherit outer (body) background */
     color: var(--color-text) !important;
 }
 
@@ -1652,13 +1742,11 @@ body {
 
 .gvav-section-title {
     font-size: 2.5rem;
-    font-weight: 800;
     text-align: center;
     margin-bottom: 3rem;
-    background: linear-gradient(135deg, #1e293b, #334155);
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: var(--color-text);
     position: relative;
     letter-spacing: -0.02em;
 }

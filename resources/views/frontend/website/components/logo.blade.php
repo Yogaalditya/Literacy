@@ -26,6 +26,6 @@
             '
         ]) }}
     >
-        {{ $headerLogoAltText }}
+        <span class="logo-text-gradient font-bold">{{ $headerLogoAltText }}</span>
     </x-literacy::link>
 @endif

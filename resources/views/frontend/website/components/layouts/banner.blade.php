@@ -99,19 +99,19 @@
                                     data-countdown-target="{{ $countdownTarget->format('c') }}"
                                 >
                                     <div class="flex flex-col items-center">
-                                        <div id="days-mobile" class="text-xl font-bold text-gray-800">00</div>
+                                        <div id="days-mobile" class="text-gradient text-xl font-bold">00</div>
                                         <div class="text-xs text-gray-600 tracking-wide">Days</div>
                                     </div>
                                     <div class="flex flex-col items-center">
-                                        <div id="hours-mobile" class="text-xl font-bold text-gray-800">00</div>
+                                        <div id="hours-mobile" class="text-gradient text-xl font-bold">00</div>
                                         <div class="text-xs text-gray-600 tracking-wide">Hours</div>
                                     </div>
                                     <div class="flex flex-col items-center">
-                                        <div id="minutes-mobile" class="text-xl font-bold text-gray-800">00</div>
+                                        <div id="minutes-mobile" class="text-gradient text-xl font-bold">00</div>
                                         <div class="text-xs text-gray-600 tracking-wide">Mins</div>
                                     </div>
                                     <div class="flex flex-col items-center">
-                                        <div id="seconds-mobile" class="text-xl font-bold text-gray-800">00</div>
+                                        <div id="seconds-mobile" class="text-gradient text-xl font-bold">00</div>
                                         <div class="text-xs text-gray-600 tracking-wide">Secs</div>
                                     </div>
                                 </div>
@@ -157,19 +157,19 @@
                     </div>
                     <div class="countdown-con grid grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center justify-center w-full max-w-4xl">
                         <div class="time-segment flex flex-col items-center min-w-[50px] sm:min-w-[60px] md:min-w-[70px]">
-                            <div id="days" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">00</div>
+                            <div id="days" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">00</div>
                             <div class="uppercase text-sm sm:text-base md:text-lg text-gray-500 font-medium tracking-wider mb-4">Days</div>
                         </div>
                         <div class="time-segment flex flex-col items-center min-w-[50px] sm:min-w-[60px] md:min-w-[70px]">
-                            <div id="hours" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">00</div>
+                            <div id="hours" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">00</div>
                             <div class="uppercase text-sm sm:text-base md:text-lg text-gray-500 font-medium tracking-wider mb-4">Hours</div>
                         </div>
                         <div class="time-segment flex flex-col items-center min-w-[50px] sm:min-w-[60px] md:min-w-[70px]">
-                            <div id="minutes" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">00</div>
+                            <div id="minutes" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">00</div>
                             <div class="uppercase text-sm sm:text-base md:text-lg text-gray-500 font-medium tracking-wider mb-4">Minutes</div>
                         </div>
                         <div class="time-segment flex flex-col items-center min-w-[50px] sm:min-w-[60px] md:min-w-[70px]">
-                            <div id="seconds" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">00</div>
+                            <div id="seconds" class="text-gradient text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">00</div>
                             <div class="uppercase text-sm sm:text-base md:text-lg text-gray-500 font-medium tracking-wider mb-4">Seconds</div>
                         </div>
                     </div>
@@ -319,14 +319,6 @@
     .countdown-con {
         min-height: 80px;
     }
-}
-
-/* Text gradient effect for countdown numbers */
-.text-gradient {
-    background: linear-gradient(135deg, oklch(var(--p)), #667eea);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 </style>
 
