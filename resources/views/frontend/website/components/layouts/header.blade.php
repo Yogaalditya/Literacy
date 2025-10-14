@@ -7,7 +7,7 @@
 @if(app()->getCurrentConference() || app()->getCurrentScheduledConference())
     <!-- Logo (non-sticky, hanya untuk mobile) -->
     <div @class([
-        'lg:hidden absolute top-[22px] z-40',
+        'lg:hidden absolute top-[18px] z-40 max-w-[100%] pr-2',
         'left-8' => $headerLogo, // Image logo lebih ke kiri
         'left-16' => !$headerLogo, // Text logo posisi normal
     ])>
@@ -15,7 +15,7 @@
             :headerLogo="$headerLogo"
             :homeUrl="$homeUrl"
             :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')"
-            class="no-underline-hover text-2xl sm:text-2xl font-semibold"
+            class="no-underline-hover text-xl sm:text-xl font-semibold"
         />
     </div>
     
@@ -25,12 +25,12 @@
             <x-literacy::navigation-menu-mobile />
         </div>
         <!-- Logo untuk desktop (sticky) -->
-        <div class="absolute top-[22px] left-5 hidden lg:flex items-center gap-3">
+        <div class="absolute top-[18px] left-5 hidden lg:flex items-center gap-3 max-w-[35%] xl:max-w-[38%] pr-4">
             <x-literacy::logo
                 :headerLogo="$headerLogo"
                 :homeUrl="$homeUrl"
                 :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')"
-                class="no-underline-hover text-2xl sm:text-2xl font-semibold text-gray-800"
+                class="no-underline-hover text-xl xl:text-2xl font-semibold text-gray-800"
             />
         </div>
         <div class="navbar-literacy container mx-auto px-4 lg:px-8 py-3">

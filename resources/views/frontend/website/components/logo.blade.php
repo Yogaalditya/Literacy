@@ -23,9 +23,10 @@
         {{ $attributes->merge([
             'class' => '
                 no-underline-hover
+                logo-text-wrapper
             '
         ]) }}
     >
-        <span class="logo-text-gradient font-bold">{{ $headerLogoAltText }}</span>
+        <span class="logo-text-gradient font-bold logo-text-responsive">{{ $headerLogoAltText }}</span>
     </x-literacy::link>
 @endif
