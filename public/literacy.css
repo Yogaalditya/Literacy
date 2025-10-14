@@ -112,7 +112,7 @@ body {
 }
 
 .footer-container .copyright a {
-    color: oklch(var(--p));
+    color: var(--color-text);
     transition: opacity 0.3s ease;
 }
 
@@ -1102,7 +1102,7 @@ body {
 }
 
 .dark .gvav-hero-date {
-    color: var(--color-text-secondary) !important;
+    color: oklch(var(--p)) !important;
 }
 
 .dark .gvav-cta-button {
@@ -1822,7 +1822,7 @@ body {
     margin-bottom: 3rem;
     -webkit-background-clip: text;
     background-clip: text;
-    color: var(--color-text);
+    color: var(--color-text) !important;
     position: relative;
     letter-spacing: -0.02em;
 }
@@ -1923,7 +1923,7 @@ body {
 }
 
 .gvav-timeline-content {
-    background: white;
+    background-color: var(--color-card-bg);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -2063,13 +2063,13 @@ body {
 }
 
 .gvav-research-card {
-    background: white;
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
+    box-shadow: 0 4px 6px var(--color-shadow) !important;
     padding: 2rem;
     border-radius: 12px;
     text-align: left;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid oklch(var(--p));
 }
 
 .gvav-research-card:hover {
@@ -2123,7 +2123,7 @@ body {
 .gvav-day-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: oklch(var(--p));
+    color: var(--color-text) !important;
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -2162,7 +2162,7 @@ body {
 .gvav-info-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1e293b;
+    color: var(--color-text) !important;
     margin-bottom: 1rem;
 }
 
