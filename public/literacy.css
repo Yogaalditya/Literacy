@@ -167,7 +167,7 @@ body {
 
 .navbar-custom-literacy a:hover {
     transform: translateY(-2px);
-    color: oklch(var(--p)) !important;
+    color: var(--color-text) !important;
 }
 
 
@@ -253,7 +253,7 @@ body {
 
 .dark .navbar-dropdown-content a:hover {
     background-color: var(--color-border) !important;
-    color: oklch(var(--p)) !important;
+    color: var(--color-text) !important;
 }
 
 /* Mobile Navigation Menu Styles */
