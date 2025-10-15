@@ -1,5 +1,5 @@
 <x-literacy::layouts.main class="min-h-screen">
-    <div class="max-w-md mx-auto px-4 py-8">
+    <div class="max-w-lg mx-auto py-8">
         <div class="mb-6">
             <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
         </div>
@@ -66,7 +66,7 @@
                 <div class="flex gap-3 pt-4">
                     <button 
                         type="submit" 
-                        class="login-button-primary" 
+                        class="login-button-primary rounded-xl" 
                         wire:loading.attr="disabled"
                     >
                         <span class="loading loading-spinner loading-xs" wire:loading></span>
@@ -74,7 +74,7 @@
                     </button>
                     @if($registerUrl)
                         <x-literacy::link 
-                            class="login-button-secondary" 
+                            class="login-button-secondary rounded-xl" 
                             :href="$registerUrl"
                         >
                             {{ __('general.register') }}

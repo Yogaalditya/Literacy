@@ -1,5 +1,5 @@
-<x-literacy::layouts.main class="min-h-screen bg-gray-50/50 py-16 px-4">
-    <div class="max-w-lg mx-auto">
+<x-literacy::layouts.main class="min-h-screen">
+    <div class="max-w-lg mx-auto py-8">
         <div class="mb-8">
             <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-500 hover:text-gray-700 transition-colors" />
         </div>
