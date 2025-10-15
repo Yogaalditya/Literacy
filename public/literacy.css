@@ -567,8 +567,10 @@ body {
 }
 
 .login-link {
-    font-size: 0.875rem;
-    color: oklch(var(--p));
+    font-size: 0.815rem;
+    color: var(--color-text);
+    text-decoration: underline;
+    font-weight: bold;
     transition: opacity 0.3s ease;
 }
 
