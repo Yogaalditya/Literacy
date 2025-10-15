@@ -397,6 +397,17 @@ body {
     box-shadow: 0 20px 25px -5px var(--color-shadow), 0 10px 10px -5px var(--color-shadow) !important;
 }
 
+/* Privacy Statement Styling */
+.privacy-statement-text a {
+    font-weight: bold !important;
+    color: var(--color-text) !important;
+    text-decoration: underline !important;
+}
+
+.dark .privacy-statement-text a {
+    color: var(--color-text) !important;
+}
+
 .dark .shadow-md {
     box-shadow: 0 4px 6px -1px var(--color-shadow), 0 2px 4px -1px var(--color-shadow) !important;
 }
@@ -693,7 +704,6 @@ body {
     align-items: flex-start;
     cursor: pointer;
     font-size: 0.875rem;
-    font-weight: 700;
     color: var(--color-text);
 }
 

@@ -166,7 +166,7 @@
                             <div class="sm:col-span-6">
                                 <label class="register-privacy-label gap-2">
                                     <input type="checkbox" class="mt-1" wire:model="privacy_statement_agree" required />
-                                    <span>
+                                    <span class="privacy-statement-text">
                                         {!! __('general.privacy_statement_agree', ['url' => $privacyStatementUrl]) !!}
                                     </span>
                                 </label>
