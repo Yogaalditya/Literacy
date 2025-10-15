@@ -498,7 +498,6 @@ body {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
 }
 
-/* Autofill styles - menggunakan box-shadow untuk override background autofill */
 .login-input:-webkit-autofill,
 .login-input:-webkit-autofill:hover,
 .login-input:-webkit-autofill:focus {
