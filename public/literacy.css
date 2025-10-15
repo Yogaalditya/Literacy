@@ -16,6 +16,8 @@
     --color-shadow: rgba(0, 0, 0, 0.1);
     --color-footer-bg: var(--color-card-bg);
     --color-footer-text: var(--color-text);
+    --color-input-autofill-bg: #f8f9fa;
+    --color-input-autofill-text: #495057;
 }
 
 .dark {
@@ -31,6 +33,8 @@
     --color-shadow: rgba(0, 0, 0, 0.3);
     --color-footer-bg: var(--color-card-bg);
     --color-footer-text: var(--color-text);
+    --color-input-autofill-bg: #0d1117;
+    --color-input-autofill-text: #c9d1d9;
 }
 
 body {
@@ -453,6 +457,165 @@ body {
     .speakers-card {
         width: calc(25% - 2.25rem);
     }
+}
+
+/* Login Form Styles */
+.login-card {
+    background-color: var(--color-card-bg);
+}
+
+.login-heading {
+    color: var(--color-text);
+}
+
+.login-divider {
+    background-color: var(--color-border);
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    background-color: var(--color-input-autofill-bg) !important;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: oklch(var(--p));
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.dark .login-input {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.dark .login-input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+/* Autofill styles - menggunakan box-shadow untuk override background autofill */
+.login-input:-webkit-autofill,
+.login-input:-webkit-autofill:hover,
+.login-input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--color-input-autofill-bg) inset !important;
+    -webkit-text-fill-color: var(--color-input-autofill-text) !important;
+    border: 1px solid var(--color-border);
+}
+
+.dark .login-input:-webkit-autofill,
+.dark .login-input:-webkit-autofill:hover,
+.dark .login-input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--color-input-autofill-bg) inset !important;
+    -webkit-text-fill-color: var(--color-input-autofill-text) !important;
+    border: 1px solid var(--color-border);
+}
+
+.login-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+}
+
+.login-checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--color-text);
+}
+
+.login-checkbox-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    background-color: var(--color-input-autofill-bg);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.login-checkbox-label input[type="checkbox"]:checked {
+    background-color: oklch(var(--p));
+    border-color: oklch(var(--p));
+}
+
+.login-checkbox-label input[type="checkbox"]:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.login-link {
+    font-size: 0.875rem;
+    color: oklch(var(--p));
+    transition: opacity 0.3s ease;
+}
+
+.login-link:hover {
+    opacity: 0.8;
+}
+
+.login-button-primary {
+    padding: 0.5rem 1rem;
+    background-color: oklch(var(--p));
+    color: #ffffff;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.login-button-primary:hover:not(:disabled) {
+    opacity: 0.9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-button-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.login-button-secondary {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    background-color: transparent;
+    color: var(--color-text);
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.login-button-secondary:hover {
+    background-color: var(--color-border);
+}
+
+.login-error {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #dc2626;
+}
+
+.login-error-box {
+    padding: 0.75rem;
+    background-color: #fef2f2;
+    color: #991b1b;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+}
+
+.dark .login-error-box {
+    background-color: rgba(220, 38, 38, 0.1);
+    color: #fca5a5;
 }
 
 /* Alpine.js cloak */

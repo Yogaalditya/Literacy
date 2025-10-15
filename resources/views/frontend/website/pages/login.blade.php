@@ -1,64 +1,64 @@
-<x-literacy::layouts.main class="min-h-screen bg-gray-50">
+<x-literacy::layouts.main class="min-h-screen">
     <div class="max-w-md mx-auto px-4 py-8">
         <div class="mb-6">
-            <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-600" />
+            <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
         </div>
         
-        <div class="bg-white rounded-lg shadow-sm p-6">
+        <div class="login-card rounded-lg shadow-sm p-6">
             <div class="flex items-center mb-6">
-                <h1 class="text-xl font-semibold text-gray-900 min-w-fit pr-4">{{ __('general.login') }}</h1>
-                <div class="flex-grow h-px bg-gray-200"></div>
+                <h1 class="text-xl font-semibold min-w-fit pr-4 login-heading">{{ __('general.login') }}</h1>
+                <div class="flex-grow h-px login-divider"></div>
             </div>
 
             <form wire:submit='login' class="space-y-4">
                 @error('throttle')
-                    <div class="p-3 bg-red-50 text-red-700 text-sm rounded">
+                    <div class="login-error-box">
                         {{ $message }}
                     </div>
                 @enderror
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                    <label class="login-label">
                         {{ __('general.email') }} <span class="text-red-500">*</span>
                     </label>
                     <input 
                         type="email" 
                         name="email" 
-                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-1 focus:ring-primary-200 focus:border-primary-400" 
+                        class="login-input" 
                         wire:model="email" 
                         required
                     />
                     @error('email')
-                        <div class="mt-1 text-sm text-red-600">{{ $message }}</div>
+                        <div class="login-error">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                    <label class="login-label">
                         {{ __('general.password') }} <span class="text-red-500">*</span>
                     </label>
                     <input 
                         type="password" 
                         name="password" 
-                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-1 focus:ring-primary-200 focus:border-primary-400" 
+                        class="login-input" 
                         wire:model="password" 
                         required 
                     />
                     @error('password')
-                        <div class="mt-1 text-sm text-red-600">{{ $message }}</div>
+                        <div class="login-error">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <label class="flex items-center cursor-pointer">
+                    <label class="login-checkbox-label">
                         <input 
                             type="checkbox" 
                             wire:model='remember' 
-                            class="text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                            class="mr-2"
                         />
-                        <span class="ml-2 text-sm text-gray-700">{{ __('general.remember_me') }}</span>
+                        <span>{{ __('general.remember_me') }}</span>
                     </label>
-                    <x-literacy::link :href="$resetPasswordUrl" class="text-sm text-primary-600 hover:text-blue-600">
+                    <x-literacy::link :href="$resetPasswordUrl" class="login-link">
                         {{ __('general.forgot_password_question') }}
                     </x-literacy::link>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="flex gap-3 pt-4">
                     <button 
                         type="submit" 
-                        class="px-4 py-2 button-banner submit text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" 
+                        class="login-button-primary" 
                         wire:loading.attr="disabled"
                     >
                         <span class="loading loading-spinner loading-xs" wire:loading></span>
@@ -74,7 +74,7 @@
                     </button>
                     @if($registerUrl)
                         <x-literacy::link 
-                            class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" 
+                            class="login-button-secondary" 
                             :href="$registerUrl"
                         >
                             {{ __('general.register') }}
