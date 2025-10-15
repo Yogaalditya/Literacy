@@ -4,7 +4,7 @@
             <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
         </div>
         
-        <div class="login-card rounded-lg shadow-sm p-6">
+        <div class="login-card rounded-2xl shadow-lg backdrop-blur-sm p-6">
             <div class="flex items-center mb-6">
                 <h1 class="text-xl font-semibold min-w-fit pr-4 login-heading">{{ __('general.login') }}</h1>
                 <div class="flex-grow h-px login-divider"></div>

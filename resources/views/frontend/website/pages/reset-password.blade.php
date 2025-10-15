@@ -4,7 +4,7 @@
             <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-500 hover:text-gray-700 transition-colors" />
         </div>
 
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-100/50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl shadow-lg backdrop-blur-sm">
             <div class="p-8">
                 <div class="flex flex-col space-y-1.5 mb-8">
                     <h1 class="text-2xl font-semibold tracking-tight text-gray-900">{{ __('general.reset_password') }}</h1>
