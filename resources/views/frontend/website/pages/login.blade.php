@@ -24,7 +24,7 @@
                     <input 
                         type="email" 
                         name="email" 
-                        class="login-input" 
+                        class="login-input rounded-xl" 
                         wire:model="email" 
                         required
                     />
@@ -40,7 +40,7 @@
                     <input 
                         type="password" 
                         name="password" 
-                        class="login-input" 
+                        class="login-input rounded-xl" 
                         wire:model="password" 
                         required 
                     />
