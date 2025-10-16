@@ -417,6 +417,77 @@ body {
     box-shadow: 0 4px 6px -1px var(--color-shadow), 0 2px 4px -1px var(--color-shadow) !important;
 }
 
+/* Email Verification Page Styles */
+.email-verification-container {
+    background-color: var(--color-bg);
+}
+
+.email-verification-card {
+    background-color: var(--color-card-bg);
+    border-color: var(--color-border);
+}
+
+.email-verification-heading {
+    color: var(--color-text);
+}
+
+.email-verification-divider {
+    background-color: var(--color-border);
+}
+
+.email-verification-text {
+    color: var(--color-text);
+}
+
+.email-verification-text-secondary {
+    color: var(--color-text-secondary);
+}
+
+.email-verification-breadcrumb {
+    color: var(--color-text-secondary);
+}
+
+/* Email Verification Alert Styles */
+.email-verification-alert-success {
+    background-color: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #15803d;
+}
+
+.dark .email-verification-alert-success {
+    background-color: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.3);
+    color: #86efac;
+}
+
+.email-verification-alert-success-icon {
+    color: #16a34a;
+}
+
+.dark .email-verification-alert-success-icon {
+    color: #86efac;
+}
+
+.email-verification-alert-error {
+    background-color: #fef2f2;
+    border-color: #fecaca;
+    color: #dc2626;
+}
+
+.dark .email-verification-alert-error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.email-verification-alert-error-icon {
+    color: #dc2626;
+}
+
+.dark .email-verification-alert-error-icon {
+    color: #fca5a5;
+}
+
 .dark .banner-info-card .text-gray-500 {
     color: var(--color-text-secondary) !important;
 }

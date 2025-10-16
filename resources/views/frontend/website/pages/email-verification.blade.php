@@ -1,34 +1,34 @@
-<x-literacy::layouts.main class="min-h-screen bg-gray-50 py-12 px-4">
+<x-literacy::layouts.main class="min-h-screen email-verification-container py-12 px-4">
     <div class="max-w-xl mx-auto">
         <div class="mb-6">
-            <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm text-gray-500 hover:text-gray-700 transition-colors" />
+            <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" class="text-sm email-verification-breadcrumb transition-colors" />
         </div>
 
-        <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+        <div class="email-verification-card rounded-xl shadow-lg p-8 border">
             <div class="flex items-center mb-5 space-x-4">
-                <h1 class="text-2xl font-semibold text-gray-800 flex items-center gap-2">
+                <h1 class="text-2xl font-semibold email-verification-heading flex items-center gap-2">
                     <x-heroicon-s-envelope class="h-6 w-6 icon-banner" />
                     Verify Your Email
                 </h1>
-                <hr class="flex-grow h-px bg-gray-300 border-0">
+                <hr class="flex-grow h-px email-verification-divider border-0">
             </div>
 
-            <div class="space-y-4 text-gray-600">
+            <div class="space-y-4 email-verification-text-secondary">
                 @if (session('success'))
-                    <div class="flex items-center bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg">
-                        <x-heroicon-s-check-circle class="h-5 w-5 mr-2 text-green-600" />
+                    <div class="flex items-center email-verification-alert-success border p-4 rounded-lg">
+                        <x-heroicon-s-check-circle class="h-5 w-5 mr-2 email-verification-alert-success-icon" />
                         <span>Email verification link sent successfully.</span>
                     </div>
                 @endif
 
                 @error('email')
-                    <div class="flex items-center bg-red-50 border border-red-200 text-red-600 p-4 rounded-lg">
-                        <x-heroicon-o-exclamation-circle class="h-5 w-5 mr-2 text-red-600" />
+                    <div class="flex items-center email-verification-alert-error border p-4 rounded-lg">
+                        <x-heroicon-o-exclamation-circle class="h-5 w-5 mr-2 email-verification-alert-error-icon" />
                         <span>{{ $message }}</span>
                     </div>
                 @enderror
 
-                <p class="text-gray-700">
+                <p class="email-verification-text">
                     Almost there! We've sent a verification email to <b>{{ Str::maskEmail(auth()->user()->email) }}</b>.
                 </p>
                 <p>You need to verify your email address to log into Leconfe.</p>
