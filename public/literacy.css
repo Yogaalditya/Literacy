@@ -315,6 +315,11 @@ body {
     color: var(--color-text) !important;
 }
 
+.prose a {
+    color: var(--color-text);
+    font-weight: bold;
+}
+
 .dark .prose {
     color: var(--color-text-secondary);
 }
@@ -342,6 +347,11 @@ body {
 
 .dark .prose ul li::marker {
     color: var(--color-text);
+}
+
+.dark .prose a {
+    color: var(--color-text);
+    font-weight: bold;
 }
 
 .dark .home-literacy li {
