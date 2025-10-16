@@ -1,5 +1,5 @@
 <x-literacy::layouts.main>
-    <div class="mx-auto ">
+    <div class="mx-auto">
         <div class="mb-6">
             <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
         </div>
