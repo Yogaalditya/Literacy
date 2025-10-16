@@ -66,7 +66,7 @@
                 <div class="flex gap-3 pt-4">
                     <button 
                         type="submit" 
-                        class="login-button-primary rounded-xl" 
+                        class="login-button-primary rounded-xl text-sm font-medium" 
                         wire:loading.attr="disabled"
                     >
                         <span class="loading loading-spinner loading-xs" wire:loading></span>
@@ -74,7 +74,7 @@
                     </button>
                     @if($registerUrl)
                         <x-literacy::link 
-                            class="login-button-secondary rounded-xl" 
+                            class="login-button-secondary rounded-xl text-sm font-medium" 
                             :href="$registerUrl"
                         >
                             {{ __('general.register') }}
