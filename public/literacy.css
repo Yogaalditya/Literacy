@@ -566,6 +566,21 @@ body {
     border-color: oklch(var(--p));
 }
 
+.login-checkbox-label input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
 .login-checkbox-label input[type="checkbox"]:focus {
     outline: none !important;
     box-shadow: none !important;
@@ -712,6 +727,52 @@ body {
     color: var(--color-text);
 }
 
+.register-privacy-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    background-color: var(--color-input-autofill-bg);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    outline: none;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+}
+
+.register-privacy-label input[type="checkbox"]:checked {
+    background-color: oklch(var(--p));
+    border-color: oklch(var(--p));
+}
+
+.register-privacy-label input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+.register-privacy-label input[type="checkbox"]:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.register-privacy-label .privacy-statement-text {
+    line-height: 1.5;
+}
+
 .register-checkbox-label input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
@@ -730,6 +791,21 @@ body {
 .register-checkbox-label input[type="checkbox"]:checked {
     background-color: oklch(var(--p));
     border-color: oklch(var(--p));
+}
+
+.register-checkbox-label input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 0.75rem;
+    height: 0.75rem;
 }
 
 .register-checkbox-label input[type="checkbox"]:focus {

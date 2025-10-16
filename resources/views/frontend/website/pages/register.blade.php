@@ -1,10 +1,10 @@
-<x-literacy::layouts.main>
+<x-literacy::layouts.main class="min-h-screen">
     <div class="max-w-4xl mx-auto px-4 py-8">
         <div class="mb-6">
             <x-literacy::breadcrumbs :breadcrumbs="$this->getBreadcrumbs()" />
         </div>
 
-        <div class="register-card rounded-lg shadow-sm p-6">
+        <div class="register-card rounded-2xl shadow-lg backdrop-blur-sm p-6">
             <div class="flex items-center mb-6">
                 <h1 class="text-xl font-semibold register-heading min-w-fit pr-4">{{ $this->getTitle() }}</h1>
                 <div class="flex-grow h-px register-divider"></div>
@@ -25,7 +25,7 @@
                                 <label class="register-label">
                                     {{ __('general.given_name') }} <span class="text-red-500">*</span>
                                 </label>
-                                <input type="text" class="register-input" wire:model="given_name" required />
+                                <input type="text" class="register-input rounded-xl" wire:model="given_name" required />
                                 @error('given_name')
                                     <div class="register-error">{{ $message }}</div>
                                 @enderror
@@ -35,7 +35,7 @@
                                 <label class="register-label">
                                     {{ __('general.family_name') }}
                                 </label>
-                                <input type="text" class="register-input" wire:model="family_name" />
+                                <input type="text" class="register-input rounded-xl" wire:model="family_name" />
                                 @error('family_name')
                                     <div class="register-error">{{ $message }}</div>
                                 @enderror
@@ -45,7 +45,7 @@
                                 <label class="register-label">
                                     {{ __('general.public_name') }}
                                 </label>
-                                <input type="text" class="register-input" wire:model="public_name" />
+                                <input type="text" class="register-input rounded-xl" wire:model="public_name" />
                                 @error('public_name')
                                 <div class="register-error">{{ $message }}</div>
                                 @enderror
@@ -56,7 +56,7 @@
                                 <label class="register-label">
                                     {{ __('general.affiliation') }}
                                 </label>
-                                <input type="text" class="register-input" wire:model="affiliation" />
+                                <input type="text" class="register-input rounded-xl" wire:model="affiliation" />
                                 @error('affiliation')
                                     <div class="register-error">{{ $message }}</div>
                                 @enderror
@@ -66,7 +66,7 @@
                                 <label class="register-label">
                                     {{ __('general.country') }}
                                 </label>
-                                <select class="register-input" wire:model='country'>
+                                <select class="register-input rounded-xl" wire:model='country'>
                                     <option value="none" selected disabled>{{ __('general.select_country') }}</option>
                                     @foreach ($countries as $country)
                                         <option value="{{ $country->id }}">{{ $country->flag . ' ' . $country->name }}</option>
@@ -81,7 +81,7 @@
                                 <label class="register-label">
                                     {{ __('general.phone') }}
                                 </label>
-                                <input type="tel" class="register-input" wire:model="phone" />
+                                <input type="tel" class="register-input rounded-xl" wire:model="phone" />
                                 @error('phone')
                                 <div class="register-error">{{ $message }}</div>
                                 @enderror
@@ -93,7 +93,7 @@
                                 <label class="register-label">
                                     {{ __('general.email') }} <span class="text-red-500">*</span>
                                 </label>
-                                <input type="email" class="register-input" wire:model="email" required />
+                                <input type="email" class="register-input rounded-xl" wire:model="email" required />
                                 @error('email')
                                     <div class="register-error">{{ $message }}</div>
                                 @enderror
@@ -103,7 +103,7 @@
                                 <label class="register-label">
                                     {{ __('general.password') }} <span class="text-red-500">*</span>
                                 </label>
-                                <input type="password" class="register-input" wire:model="password" required />
+                                <input type="password" class="register-input rounded-xl" wire:model="password" required />
                                 @error('password')
                                     <div class="register-error">{{ $message }}</div>
                                 @enderror
@@ -113,7 +113,7 @@
                                 <label class="register-label">
                                     {{ __('general.password_confirmation') }} <span class="text-red-500">*</span>
                                 </label>
-                                <input type="password" class="register-input" wire:model="password_confirmation" required />
+                                <input type="password" class="register-input rounded-xl" wire:model="password_confirmation" required />
                                 @error('password_confirmation')
                                     <div class="register-error">{{ $message }}</div>
                                 @enderror
@@ -164,8 +164,8 @@
 
                             <!-- Privacy Statement -->
                             <div class="sm:col-span-6">
-                                <label class="register-privacy-label gap-2">
-                                    <input type="checkbox" class="mt-1" wire:model="privacy_statement_agree" required />
+                                <label class="register-privacy-label">
+                                    <input type="checkbox" wire:model="privacy_statement_agree" required />
                                     <span class="privacy-statement-text">
                                         {!! __('general.privacy_statement_agree', ['url' => $privacyStatementUrl]) !!}
                                     </span>
