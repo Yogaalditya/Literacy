@@ -100,17 +100,6 @@ foreach ($sponsorLevels as $index => $sponsorLevel) {
 	</div>
 
 	<style>
-		.splide__slide {
-			transition: filter 0.3s ease;
-			filter: blur(2px);
-			opacity: 0.6;
-		}
-		
-		.splide__slide.is-active {
-			filter: blur(0px);
-			opacity: 1;
-		}
-
 		/* Pagination styling (for now for mobile) */
 		#sponsor-slider .splide__pagination {
 			margin-top: 2rem;

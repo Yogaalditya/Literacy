@@ -63,16 +63,6 @@ foreach ($partners as $partner) {
 	</div>
 
 	<style>
-		.splide__slide {
-			transition: filter 0.3s ease;
-			filter: blur(2px);
-			opacity: 0.6;
-		}
-		
-		.splide__slide.is-active {
-			filter: blur(0px);
-			opacity: 1;
-		}
 
 		/* Pagination styling (for now for mobile) */
 		#partner-slider .splide__pagination {
