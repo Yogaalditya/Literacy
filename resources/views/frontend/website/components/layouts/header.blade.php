@@ -15,7 +15,7 @@
             :headerLogo="$headerLogo"
             :homeUrl="$homeUrl"
             :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')"
-            class="no-underline-hover text-xl sm:text-xl font-semibold"
+            class="no-underline-hover"
         />
     </div>
     
@@ -30,7 +30,7 @@
                 :headerLogo="$headerLogo"
                 :homeUrl="$homeUrl"
                 :headerLogoAltText="app()->getCurrentConference()?->name ?? config('app.name')"
-                class="no-underline-hover text-xl xl:text-2xl font-semibold text-gray-800"
+                class="no-underline-hover"
             />
         </div>
         <div class="navbar-literacy container mx-auto px-4 lg:px-8 py-3">

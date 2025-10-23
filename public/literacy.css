@@ -7,7 +7,7 @@
     /* Light Mode Colors */
     --color-bg: #FAFAFA;
     --color-bg-secondary: #ffffff;
-    --color-text: #495057;
+    --color-text: #212121;
     --color-text-secondary: #4b5563;
     --color-border: #d0d0d0;
     --color-navbar-bg: var(--color-bg-secondary);
@@ -1093,18 +1093,6 @@ body {
     width: 100%;
 }
 
-/* Logo text gradient effect */
-.logo-text-gradient {
-    color: var(--color-text);
-    background: radial-gradient(circle at 30% 20%, oklch(var(--p)), var(--color-text) 40%, oklch(var(--p)) 70%, var(--color-text));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% 200%;
-    animation: gradientShift 4s ease-in-out infinite;
-    transition: all 0.3s ease;
-}
-
 /* Responsive logo text with 2-line limit and reduced width */
 .logo-text-responsive {
     display: -webkit-box;
@@ -1129,7 +1117,7 @@ body {
 
 @media (max-width: 480px) {
     .logo-text-responsive {
-        font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
         line-height: 1.1;
         max-width: 100%;
         -webkit-line-clamp: 3; 
@@ -1138,7 +1126,7 @@ body {
 
 @media (min-width: 481px) and (max-width: 640px) {
     .logo-text-responsive {
-        font-size: clamp(1rem, 2.3vw, 1.3rem);
+        font-size: clamp(1.1rem, 2.3vw, 1.3rem);
         line-height: 1.15;
         max-width: 100%;
         -webkit-line-clamp: 2; 
@@ -1147,7 +1135,7 @@ body {
 
 @media (min-width: 641px) and (max-width: 1023px) {
     .logo-text-responsive {
-        font-size: clamp(1rem, 2vw, 1.5rem);
+        font-size: clamp(1.2rem, 2vw, 1.4rem);
         line-height: 1.2;
         max-width: 100%; 
         -webkit-line-clamp: 2; 
@@ -1156,7 +1144,7 @@ body {
 
 @media (min-width: 1024px) and (max-width: 1279px) {
     .logo-text-responsive {
-        font-size: clamp(0.8rem, 1.8vw, 1rem);
+        font-size: clamp(1.3rem, 1.8vw, 1.5rem);
         line-height: 1.2;
         max-width: 100%;
         -webkit-line-clamp: 3;
@@ -1165,14 +1153,40 @@ body {
 
 @media (min-width: 1280px) {
     .logo-text-responsive {
-        font-size: clamp(0.9rem, 1.6vw, 1.2rem);
+        font-size: clamp(1.4rem, 1.6vw, 1.6rem);
         line-height: 1.25;
         max-width: 100%;
         -webkit-line-clamp: 2;
     }
 }
 
+/* Logo text gradient effect */
+.logo-text-gradient {
+    color: var(--color-text);
+}
+
+
 .dark .logo-text-gradient {
+    color: var(--color-text);
+}
+
+.logo-text-wrapper:hover {
+    transform: scale(1.01);
+}
+
+/* Countdown text gradient effect */
+.text-gradient {
+    color: var(--color-text);
+    background: radial-gradient(circle at 30% 20%, oklch(var(--p)), var(--color-text) 40%, oklch(var(--p)) 70%, var(--color-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.dark .text-gradient {
     color: var(--color-text);
     background: radial-gradient(circle at 30% 20%, oklch(var(--p)), var(--color-text) 40%, oklch(var(--p)) 70%, var(--color-text));
     -webkit-background-clip: text;
@@ -1218,39 +1232,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-/* Hover effect for logo gradient */
-.logo-text-wrapper:hover .logo-text-gradient {
-    filter: brightness(1.1);
-    animation-duration: 2s;
-}
-
-.logo-text-wrapper:hover {
-    transform: scale(1.01);
-}
-
-/* Countdown text gradient effect */
-.text-gradient {
-    color: var(--color-text);
-    background: radial-gradient(circle at 30% 20%, oklch(var(--p)), var(--color-text) 40%, oklch(var(--p)) 70%, var(--color-text));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% 200%;
-    animation: gradientShift 4s ease-in-out infinite;
-    transition: all 0.3s ease;
-}
-
-.dark .text-gradient {
-    color: var(--color-text);
-    background: radial-gradient(circle at 30% 20%, oklch(var(--p)), var(--color-text) 40%, oklch(var(--p)) 70%, var(--color-text));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% 200%;
-    animation: gradientShiftDark 4s ease-in-out infinite;
-    transition: all 0.3s ease;
 }
 
 /* Sponsor Carousel Styles */
@@ -3274,7 +3255,7 @@ body {
 
 @media (max-width: 640px) {
     .latest-news-card {
-        min-hessight: 450px;
+        min-height: 450px;
     }
     
     .latest-news-card .h-\[270px\] {
