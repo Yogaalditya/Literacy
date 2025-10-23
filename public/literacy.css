@@ -3176,7 +3176,7 @@ body {
 /* Desktop specific adjustments for banner content */
 @media (min-width: 1024px) {
     .banner-content {
-        top: 300px !important;
+        top: 250px !important;
         margin-left: 100px !important;
         padding-top: 3rem !important;
     }
@@ -3184,10 +3184,7 @@ body {
 
 /* Text size adjustments specifically for tablet screens only */
 @media (min-width: 768px) and (max-width: 1023px) {
-    /* Reduce banner title size for tablets */
-    .banner-content h1 {
-        font-size: 1.125rem !important; 
-    }
+    /* Removed font-size override to allow Tailwind md:text-4xl to work properly */
     
     /* Reduce date and location text for tablets */
     .banner-content .text-sm {
@@ -3277,7 +3274,7 @@ body {
 
 @media (max-width: 640px) {
     .latest-news-card {
-        min-height: 450px;
+        min-hessight: 450px;
     }
     
     .latest-news-card .h-\[270px\] {
@@ -3425,9 +3422,9 @@ body {
     }
     
     .banner-content .section-title h1 {
-        -webkit-line-clamp: 5;
-        line-clamp: 5;
-        max-width: 600px;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        max-width: 1100px;
     }
 }
 

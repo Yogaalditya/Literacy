@@ -41,10 +41,10 @@
         <!-- Content Overlay with Vertical Layout -->
         <div class="absolute inset-0 flex flex-col justify-start px-4 sm:px-6 lg:px-8">
             <div class="container mx-auto max-w-full">
-                <div class="banner-content flex flex-col space-y-4 md:space-y-6 max-w-4xl">
+                <div class="banner-content flex flex-col space-y-4 md:space-y-6 max-w-7xl">
                     <!-- Title Section -->
                     <div class="section-title">
-                        <h1 class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-tight {{ $bannerUrl ? 'drop-shadow-lg color-latest' : 'text-gray-800' }} leading-tight break-words">
+                        <h1 class="font-extrabold text-xl sm:text-2xl md:text-4xl lg:text-7xl tracking-tight {{ $bannerUrl ? 'drop-shadow-lg color-latest' : 'text-gray-800' }} leading-tight break-words">
                             {{ $currentScheduledConference->title }}
                         </h1>
                     </div>
