@@ -5,14 +5,14 @@
     font-family: "Inter Tight", sans-serif;
     
     /* Light Mode Colors */
-    --color-bg: #FAFAFA;
-    --color-bg-secondary: #ffffff;
+    --color-bg: #ffffff ;
+    --color-bg-secondary: #FAFAFA;
     --color-text: #212121;
     --color-text-secondary: #4b5563;
     --color-border: #d0d0d0;
     --color-navbar-bg: var(--color-bg-secondary);
     --color-navbar-border: var(--color-border);
-    --color-card-bg: #ffffff;
+    --color-card-bg: #FFFDF9;
     --color-shadow: rgba(0, 0, 0, 0.1);
     --color-footer-bg: var(--color-card-bg);
     --color-footer-text: var(--color-text);
@@ -1632,7 +1632,7 @@ body {
 }
 
 .gvav-main {
-    background-color: transparent !important;
+    background-color: var(--color-bg) !important;
 }
 
 /* Hero should use outer background (not white) */
@@ -1648,7 +1648,7 @@ body {
 
 /* About section: only cards (.gvav-timeline-item) are colored; outside stays outer background */
 .gvav-section {
-    background-color: var(--color-bg-secondary) !important; /* inherit outer (body) background */
+    background-color: var(--color-bg) !important; /* inherit outer (body) background */
     color: var(--color-text) !important;
 }
 
@@ -1680,11 +1680,11 @@ body {
 }
 
 .dark .gvav-main {
-    background-color: var(--color-bg-secondary) !important;
+    background-color: var(--color-bg) !important;
 }
 
 .dark .gvav-hero {
-    background-color: var(--color-bg-secondary) !important;
+    background-color: var(--color-bg) !important;
     color: var(--color-text) !important;
 }
 
@@ -1719,11 +1719,6 @@ body {
 }
 
 .dark .gvav-section {
-    background-color: var(--color-bg-secondary) !important;
-    color: var(--color-text) !important;
-}
-
-.dark .gvav-section-alt {
     background-color: var(--color-bg) !important;
     color: var(--color-text) !important;
 }
@@ -2415,10 +2410,6 @@ body {
     padding: 6rem 2rem;
 }
 
-.gvav-section-alt {
-    background-color: #f8fafc;
-}
-
 .gvav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -2722,7 +2713,8 @@ body {
 }
 
 .gvav-schedule-day {
-    background: white;
+    background-color: var(--color-card-bg) !important;
+    border-color: var(--color-border) !important;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
