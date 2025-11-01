@@ -1,12 +1,9 @@
 <body>
-  <section class="gvav-pricing" aria-labelledby="pricing-title">
-    <div class="gvav-container">
+  <section class="section-pricing" aria-labelledby="pricing-title">
+    <div class="price-container">
       <div class="pricing-header">
         <h3 class="pricing-subtitle">Registration Options</h3>
         <h2 id="pricing-title" class="pricing-title">Join Three Days of Literacy Innovation 2025</h2>
-        <div class="pricing-divider">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
       </div>
 
       <div class="pricing-container">

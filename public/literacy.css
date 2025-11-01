@@ -3409,6 +3409,17 @@ body {
 
 
 /* Pricing Custom Content */
+
+.price-container {
+    background-color: transparent !important;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dark .price-container {
+    background-color: transparent !important;
+}
+
 .pricing-section {
   text-align: center;
   padding: 60px 1rem;
@@ -3417,14 +3428,14 @@ body {
 }
 
 .pricing-subtitle {
-  color: #ff7c00;
-  font-weight: bold;
+  color: oklch(var(--p)) !important;
+  font-weight: bold !important;
   margin-bottom: 10px;
   text-align: center;
 }
 
 .pricing-title {
-  color: #004b5f;
+  color: var(--color-text);
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -3439,12 +3450,6 @@ body {
   border-radius: 10px;
 }
 
-.pricing-divider span:nth-child(1) { background: #ff7c00; }
-.pricing-divider span:nth-child(2) { background: #004b5f; }
-.pricing-divider span:nth-child(3) { background: #f7c600; }
-.pricing-divider span:nth-child(4) { background: #004b5f; }
-.pricing-divider span:nth-child(5) { background: #ff7c00; }
-
 .pricing-container {
   display: flex;
   justify-content: center;
@@ -3454,7 +3459,7 @@ body {
 }
 
 .pricing-card {
-  background-color: white;
+  background-color: var(--color-card-bg);
   width: 280px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -3463,6 +3468,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border: 1px solid var(--color-border);
 }
 
 .pricing-card-title {
@@ -3532,4 +3538,31 @@ body {
 
 .register-btn:hover {
   background: linear-gradient(to right, #00b4d8, #0096c7);
+}
+
+/* Dark mode styles for pricing */
+.dark .pricing-subtitle {
+  color: oklch(var(--p)) !important;
+}
+
+.dark .pricing-title {
+  color: var(--color-text);
+}
+
+.dark .pricing-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 6px var(--color-shadow);
+}
+
+.dark .pricing-card:hover {
+  box-shadow: 0 8px 16px var(--color-shadow);
+}
+
+.dark .pricing-card-title {
+  color: var(--color-text);
+}
+
+.dark .pricing-features li {
+  color: var(--color-text-secondary);
 }
