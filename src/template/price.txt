@@ -1,9 +1,9 @@
 <body>
-  <section class="ny2026-pricing py-8 md:py-12" aria-labelledby="pricing-title">
-    <div class="ny2026-container">
+  <section class="gvav-pricing" aria-labelledby="pricing-title">
+    <div class="gvav-container">
       <div class="pricing-header">
-        <h3 class="pricing-subtitle">Registration Slots</h3>
-        <h2 id="pricing-title" class="pricing-title">Explore Our Flexible Prices</h2>
+        <h3 class="pricing-subtitle">Registration Options</h3>
+        <h2 id="pricing-title" class="pricing-title">Join Three Days of Literacy Innovation 2025</h2>
         <div class="pricing-divider">
           <span></span><span></span><span></span><span></span><span></span>
         </div>
@@ -11,52 +11,53 @@
 
       <div class="pricing-container">
         <div class="pricing-card">
-          <h3 class="pricing-card-title">Delegate/Listener <br>(In-Person)</h3>
-          <p class="pricing-card-price"><span>$</span>849 <span class="usd">USD</span></p>
+          <h3 class="pricing-card-title">Student/Educator</h3>
+          <p class="pricing-card-price"><span>$</span>99 <span class="usd">USD</span></p>
           <ul class="pricing-features">
-            <li>Entry to all session and workshops</li>
-            <li>Lunch & Coffee breaks</li>
-            <li>Conference schedule handout</li>
-            <li>Certificate of Attendance</li>
-            <li>E-Abstract Book</li>
+            <li>Access to all literacy sessions and workshops</li>
+            <li>Networking lunch & coffee breaks</li>
+            <li>Conference materials and handouts</li>
+            <li>Certificate of Participation</li>
+            <li>Digital literacy resource library</li>
           </ul>
           <button class="register-btn">Register Now</button>
         </div>
 
         <div class="pricing-card">
-          <h3 class="pricing-card-title">Speaker (In-person)</h3>
-          <p class="pricing-card-price"><span>$</span>749 <span class="usd">USD</span></p>
+          <h3 class="pricing-card-title">Virtual Attendance</h3>
+          <p class="pricing-card-price"><span>$</span>149 <span class="usd">USD</span></p>
           <ul class="pricing-features">
-            <li>Entry to all session and workshops</li>
-            <li>Lunch & Coffee breaks</li>
-            <li>Conference schedule handout</li>
-            <li>Certificate of Attendance</li>
-            <li>E-Abstract Book</li>
+            <li>Live streaming of all sessions</li>
+            <li>Access to recorded sessions</li>
+            <li>Digital conference materials</li>
+            <li>Certificate of Virtual Participation</li>
+            <li>Digital literacy resource library</li>
           </ul>
           <button class="register-btn">Register Now</button>
         </div>
 
         <div class="pricing-card">
-          <h3 class="pricing-card-title">Student/Poster</h3>
-          <p class="pricing-card-price"><span>$</span>549 <span class="usd">USD</span></p>
+          <h3 class="pricing-card-title">Early Bird (In-Person)</h3>
+          <p class="pricing-card-price"><span>$</span>299 <span class="usd">USD</span></p>
           <ul class="pricing-features">
-            <li>Entry to all session and workshops</li>
-            <li>Lunch & Coffee breaks</li>
-            <li>Conference schedule handout</li>
-            <li>Certificate of Attendance</li>
-            <li>E-Abstract Book</li>
+            <li>Access to all literacy sessions and workshops</li>
+            <li>Networking lunch & coffee breaks</li>
+            <li>Conference materials and handouts</li>
+            <li>Certificate of Participation</li>
+            <li>Digital literacy resource library</li>
           </ul>
           <button class="register-btn">Register Now</button>
         </div>
 
         <div class="pricing-card">
-          <h3 class="pricing-card-title">Virtual (Speaker/Delegate)</h3>
+          <h3 class="pricing-card-title">Regular (In-person)</h3>
           <p class="pricing-card-price"><span>$</span>399 <span class="usd">USD</span></p>
           <ul class="pricing-features">
-            <li>Conference recorded video access</li>
-            <li>Conference schedule handout</li>
-            <li>Certificate of Attendance</li>
-            <li>E-Abstract Book</li>
+            <li>Access to all literacy sessions and workshops</li>
+            <li>Networking lunch & coffee breaks</li>
+            <li>Conference materials and handouts</li>
+            <li>Certificate of Participation</li>
+            <li>Digital literacy resource library</li>
           </ul>
           <button class="register-btn">Register Now</button>
         </div>
