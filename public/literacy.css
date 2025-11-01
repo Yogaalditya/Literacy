@@ -3406,3 +3406,124 @@ body {
         padding-top: 5rem;
     }
 }
+
+
+.pricing-section {
+  text-align: center;
+  padding: 60px 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pricing-subtitle {
+  color: #ff7c00;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.pricing-title {
+  color: #004b5f;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pricing-divider span {
+  display: inline-block;
+  width: 20px;
+  height: 4px;
+  margin: 0 2px;
+  border-radius: 10px;
+}
+
+.pricing-divider span:nth-child(1) { background: #ff7c00; }
+.pricing-divider span:nth-child(2) { background: #004b5f; }
+.pricing-divider span:nth-child(3) { background: #f7c600; }
+.pricing-divider span:nth-child(4) { background: #004b5f; }
+.pricing-divider span:nth-child(5) { background: #ff7c00; }
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 50px;
+}
+
+.pricing-card {
+  background-color: white;
+  width: 280px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 30px 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pricing-card-title {
+  color: #003366;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.pricing-card-price {
+  color: #ff5a00;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+.pricing-card-price span {
+  font-size: 20px;
+  vertical-align: super;
+}
+
+.pricing-card-price .usd {
+  font-size: 14px;
+  vertical-align: middle;
+  color: #ff5a00;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.pricing-features li {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #333;
+  position: relative;
+  padding-left: 25px;
+}
+
+.pricing-features li::before {
+  content: '✔';
+  color: #004b5f;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.register-btn {
+  background: linear-gradient(to right, #0096c7, #0077b6);
+  color: white;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: linear-gradient(to right, #00b4d8, #0096c7);
+}

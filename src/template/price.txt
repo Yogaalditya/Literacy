@@ -1,0 +1,66 @@
+<body>
+  <section class="ny2026-pricing py-8 md:py-12" aria-labelledby="pricing-title">
+    <div class="ny2026-container">
+      <div class="pricing-header">
+        <h3 class="pricing-subtitle">Registration Slots</h3>
+        <h2 id="pricing-title" class="pricing-title">Explore Our Flexible Prices</h2>
+        <div class="pricing-divider">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="pricing-container">
+        <div class="pricing-card">
+          <h3 class="pricing-card-title">Delegate/Listener <br>(In-Person)</h3>
+          <p class="pricing-card-price"><span>$</span>849 <span class="usd">USD</span></p>
+          <ul class="pricing-features">
+            <li>Entry to all session and workshops</li>
+            <li>Lunch & Coffee breaks</li>
+            <li>Conference schedule handout</li>
+            <li>Certificate of Attendance</li>
+            <li>E-Abstract Book</li>
+          </ul>
+          <button class="register-btn">Register Now</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="pricing-card-title">Speaker (In-person)</h3>
+          <p class="pricing-card-price"><span>$</span>749 <span class="usd">USD</span></p>
+          <ul class="pricing-features">
+            <li>Entry to all session and workshops</li>
+            <li>Lunch & Coffee breaks</li>
+            <li>Conference schedule handout</li>
+            <li>Certificate of Attendance</li>
+            <li>E-Abstract Book</li>
+          </ul>
+          <button class="register-btn">Register Now</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="pricing-card-title">Student/Poster</h3>
+          <p class="pricing-card-price"><span>$</span>549 <span class="usd">USD</span></p>
+          <ul class="pricing-features">
+            <li>Entry to all session and workshops</li>
+            <li>Lunch & Coffee breaks</li>
+            <li>Conference schedule handout</li>
+            <li>Certificate of Attendance</li>
+            <li>E-Abstract Book</li>
+          </ul>
+          <button class="register-btn">Register Now</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="pricing-card-title">Virtual (Speaker/Delegate)</h3>
+          <p class="pricing-card-price"><span>$</span>399 <span class="usd">USD</span></p>
+          <ul class="pricing-features">
+            <li>Conference recorded video access</li>
+            <li>Conference schedule handout</li>
+            <li>Certificate of Attendance</li>
+            <li>E-Abstract Book</li>
+          </ul>
+          <button class="register-btn">Register Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
