@@ -3534,7 +3534,7 @@ body {
 
 .register-btn:hover {
   background: oklch(var(--p));
-  filter: brightness(1.5);
+  filter: brightness(1.3);
 }
 
 /* Dark mode styles for pricing */
