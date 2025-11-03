@@ -3446,7 +3446,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 22px;
+  gap: 26px;
   margin-top: 50px;
 }
 
@@ -3454,13 +3454,17 @@ body {
   background-color: var(--color-card-bg);
   width: 280px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px var(--color-shadow);
   padding: 30px 20px;
   text-align: left;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid var(--color-border);
+}
+
+.pricing-card:hover {
+  box-shadow: 0 8px 16px var(--color-shadow);
 }
 
 .pricing-card-title {
@@ -3516,7 +3520,7 @@ body {
 }
 
 .register-btn {
-  background: linear-gradient(to right, #0096c7, #0077b6);
+  background: oklch(var(--p));
   color: white;
   border: none;
   padding: 12px 0;
@@ -3529,7 +3533,8 @@ body {
 }
 
 .register-btn:hover {
-  background: linear-gradient(to right, #00b4d8, #0096c7);
+  background: oklch(var(--p));
+  filter: brightness(1.5);
 }
 
 /* Dark mode styles for pricing */
