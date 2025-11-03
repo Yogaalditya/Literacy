@@ -1,61 +1,64 @@
-<section class="pricing-section">
-  <div class="pricing-header">
-    <h2 class="pricing-title">Choose Your Plan</h2>
-    <p class="pricing-subtitle">
-      Find the ideal pricing plan that fits your needs. Whether you're an individual designer, 
-      a small team, or a large enterprise, we offer flexible options to help you get the most out of RTL Layout.
-    </p>
-  </div>
+<body>
+  <section class="section-pricing" aria-labelledby="pricing-title">
+    <div class="price-container">
+      <div class="pricing-header">
+        <h3 class="pricing-subtitle">Registration Options</h3>
+        <h2 id="pricing-title" class="pricing-title">Join Three Days of Literacy Innovation 2025</h2>
+      </div>
 
-  <div class="pricing-cards">
-    <!-- Free Plan -->
-    <div class="pricing-card pricing-free">
-      <h3 class="plan-name">Free Plan</h3>
-      <p class="plan-desc">Great to test the plugin on your designs.</p>
-      <p class="plan-price">Free</p>
-      <ul class="plan-features">
-        <li>5 Uses per design file</li>
-        <li>1 User</li>
-      </ul>
-      <button class="plan-btn">Try It on Figma</button>
-    </div>
+      <div class="pricing-container">
+        <div class="pricing-card">
+          <h3 class="pricing-card-title">Student/Educator</h3>
+          <p class="pricing-card-price"><span>$</span>99 <span class="usd">USD</span></p>
+          <ul class="pricing-features">
+            <li>Access to all literacy sessions and workshops</li>
+            <li>Networking lunch & coffee breaks</li>
+            <li>Conference materials and handouts</li>
+            <li>Certificate of Participation</li>
+            <li>Digital literacy resource library</li>
+          </ul>
+          <button class="register-btn">Register Now</button>
+        </div>
 
-    <!-- Solo Designer -->
-    <div class="pricing-card pricing-solo">
-      <div class="plan-badge">MOST POPULAR</div>
-      <h3 class="plan-name">Solo Designer</h3>
-      <p class="plan-desc">For professional individuals and freelances.</p>
-      <p class="plan-price">$29<span>/year</span></p>
-      <ul class="plan-features">
-        <li>Unlimited uses per design file</li>
-        <li>1 User</li>
-      </ul>
-      <button class="plan-btn">Select Plan</button>
-    </div>
+        <div class="pricing-card">
+          <h3 class="pricing-card-title">Virtual Attendance</h3>
+          <p class="pricing-card-price"><span>$</span>149 <span class="usd">USD</span></p>
+          <ul class="pricing-features">
+            <li>Live streaming of all sessions</li>
+            <li>Access to recorded sessions</li>
+            <li>Digital conference materials</li>
+            <li>Certificate of Virtual Participation</li>
+            <li>Digital literacy resource library</li>
+          </ul>
+          <button class="register-btn">Register Now</button>
+        </div>
 
-    <!-- Team Plan -->
-    <div class="pricing-card pricing-team">
-      <div class="plan-badge">BEST FOR TEAMS</div>
-      <h3 class="plan-name">Team Plan</h3>
-      <p class="plan-desc">For small design teams looking to localize.</p>
-      <p class="plan-price">$99<span>/year</span></p>
-      <ul class="plan-features">
-        <li>Unlimited uses per design file</li>
-        <li>5 Users</li>
-      </ul>
-      <button class="plan-btn">Select Plan</button>
-    </div>
+        <div class="pricing-card">
+          <h3 class="pricing-card-title">Early Bird (In-Person)</h3>
+          <p class="pricing-card-price"><span>$</span>299 <span class="usd">USD</span></p>
+          <ul class="pricing-features">
+            <li>Access to all literacy sessions and workshops</li>
+            <li>Networking lunch & coffee breaks</li>
+            <li>Conference materials and handouts</li>
+            <li>Certificate of Participation</li>
+            <li>Digital literacy resource library</li>
+          </ul>
+          <button class="register-btn">Register Now</button>
+        </div>
 
-    <!-- Enterprise -->
-    <div class="pricing-card pricing-enterprise">
-      <h3 class="plan-name">Enterprise</h3>
-      <p class="plan-desc">For large design teams who don’t want to be limited by seats.</p>
-      <p class="plan-price">$299<span>/year</span></p>
-      <ul class="plan-features">
-        <li>Unlimited uses per design file</li>
-        <li>Unlimited Users</li>
-      </ul>
-      <button class="plan-btn">Select Plan</button>
+        <div class="pricing-card">
+          <h3 class="pricing-card-title">Regular (In-person)</h3>
+          <p class="pricing-card-price"><span>$</span>399 <span class="usd">USD</span></p>
+          <ul class="pricing-features">
+            <li>Access to all literacy sessions and workshops</li>
+            <li>Networking lunch & coffee breaks</li>
+            <li>Conference materials and handouts</li>
+            <li>Certificate of Participation</li>
+            <li>Digital literacy resource library</li>
+          </ul>
+          <button class="register-btn">Register Now</button>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</body>
