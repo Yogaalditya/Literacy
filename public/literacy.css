@@ -3406,6 +3406,7 @@ body {
     background-color: transparent !important;
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 150px;
 }
 
 .dark .price-container {
